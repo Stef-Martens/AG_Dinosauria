@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774254939325",
+    "project_id": "ag-dinosauria",
+    "storage_bucket": "ag-dinosauria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774254939325:android:d888af0dd40f7c9a443bd4",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.AGDinosauria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774254939325-umkamoklmmg9emputk42465vu9ark9lj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApNlWbUcXf8YAduCquUXzLnwidHtS-U2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774254939325-umkamoklmmg9emputk42465vu9ark9lj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
