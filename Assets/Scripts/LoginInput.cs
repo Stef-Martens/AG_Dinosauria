@@ -43,10 +43,6 @@ public class LoginInput : MonoBehaviour
         }
     }
 
-    public void Login()
-    {
-
-    }
 
     public void RegisterScreen()
     {
@@ -63,13 +59,9 @@ public class LoginInput : MonoBehaviour
 
     public void BackToLogin()
     {
-        RegisterCanvas.SetActive(false);
+        if (RegisterCanvas.activeSelf) RegisterCanvas.SetActive(false);
+        if (ResetCanvas.activeSelf) ResetCanvas.SetActive(false);
         LoginCanvas.SetActive(true);
         LoginCanvas.transform.GetChild(1).gameObject.GetComponent<Selectable>().Select();
-    }
-
-    public void Register()
-    {
-
     }
 }

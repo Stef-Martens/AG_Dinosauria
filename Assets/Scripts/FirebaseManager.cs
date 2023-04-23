@@ -33,6 +33,11 @@ public class FirebaseManager : MonoBehaviour
     public Toggle Male;
     public Text warningRegisterText;
 
+    //Reset variables
+    [Header("Register")]
+    public InputField ResetEmailText;
+    public Text warningResetText;
+
     public UserClass MadeUser;
 
     void Awake()
@@ -72,6 +77,13 @@ public class FirebaseManager : MonoBehaviour
     {
         //Call the register coroutine passing the email, password, and username
         StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text));
+    }
+
+    public void ResetButton()
+    {
+        //Call the register coroutine passing the email, password, and username
+        StartCoroutine(ResetPassword(ResetEmailText.text));
+        //ResetPassword(ResetEmailText.text);
     }
 
     private IEnumerator Login(string _email, string _password)
@@ -203,6 +215,53 @@ public class FirebaseManager : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    public void GuestLogin()
+    {
+        StartCoroutine(Login("guest@mail.com", "123456"));
+    }
+
+
+    public IEnumerator ResetPassword(string ResetEmail)
+    {
+        if (ResetEmail == "")
+        {
+            //If the email field is blank show a warning
+            warningResetText.text = "Missing email";
+        }
+        else
+        {
+            var ResetTask = auth.SendPasswordResetEmailAsync(ResetEmail);
+            //Wait until the task completes
+            yield return new WaitUntil(predicate: () => ResetTask.IsCompleted);
+
+            if (ResetTask.Exception != null)
+            {
+                //If there are errors handle them
+                Debug.LogWarning(message: $"Failed to reset task with {ResetTask.Exception}");
+                FirebaseException firebaseEx = ResetTask.Exception.GetBaseException() as FirebaseException;
+                AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+
+                string message = "Reset Failed!";
+                switch (errorCode)
+                {
+                    case AuthError.MissingEmail:
+                        message = "Missing Email";
+                        break;
+                    case AuthError.InvalidEmail:
+                        message = "Invalid email";
+                        break;
+                }
+                warningResetText.text = message;
+            }
+            else
+            {
+                //FindObjectOfType<LoginInput>().BackToLogin();
+                warningResetText.text = "Reset email was sent!";
+            }
+
         }
     }
 
