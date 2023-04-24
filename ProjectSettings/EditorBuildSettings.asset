@@ -6,9 +6,39 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/Home.unity
+    guid: d240172ddab297241a655adfc4ba5367
   - enabled: 1
-    path: Assets/Scenes/TestScene_Stef.unity
-    guid: cabeeb8a8750be940af8a2ae2401bf6f
+    path: Assets/Scenes/Login_Register.unity
+    guid: 279ab5c8a423d6f49836103083b982c7
+  - enabled: 1
+    path: Assets/Scenes/Selectionscreen.unity
+    guid: cec4c4fee85f4704d8275cc6aef46908
+  - enabled: 1
+    path: Assets/Scenes/Bird/Bird.unity
+    guid: bca7b2da6c812884fab73d9bb49135c1
+  - enabled: 1
+    path: Assets/Scenes/Bird/IntroBird.unity
+    guid: a5b20004c11323a4b9d397091e843933
+  - enabled: 1
+    path: Assets/Scenes/Bird/QuizBird.unity
+    guid: 8a718992683484e4abba716b3949767e
+  - enabled: 1
+    path: Assets/Scenes/Chameleon/Chameleon.unity
+    guid: ec982fbef9436c147b63439d37477e98
+  - enabled: 1
+    path: Assets/Scenes/Chameleon/IntroChameleon.unity
+    guid: d2ef19ae325ed7c4c954924f9bd233f3
+  - enabled: 1
+    path: Assets/Scenes/Chameleon/QuizChameleon.unity
+    guid: 7dcb47e0c1e34b141b939e49c197b528
+  - enabled: 1
+    path: Assets/Scenes/Fish/Fish.unity
+    guid: 42ee62de5b569a54986df20900c6268e
+  - enabled: 1
+    path: Assets/Scenes/Fish/IntroFish.unity
+    guid: ae9127c517630ee4e9c844131c095e0b
+  - enabled: 1
+    path: Assets/Scenes/Fish/QuizFish.unity
+    guid: 512efac4c6d6c5f48aeff3853f268f54
   m_configObjects: {}
