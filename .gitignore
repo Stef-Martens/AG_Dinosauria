@@ -10,6 +10,9 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+[Uu]serSettings/
+
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
@@ -43,10 +46,15 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+*.user
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
+
+
+
 
 # Unity3D generated file on crash reports
 sysinfo.txt
