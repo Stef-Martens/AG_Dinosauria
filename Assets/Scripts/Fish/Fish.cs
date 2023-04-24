@@ -56,6 +56,8 @@ public class Fish : MonoBehaviour
                 break;
 
             default:
+                FindObjectOfType<FishManager>().AlgaeCount++;
+                Destroy(Collider.gameObject);
                 break;
         }
 

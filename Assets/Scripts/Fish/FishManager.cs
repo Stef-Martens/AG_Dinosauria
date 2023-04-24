@@ -12,10 +12,17 @@ public class FishManager : MonoBehaviour
 
     // LIFES AND PROGRESS
     public int Lifes = 3;
+    public int AlgaeCount = 0;
+    public GameObject Algae;
+    public float spawnYAlgae = 6.5f;
+    public float spawnIntervalAlgae = 1f;
+    public float spawnRangeAlgae = 9f;
+
 
     void Start()
     {
         InvokeRepeating("SpawnHooks", 0f, RepeatTime);
+        InvokeRepeating("SpawnAlgae", 0f, spawnIntervalAlgae);
     }
 
     void SpawnHooks()
@@ -30,6 +37,14 @@ public class FishManager : MonoBehaviour
         Lifes--;
         /*if (Lifes == 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);*/
+    }
+
+    void SpawnAlgae()
+    {
+        // Randomly generate an X position within the spawn range
+        float spawnX = Random.Range(-spawnRangeAlgae, spawnRangeAlgae);
+        // Spawn the object at the specified Y and X positions
+        Instantiate(Algae, new Vector3(spawnX, spawnYAlgae, 0f), Quaternion.identity);
     }
 
 }
