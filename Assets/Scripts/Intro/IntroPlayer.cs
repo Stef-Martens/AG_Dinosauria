@@ -11,6 +11,10 @@ public class IntroPlayer : MonoBehaviour
 
     public bool canMove = true;
 
+    public AudioSource JumpSound;
+    public AudioSource InteractSound;
+    public string NextScene;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,6 +37,7 @@ public class IntroPlayer : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 FindObjectOfType<DialogueSystem>().NextLine();
+                InteractSound.Play();
             }
 
         }
@@ -54,6 +59,7 @@ public class IntroPlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && coll.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
+            JumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, 10f);
         }
     }
@@ -63,11 +69,16 @@ public class IntroPlayer : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1f);
         foreach (Collider2D collider in colliders)
         {
+            if (collider.CompareTag("MinigameAnimal"))
+            {
+                FindObjectOfType<SceneSwitch>().ChangeScene(NextScene);
+            }
             if (collider.CompareTag("Animal"))
             {
                 canMove = false;
                 FindObjectOfType<DialogueSystem>().animal = collider.gameObject.GetComponent<AnimalIntro>();
                 FindObjectOfType<DialogueSystem>().StartDialogue();
+                InteractSound.Play();
                 //collider.gameObject.GetComponent<AnimalIntro>().DoAction();
                 break;
             }

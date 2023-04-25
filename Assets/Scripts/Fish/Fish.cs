@@ -17,6 +17,9 @@ public class Fish : MonoBehaviour
     public float RequiredTaps = 50;
     public Image CircleImage;
 
+    public AudioSource FishSound;
+    public AudioSource PickupSound;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,8 +59,13 @@ public class Fish : MonoBehaviour
                 break;
 
             default:
-                FindObjectOfType<FishManager>().AlgaeCount++;
-                Destroy(Collider.gameObject);
+                if (stateMachine.CurrentState.GetType() == typeof(SwimmingState))
+                {
+                    FindObjectOfType<FishManager>().AlgaeCount++;
+                    FindObjectOfType<FishManager>().EditPickupsText();
+                    Destroy(Collider.gameObject);
+                    PickupSound.Play();
+                }
                 break;
         }
 

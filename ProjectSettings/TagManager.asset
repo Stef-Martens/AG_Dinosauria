@@ -7,6 +7,7 @@ TagManager:
   - Hook
   - Algae
   - Animal
+  - MinigameAnimal
   layers:
   - Default
   - TransparentFX

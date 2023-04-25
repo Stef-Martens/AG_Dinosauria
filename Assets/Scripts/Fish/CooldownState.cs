@@ -17,6 +17,7 @@ public class CooldownState : IFishState
         if (Input.GetKey(KeyCode.Space))
         {
             fish.rb.velocity = -fish.transform.right * fish.speed;
+            fish.FishSound.Play();
         }
     }
 

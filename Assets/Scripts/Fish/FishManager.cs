@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FishManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FishManager : MonoBehaviour
     // LIFES AND PROGRESS
     public int Lifes = 3;
     public int AlgaeCount = 0;
+    public Text PickupText;
     public GameObject Algae;
     public float spawnYAlgae = 6.5f;
     public float spawnIntervalAlgae = 1f;
@@ -23,6 +25,7 @@ public class FishManager : MonoBehaviour
     {
         InvokeRepeating("SpawnHooks", 0f, RepeatTime);
         InvokeRepeating("SpawnAlgae", 0f, spawnIntervalAlgae);
+        EditPickupsText();
     }
 
     void SpawnHooks()
@@ -45,6 +48,15 @@ public class FishManager : MonoBehaviour
         float spawnX = Random.Range(-spawnRangeAlgae, spawnRangeAlgae);
         // Spawn the object at the specified Y and X positions
         Instantiate(Algae, new Vector3(spawnX, spawnYAlgae, 0f), Quaternion.identity);
+    }
+
+    public void EditPickupsText()
+    {
+        PickupText.text = "Pickups: " + AlgaeCount + "/5";
+        if (AlgaeCount == 5)
+        {
+            FindObjectOfType<SceneSwitch>().ChangeScene("QuizFish");
+        }
     }
 
 }
