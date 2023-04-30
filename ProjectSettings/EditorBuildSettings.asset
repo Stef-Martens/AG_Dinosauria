@@ -41,4 +41,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fish/QuizFish.unity
     guid: 512efac4c6d6c5f48aeff3853f268f54
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: fef323a568e57cd4c8e904d41120b2bc, type: 2}
