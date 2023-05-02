@@ -5,6 +5,7 @@ public class Nectar : MonoBehaviour
 {
     public static event Action OnCollected;
     public static int total;
+
     private void Awake() => total++;
 
     private void OnTriggerEnter2D(Collider2D collision)
