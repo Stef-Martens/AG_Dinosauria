@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
     private BoxCollider2D _bc;  
 
     public bool _movementLocked = false;
+
+    private bool isFacingRight;
     
     void Start()
     {
@@ -35,7 +37,27 @@ public class Movement : MonoBehaviour
             transform.Translate(_movement, 0);
         }
 
+
+        if (_horizontalInput < 0 && !isFacingRight)
+        {
+            Flip();
+        }
+        else if (_horizontalInput > 0 && isFacingRight)
+        {
+            Flip();
+        }
     }
+
+    private void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        isFacingRight = !isFacingRight;
+    }
+
+
 
     bool IsGrounded()
     {

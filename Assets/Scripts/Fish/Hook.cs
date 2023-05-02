@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
-    public float speed = 6f;
-    public float minY = 0f;
-    public float maxY = 20f;
-    private bool movingDown = true;
+    public float speed = 2f;
 
-    void Start()
-    {
-        maxY = transform.position.y;
-    }
+    private bool movingDown = true;
 
     void Update()
     {
@@ -20,7 +14,7 @@ public class Hook : MonoBehaviour
         if (movingDown)
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime);
-            if (transform.position.y <= minY)
+            if (transform.position.y <= -3)
             {
                 movingDown = false;
             }
@@ -28,15 +22,14 @@ public class Hook : MonoBehaviour
         else
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
-            /*if (transform.position.y >= maxY && FindObjectOfType<FishForward>().OnHook && FindObjectOfType<FishForward>().Hookske == transform.GetChild(0).transform)
+            if (gameObject.transform.position.y >= transform.parent.gameObject.transform.position.y)
             {
-                FindObjectOfType<ButtonMashing>().currentTaps = 0;
-                FindObjectOfType<ButtonMashing>().circleImage.enabled = false;
-                FindObjectOfType<FishForward>().OnHook = false;
-                FindObjectOfType<Hooks>().PlayerHit();
-                FindObjectOfType<FishForward>().StartTimer();
+                // hook at top
+                transform.parent.gameObject.GetComponent<Boat>().HookAtTop();
                 Destroy(gameObject);
-            }*/
+            }
         }
+
+
     }
 }

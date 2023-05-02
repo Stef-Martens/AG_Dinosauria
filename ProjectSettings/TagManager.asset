@@ -8,6 +8,8 @@ TagManager:
   - Algae
   - Animal
   - MinigameAnimal
+  - Worm
+  - Snail
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - UI
   - Ground
   - Player
-  - 
-  - 
-  - 
+  - Iguana
+  - Jaguar
+  - Bounds
   - 
   - 
   - 

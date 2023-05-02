@@ -43,6 +43,11 @@ public class AlternateTextScript : TextScript
     protected void AltOpenDialogue()
     {
         _dialoguePanel.SetActive(true);
+        SpriteRenderer spriteRend = GetComponent<SpriteRenderer>();
+        _textBoxImage.sprite = spriteRend.sprite;
+        _npcNameTextbox.text = _npcName;
+
+        _dialoguePanel.SetActive(true);
         StartCoroutine(AltTyping());
         foreach (var player in _collidedObjects)
         {

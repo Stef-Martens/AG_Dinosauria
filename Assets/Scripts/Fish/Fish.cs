@@ -27,6 +27,7 @@ public class Fish : MonoBehaviour
         stateMachine.CurrentState.OnEnterState(this);
     }
 
+
     private void Update()
     {
         stateMachine.CurrentState.Update(this);
@@ -59,16 +60,35 @@ public class Fish : MonoBehaviour
                 break;
 
             default:
-                if (stateMachine.CurrentState.GetType() == typeof(SwimmingState))
-                {
-                    FindObjectOfType<FishManager>().AlgaeCount++;
-                    FindObjectOfType<FishManager>().EditPickupsText();
-                    Destroy(Collider.gameObject);
-                    PickupSound.Play();
-                }
+                Pickup(Collider);
                 break;
         }
 
+    }
+
+    public void Pickup(Collider2D collider)
+    {
+        if (stateMachine.CurrentState.GetType() == typeof(SwimmingState))
+        {
+            switch (collider.gameObject.tag)
+            {
+                case "Algae":
+                    FindObjectOfType<FishManager>().AlgaeCount++;
+                    break;
+
+                case "Worm":
+                    FindObjectOfType<FishManager>().WormCount++;
+                    break;
+
+                case "Snail":
+                    FindObjectOfType<FishManager>().SnailCount++;
+                    break;
+            }
+
+            FindObjectOfType<FishManager>().EditPickupsText();
+            Destroy(collider.gameObject);
+            PickupSound.Play();
+        }
     }
 
     public void UpdateCircleImage()
