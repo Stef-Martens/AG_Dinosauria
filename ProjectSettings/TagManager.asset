@@ -8,6 +8,8 @@ TagManager:
   - Algae
   - Animal
   - MinigameAnimal
+  - Worm
+  - Snail
   layers:
   - Default
   - TransparentFX
