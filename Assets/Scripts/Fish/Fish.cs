@@ -27,6 +27,7 @@ public class Fish : MonoBehaviour
         stateMachine.CurrentState.OnEnterState(this);
     }
 
+
     private void Update()
     {
         stateMachine.CurrentState.Update(this);
