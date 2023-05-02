@@ -123,16 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &288983032
+--- !u!1001 &23035680
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7598908770565160167, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -41.69995
+    - target: {fileID: 3180707864509760567, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663671610340701998, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
+      propertyPath: IsNewGame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663671610340701998, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
+      propertyPath: IsChameleonActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663671610340701998, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
+      propertyPath: IsHummingbirdActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663671610340701998, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
+      propertyPath: IsSurgeonfishActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8834655520337282299, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8834655520686890706, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
       propertyPath: m_Name
@@ -148,7 +168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8834655520686890734, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8834655520686890734, guid: e5fdb8adb19029e49bee37373446127c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -374,5 +394,49 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2101720163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2101720165}
+  - component: {fileID: 2101720164}
+  m_Layer: 0
+  m_Name: LoadScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2101720164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101720163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f765c2b8dc1a5418e92a37b6c630ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2101720165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101720163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1203.9084, y: 482.65494, z: -3.3677197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
