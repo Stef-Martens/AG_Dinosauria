@@ -10,6 +10,7 @@ TagManager:
   - MinigameAnimal
   - Worm
   - Snail
+  - ParentObject
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - Iguana
   - Jaguar
   - Bounds
-  - 
-  - 
+  - Tongue
+  - Nectar
   - 
   - 
   - 
