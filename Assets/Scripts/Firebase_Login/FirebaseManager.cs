@@ -6,6 +6,7 @@ using Firebase.Auth;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Firebase.Database;
+using Firebase.Extensions;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -132,10 +133,29 @@ public class FirebaseManager : MonoBehaviour
 
             DontDestroyOnLoad(transform.gameObject);
 
+            /*MadeUser = new UserClass(emailRegisterField.text, Male.isOn, UsernameField.text);
+            string json = JsonUtility.ToJson(MadeUser);*/
+            var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync().ContinueWithOnMainThread(task =>
+            {
+                if (task.IsFaulted)
+                {
+                    Debug.Log("Fout");
+                }
+                else if (task.IsCompleted)
+                {
+                    //DataSnapshot snapshot = task.Result;
+                    MadeUser = JsonUtility.FromJson<UserClass>(task.Result.Value.ToString());
+                }
+            });
+
+
+
+            yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
             yield return new WaitForSeconds(1f);
 
 
-            SceneManager.LoadScene("TestScene_Stef");
+            SceneManager.LoadScene("Selectionscreen");
         }
     }
 
@@ -310,9 +330,11 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    public IEnumerator UpdateUSer()
+    public IEnumerator UpdateUSer(int index)
     {
-        MadeUser.animals[1].finished = true;
+        MadeUser.animals[index].finished = true;
+
+        Debug.Log(MadeUser.animals);
 
 
         string json = JsonUtility.ToJson(MadeUser);
@@ -328,7 +350,7 @@ public class FirebaseManager : MonoBehaviour
         }
         else
         {
-            //Xp is now updated
+            Debug.Log("update gelukt");
         }
     }
 

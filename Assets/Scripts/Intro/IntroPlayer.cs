@@ -15,10 +15,14 @@ public class IntroPlayer : MonoBehaviour
     public AudioSource InteractSound;
     public string NextScene;
 
+    private Vector3 defaultScale;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        defaultScale = transform.localScale;
     }
 
     private void Update()
@@ -30,6 +34,10 @@ public class IntroPlayer : MonoBehaviour
             {
                 Interact();
             }
+            /*if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+            {
+                if()
+            }*/
         }
         else
         {
@@ -51,10 +59,17 @@ public class IntroPlayer : MonoBehaviour
         if (hDirection < 0)
         {
             rb.velocity = new Vector2(-5, rb.velocity.y);
+            Vector3 newScale = defaultScale;
+            newScale.x = -defaultScale.x;
+            transform.localScale = newScale;
         }
         else if (hDirection > 0)
         {
             rb.velocity = new Vector2(5, rb.velocity.y);
+            Vector3 newScale = defaultScale;
+            newScale.x = defaultScale.x;
+            transform.localScale = newScale;
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && coll.IsTouchingLayers(LayerMask.GetMask("Ground")))
@@ -66,7 +81,7 @@ public class IntroPlayer : MonoBehaviour
 
     private void Interact()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 3f);
         foreach (Collider2D collider in colliders)
         {
             if (collider.CompareTag("MinigameAnimal"))

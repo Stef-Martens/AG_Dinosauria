@@ -55,6 +55,8 @@ public class TongueBehaviour : MonoBehaviour
 
     public bool _isDirecthit = false;
 
+    public AudioSource shootSound;
+
     private void Awake()
     {
         FlatVisual.SetPosition(0, TongueIndicator.transform.position);
@@ -380,8 +382,10 @@ public class TongueBehaviour : MonoBehaviour
 
     private void ShootTongue(RaycastHit hit)
     {
+
         if (InputV1.ShootTongue && _canShoot && _canRegisterNewInput)
         {
+            shootSound.Play();
             //CheckHit();
 
             _isExtended = true;

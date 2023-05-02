@@ -32,8 +32,8 @@ public class DialogueSystem : MonoBehaviour
         currentIndex = 0;
         dialogueText = animal.CurrentDialogue[currentIndex];
 
-        dialogueBox.transform.GetChild(0).GetComponent<Text>().text = animal.animalName;
-        dialogueBox.transform.GetChild(1).GetComponent<Image>().sprite = animal.image;
+        if (animal.animalName != null) dialogueBox.transform.GetChild(0).GetComponent<Text>().text = animal.animalName;
+        if (animal.image != null) dialogueBox.transform.GetChild(1).GetComponent<Image>().sprite = animal.image;
         dialogueBox.transform.GetChild(2).GetComponent<Text>().text = dialogueText;
 
         // Show the dialogue box
@@ -44,6 +44,9 @@ public class DialogueSystem : MonoBehaviour
     public void EndDialogue()
     {
         if (animal.secondDialogue != null) animal.CurrentDialogue = animal.secondDialogue;
+
+        // change later, for now always action after dialogue
+        animal.DoAction();
         FindObjectOfType<IntroPlayer>().canMove = true;
         dialogueBox.SetActive(false);
     }

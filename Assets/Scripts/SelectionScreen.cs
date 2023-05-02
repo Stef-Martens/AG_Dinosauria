@@ -110,10 +110,10 @@ public class SelectionScreen : MonoBehaviour
     #endregion
 
     public Inputs Inputs;
-    public bool IsNewGame /*{ get; set; }*/ = true;
-    public bool IsHummingbirdActive /*{ get; set; }*/ = false;
-    public bool IsSurgeonfishActive /*{ get; set; }*/ = false;
-    public bool IsChameleonActive /*{ get; set; }*/ = false;
+    public bool IsNewGame = false;
+    public bool IsHummingbirdActive = false;
+    public bool IsSurgeonfishActive = false;
+    public bool IsChameleonActive = false;
 
     #region AnimalSelection
     private GameObject[] _animalBtns;
@@ -143,9 +143,16 @@ public class SelectionScreen : MonoBehaviour
 
     void Awake()
     {
+        IsHummingbirdActive = FindObjectOfType<FirebaseManager>().MadeUser.animals[0].finished;
+        IsSurgeonfishActive = FindObjectOfType<FirebaseManager>().MadeUser.animals[1].finished;
+        IsChameleonActive = FindObjectOfType<FirebaseManager>().MadeUser.animals[2].finished;
+        Debug.Log(FindObjectOfType<FirebaseManager>().MadeUser.animals[2].finished);
+
+
+
         SetGameGui();
 
-        if(IsNewGame)
+        if (IsNewGame)
         {
             IsHummingbirdActive = false;
             IsSurgeonfishActive = false;
@@ -249,12 +256,12 @@ public class SelectionScreen : MonoBehaviour
         }
 
         SetPlayLevelSelectActive();
-       // SetCanSelectPlayLevelSelectlGUIObject();
+        // SetCanSelectPlayLevelSelectlGUIObject();
 
         if (_canSelectPlayLevelSelect)
         {
             HandlePlayLevelSelectReturnVerticalHorizontalSwith();
-          //  Return();
+            //  Return();
             LoadScene();
         }
     }
@@ -371,7 +378,7 @@ public class SelectionScreen : MonoBehaviour
         // Deselect all buttons
         for (int i = 0; i < _animalBtns.Length; i++)
         {
-            if(i == hummingbirdIndex)
+            if (i == hummingbirdIndex)
             {
                 if (IsHummingbirdActive)
                 {
@@ -436,9 +443,9 @@ public class SelectionScreen : MonoBehaviour
         }
 
         // Deselect the unselected Buttons
-        if(_animalSelectedBtns[index].gameObject.activeSelf)
+        if (_animalSelectedBtns[index].gameObject.activeSelf)
             _animalBtns[index].gameObject.SetActive(false);
-        else if(_animalSilhoutteSelectedBtns[index].gameObject.activeSelf)
+        else if (_animalSilhoutteSelectedBtns[index].gameObject.activeSelf)
             _animalSilhoutteBtns[index].gameObject.SetActive(false);
     }
 
@@ -502,7 +509,7 @@ public class SelectionScreen : MonoBehaviour
 
     private void SetCanSelectAnimalGUIObject()
     {
-        if(_canSelectAnimal)
+        if (_canSelectAnimal)
         {
             AnimalselectionGUIObjects.ADSpaceEnter.SetActive(true);
             AnimalselectionGUIObjects.AnimalselectionInactive.SetActive(false);
@@ -531,7 +538,7 @@ public class SelectionScreen : MonoBehaviour
             || (IsChameleonActive && _animalSelectedBtns[chameleonIndex].activeSelf)
             )
         {
-            if(Inputs.Action || Inputs.Confirm)
+            if (Inputs.Action || Inputs.Confirm)
             {
                 PlayLevelselectGUIObjects.PlayLevelselect.SetActive(true);
                 PlayLevelselectGUIObjects.ReturnBtn.SetActive(true);
@@ -606,7 +613,7 @@ public class SelectionScreen : MonoBehaviour
     private void OnPlayLevelSelectVerticalMove()
     {
         Vector2 verticalMove = Inputs.VerticalMove;
- 
+
         if (verticalMove.y > 0 && !_isPlayLevelSelectVerticalMovePressed)
         {
             _isPlayLevelSelectVerticalMovePressed = true;
@@ -716,7 +723,7 @@ public class SelectionScreen : MonoBehaviour
                 _playReturnBtns[i].SetActive(true);
             }
         }
-        
+
         // Deselect the unselected Button
         if (_playReturnSelectedBtns[index].gameObject.activeSelf)
             _playReturnBtns[index].gameObject.SetActive(false);
@@ -756,7 +763,7 @@ public class SelectionScreen : MonoBehaviour
         // notify the listeners for vertical movement.
         if (!_isPlayReturnHorizontalMovePressed && !isReturnSelectedBtnActive)
         {
-                OnPlayLevelSelectVerticalMove();
+            OnPlayLevelSelectVerticalMove();
         }
 
 
@@ -793,7 +800,7 @@ public class SelectionScreen : MonoBehaviour
 
     private void SetCanSelectPlayLevelSelectlGUIObject()
     {
-        if(!_canSelectPlayLevelSelect)
+        if (!_canSelectPlayLevelSelect)
         {
             PlayLevelselectGUIObjects.ReturnBtn.SetActive(true);
             PlayLevelselectGUIObjects.ReturnSelectedBtn.SetActive(false);
@@ -810,20 +817,20 @@ public class SelectionScreen : MonoBehaviour
         }
         else
         {
-            _canSelectAnimal= false;
+            _canSelectAnimal = false;
             _canSelectPlayLevelSelect = true;
         }
 
-      /*  else
-        {
-            PlayLevelselectGUIObjects.ReturnBtn.SetActive(true);
-            PlayLevelselectGUIObjects.ReturnSelectedBtn.SetActive(false);
-            PlayLevelselectGUIObjects.PlayBtn.SetActive(false);
-            PlayLevelselectGUIObjects.PlaySelectedBtn.SetActive(true);
-            PlayLevelselectGUIObjects.LevelselectBtn.SetActive(true);
-            PlayLevelselectGUIObjects.LevelselectSelectedBtn.SetActive(false);
-            PlayLevelselectGUIObjects.LeftRightBackspaceSpaceEnter.SetActive(true);
-            PlayLevelselectGUIObjects.PlayLevelselectInactive.SetActive(false);
+        /*  else
+          {
+              PlayLevelselectGUIObjects.ReturnBtn.SetActive(true);
+              PlayLevelselectGUIObjects.ReturnSelectedBtn.SetActive(false);
+              PlayLevelselectGUIObjects.PlayBtn.SetActive(false);
+              PlayLevelselectGUIObjects.PlaySelectedBtn.SetActive(true);
+              PlayLevelselectGUIObjects.LevelselectBtn.SetActive(true);
+              PlayLevelselectGUIObjects.LevelselectSelectedBtn.SetActive(false);
+              PlayLevelselectGUIObjects.LeftRightBackspaceSpaceEnter.SetActive(true);
+              PlayLevelselectGUIObjects.PlayLevelselectInactive.SetActive(false);
 
 
 
@@ -831,21 +838,21 @@ public class SelectionScreen : MonoBehaviour
 
 
 
-        }*/
+          }*/
     }
 
-  //  private void Update()
-   // {
-        /*Debug.Log(_canSelectAnimal + " _canSelectAnimal");
-        Debug.Log(_isAnimalSelectionHorizontalMovePressed + " _isAnimalSelectionHorizontalMovePressed");
-        Debug.Log(_isPlayLevelSelectVerticalMovePressed + " _isPlayLevelSelectVerticalMovePressed");
-        Debug.Log(_isPlayReturnHorizontalMovePressed + " _isPlayReturnHorizontalMovePressed");
-        Debug.Log(_canSelectPlayLevelSelect + " _canSelectPlayLevelSelect");
-        Debug.Log(_isActionComfirmButtonReleased + " _isActionComfirmButtonReleased");*/
+    //  private void Update()
+    // {
+    /*Debug.Log(_canSelectAnimal + " _canSelectAnimal");
+    Debug.Log(_isAnimalSelectionHorizontalMovePressed + " _isAnimalSelectionHorizontalMovePressed");
+    Debug.Log(_isPlayLevelSelectVerticalMovePressed + " _isPlayLevelSelectVerticalMovePressed");
+    Debug.Log(_isPlayReturnHorizontalMovePressed + " _isPlayReturnHorizontalMovePressed");
+    Debug.Log(_canSelectPlayLevelSelect + " _canSelectPlayLevelSelect");
+    Debug.Log(_isActionComfirmButtonReleased + " _isActionComfirmButtonReleased");*/
 
-      //  Debug.Log(Inputs.Action);
+    //  Debug.Log(Inputs.Action);
 
-//}
+    //}
 
     private void LoadScene()
     {
@@ -853,7 +860,7 @@ public class SelectionScreen : MonoBehaviour
         {
             _isActionComfirmButtonReleased = true;
         }
-        
+
         if ((Inputs.Action || Inputs.Confirm)
             && PlayLevelselectGUIObjects.PlaySelectedBtn.activeSelf
             && _isActionComfirmButtonReleased)
@@ -882,14 +889,14 @@ public class SelectionScreen : MonoBehaviour
 
     private void Return()
     {
-       
-            if(PlayLevelselectGUIObjects.ReturnSelectedBtn.activeSelf
-               && (Inputs.Action || Inputs.Confirm))
-            {
-                _canSelectPlayLevelSelect = false;
-                _canSelectAnimal = true;
-            }
-        
+
+        if (PlayLevelselectGUIObjects.ReturnSelectedBtn.activeSelf
+           && (Inputs.Action || Inputs.Confirm))
+        {
+            _canSelectPlayLevelSelect = false;
+            _canSelectAnimal = true;
+        }
+
     }
     #endregion
 }

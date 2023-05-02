@@ -9,6 +9,8 @@ public class Mouse : AnimalIntro
     private bool MoveRight = false;
     public Sprite GivenImage;
 
+    public GameObject Bush;
+
 
     public override List<string> dialogue
     {
@@ -16,10 +18,15 @@ public class Mouse : AnimalIntro
         {
             return new List<string>
             {
-                "Hello, I am a mouse!",
+                /*"Hello, I am a mouse!",
                 "I'm tiny, but a lot of big creatures are scared of me!",
                 "I like to travel places and I'm going to see what's to the right.",
-                "Talk to me again and I will start my journey!",
+                "Talk to me again and I will start my journey!",*/
+
+                "Hi, I'm just a placeholder!",
+                "I will remove the bush for you.",
+                "Bye and good luck!",
+
             };
         }
     }
@@ -30,7 +37,7 @@ public class Mouse : AnimalIntro
         {
             return new List<string>
             {
-                "Hello, this is the second conversation",
+                "Hi, I removed the bush for you.",
                 "Bye"
             };
         }
@@ -44,8 +51,8 @@ public class Mouse : AnimalIntro
     {
         base.Update();
 
-        if (MoveRight)
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        /*if (MoveRight)
+            transform.Translate(Vector3.right * speed * Time.deltaTime);*/
     }
 
     public override List<string> CurrentDialogue { get; set; }
@@ -56,6 +63,8 @@ public class Mouse : AnimalIntro
 
     public override void DoAction()
     {
-        MoveRight = true;
+        //MoveRight = true;
+
+        if (Bush) Destroy(Bush);
     }
 }

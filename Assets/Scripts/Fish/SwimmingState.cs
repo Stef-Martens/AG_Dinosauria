@@ -6,7 +6,7 @@ public class SwimmingState : IFishState
 {
     public void Update(Fish fish)
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             fish.rb.velocity = -fish.transform.right * fish.speed;
             fish.FishSound.Play();

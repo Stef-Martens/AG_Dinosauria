@@ -10,12 +10,12 @@ public class LevelComplete : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(FlyCount.FliesTakenCount == 4) { LevelFinished = true; };
+        if (FlyCount.FliesTakenCount == 4) { FindObjectOfType<SceneSwitch>().ChangeScene("QuizChameleon"); };
     }
 }

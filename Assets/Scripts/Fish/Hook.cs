@@ -22,11 +22,24 @@ public class Hook : MonoBehaviour
         else
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
-            if (gameObject.transform.position.y >= transform.parent.gameObject.transform.position.y)
+            if (gameObject.transform.position.y >= transform.parent.gameObject.transform.position.y - 2)
             {
+
                 // hook at top
-                transform.parent.gameObject.GetComponent<Boat>().HookAtTop();
+
+
+                if (transform == FindObjectOfType<Fish>().AttachedHook)
+                {
+                    FindObjectOfType<FishManager>().Lifes--;
+                    FindObjectOfType<Fish>().CurrentTaps = 0;
+                    FindObjectOfType<Fish>().UpdateCircleImage();
+                    FindObjectOfType<Fish>().gameObject.transform.position -= new Vector3(0, -2f, 0);
+                    FindObjectOfType<Fish>().ChangeState(new CooldownState());
+                }
+
                 Destroy(gameObject);
+                transform.parent.gameObject.GetComponent<Boat>().HookAtTop();
+
             }
         }
 

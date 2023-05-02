@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class FlowerCount : MonoBehaviour
 {
     public Text text;
-    int count;
+    public int count;
 
     void Awake()
     {
@@ -35,9 +35,9 @@ public class FlowerCount : MonoBehaviour
 
     private void Update()
     {
-        if(count == Nectar.total)
+        if (count >= Nectar.total)
         {
-            //SceneManager.LoadScene(0);
+            FindObjectOfType<SceneSwitch>().ChangeScene("QuizBird");
             gameObject.SetActive(false);
         }
     }

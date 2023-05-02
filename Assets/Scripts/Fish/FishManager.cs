@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FishManager : MonoBehaviour
@@ -17,6 +18,12 @@ public class FishManager : MonoBehaviour
     public float spawnIntervalPickup = 1f;
     public float spawnRangePickup = 9f;
 
+    public Text AlgaeText;
+    public Text SnailText;
+    public Text WormsText;
+
+    public Text LifesText;
+
 
     void Start()
     {
@@ -24,11 +31,13 @@ public class FishManager : MonoBehaviour
         EditPickupsText();
     }
 
-    public void PlayerHit()
+    void Update()
     {
-        Lifes--;
-        /*if (Lifes == 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);*/
+        LifesText.text = Lifes.ToString();
+        if (Lifes <= 0)
+        {
+            FindObjectOfType<SceneSwitch>().ChangeScene("Fish");
+        }
     }
 
     void SpawnPickup()
@@ -44,9 +53,9 @@ public class FishManager : MonoBehaviour
 
     public void EditPickupsText()
     {
-        PickupText.text = "Pickups: " + Environment.NewLine + "Algae: " + AlgaeCount + "/5"
-        + Environment.NewLine + "Worms: " + WormCount + "/5"
-        + Environment.NewLine + "Snails: " + SnailCount + "/5";
+        AlgaeText.text = AlgaeCount.ToString();
+        SnailText.text = SnailCount.ToString();
+        WormsText.text = WormCount.ToString();
         if (AlgaeCount >= 5 && WormCount >= 5 && SnailCount >= 5)
         {
             FindObjectOfType<SceneSwitch>().ChangeScene("QuizFish");
