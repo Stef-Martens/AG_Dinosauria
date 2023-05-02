@@ -7,9 +7,6 @@ public class Nectar : MonoBehaviour
     public static int total;
     private void Awake() => total++;
 
-    //private void OnEnable() => total++;
-    //private void OnDisable() => total--;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("ParentObject"))

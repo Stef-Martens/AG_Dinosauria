@@ -11,6 +11,7 @@ TagManager:
   - Worm
   - Snail
   - ParentObject
+  - Insect
   layers:
   - Default
   - TransparentFX

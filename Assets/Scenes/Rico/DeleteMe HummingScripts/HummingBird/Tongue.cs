@@ -27,7 +27,6 @@ public class Tongue : MonoBehaviour
         Nectar nectar = collision.gameObject.GetComponent<Nectar>();
         SinusoidalMove sinusMove = collision.gameObject.GetComponent<SinusoidalMove>();
 
-
         if (nectar != null || sinusMove != null)
         {
             Destroy(collision.gameObject);
@@ -41,20 +40,9 @@ public class Tongue : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.CompareTag("Insect"))
-    //    {
-    //        collision.gameObject.transform.parent = _container.transform;
-    //        collision.gameObject.transform.position = _container.transform.position;
-    //        Destroy(collision.gameObject, 0.5f);
-    //    }
-    //}
-
-
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Space)/*&& _bird.insideFlower == true*/)
+        if(Input.GetKey(KeyCode.Space))
         {
             _renderer.enabled = true;
             _collider.enabled = true;
