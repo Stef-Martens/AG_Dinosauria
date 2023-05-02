@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1735297449464987752}
+  - component: {fileID: 6615836712835363582}
   m_Layer: 0
   m_Name: Bird_Flower01
   m_TagString: Untagged
@@ -36,6 +37,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &6615836712835363582
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2895534751101226920}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.05, y: 1.438437}
+  serializedVersion: 2
+  m_Radius: 1.0715632
 --- !u!1 &5148661186822976027
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +63,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2726657804793798593}
   - component: {fileID: 7831287112793246151}
+  - component: {fileID: 5303329766231794959}
   m_Layer: 0
   m_Name: T_Flower01
   m_TagString: Untagged
@@ -120,6 +138,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5303329766231794959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148661186822976027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7271a454f78917d4b98eb995f40d448b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1339682714994085815
 PrefabInstance:
   m_ObjectHideFlags: 0

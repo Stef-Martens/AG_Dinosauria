@@ -10,6 +10,8 @@ TagManager:
   - MinigameAnimal
   - Worm
   - Snail
+  - ParentObject
+  - Insect
   layers:
   - Default
   - TransparentFX
@@ -24,6 +26,8 @@ TagManager:
   - Bounds
   - TongueCurl
   - 
+  - Tongue
+  - Nectar
   - 
   - 
   - 
