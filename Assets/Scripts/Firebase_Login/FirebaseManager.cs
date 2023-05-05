@@ -41,6 +41,8 @@ public class FirebaseManager : MonoBehaviour
 
     public UserClass MadeUser;
 
+    private bool isGuest = false;
+
     void Awake()
     {
         //Check that all of the necessary dependencies for Firebase are present on the system
@@ -240,7 +242,10 @@ public class FirebaseManager : MonoBehaviour
 
     public void GuestLogin()
     {
-        StartCoroutine(Login("guest@mail.com", "123456"));
+        MadeUser = new UserClass("guest", true, "guest");
+        isGuest = true;
+        DontDestroyOnLoad(transform.gameObject);
+        SceneManager.LoadScene("Selectionscreen");
     }
 
 
@@ -334,24 +339,27 @@ public class FirebaseManager : MonoBehaviour
     {
         MadeUser.animals[index].finished = true;
 
-        Debug.Log(MadeUser.animals);
-
-
-        string json = JsonUtility.ToJson(MadeUser);
-        var DBTask = DBreference.Child("users").Child(User.UserId).SetValueAsync(json);
-
-
-
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
-
-        if (DBTask.Exception != null)
+        if (!isGuest)
         {
-            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+            string json = JsonUtility.ToJson(MadeUser);
+            var DBTask = DBreference.Child("users").Child(User.UserId).SetValueAsync(json);
+
+
+
+            yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+            if (DBTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+            }
+            else
+            {
+                Debug.Log("update gelukt");
+            }
         }
-        else
-        {
-            Debug.Log("update gelukt");
-        }
+
+
+
     }
 
 }
