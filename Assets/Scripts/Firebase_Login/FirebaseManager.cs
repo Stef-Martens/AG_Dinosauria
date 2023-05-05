@@ -298,13 +298,15 @@ public class FirebaseManager : MonoBehaviour
         public string username;
         public bool male;
         public List<animal> animals;
+        public float MusicVolume = 1;
+        public float EffectsVolume = 1;
 
         public UserClass(string Email, bool Male, string Username)
         {
             email = Email;
             male = Male;
             username = Username;
-            animals = new List<animal>() { new animal("Bird"), new animal("Fish"), new animal("Chameleon"), new animal("Frog"), new animal("Ladybug"), new animal("Red Panda") };
+            animals = new List<animal>() { new animal("Bird"), new animal("Fish"), new animal("Chameleon") };
         }
     }
 
@@ -335,9 +337,9 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    public IEnumerator UpdateUSer(int index)
+    public IEnumerator UpdateUSer(int index = 999)
     {
-        MadeUser.animals[index].finished = true;
+        if (index != 999) MadeUser.animals[index].finished = true;
 
         if (!isGuest)
         {

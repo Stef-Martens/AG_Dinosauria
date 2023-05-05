@@ -44,6 +44,19 @@ public class PauseMenu : MonoBehaviour
             else
                 effectsSource.Add(source);
         }
+
+        musicVolume = FindObjectOfType<FirebaseManager>().MadeUser.MusicVolume;
+        effectsVolume = FindObjectOfType<FirebaseManager>().MadeUser.EffectsVolume;
+
+        musicSource.volume = musicVolume;
+
+        foreach (var source in effectsSource)
+        {
+            source.volume = effectsVolume;
+        }
+
+        MusicSlider.value = musicVolume;
+        EffectsSlider.value = effectsVolume;
     }
 
     public void PauseGame()
@@ -56,12 +69,16 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         pauseMenuCanvas.SetActive(false);
+
+        StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer());
     }
 
     public void BackToPauseMenu()
     {
         ButtonsMain.SetActive(true);
         OptionsPanel.SetActive(false);
+
+
     }
 
     public void OpenOptions()
@@ -79,6 +96,7 @@ public class PauseMenu : MonoBehaviour
     public void ChangeVolumeMusic(Slider slider)
     {
         musicSource.volume = slider.value;
+        FindObjectOfType<FirebaseManager>().MadeUser.MusicVolume = slider.value;
     }
 
     // Called when the user exits the options menu
@@ -88,5 +106,7 @@ public class PauseMenu : MonoBehaviour
         {
             source.volume = slider.value;
         }
+        FindObjectOfType<FirebaseManager>().MadeUser.EffectsVolume = slider.value;
+
     }
 }
