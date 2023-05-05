@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         effectsSource = new List<AudioSource>();
         foreach (var source in FindObjectsOfType<AudioSource>())
         {

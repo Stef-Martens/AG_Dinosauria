@@ -12,7 +12,16 @@ public class SceneSwitch : MonoBehaviour
 
     public void ChangeScene(string SceneName)
     {
-        SceneManager.LoadScene(SceneName);
+        // Check if there is more than one scene loaded
+        if (SceneManager.sceneCount > 1)
+        {
+            // Unload the current scene
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        // Load the new scene
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+
     }
 
     public void StopGame()
