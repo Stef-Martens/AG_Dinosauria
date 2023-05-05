@@ -103,6 +103,7 @@ public class Fish : MonoBehaviour
             Destroy(AttachedHook.gameObject);
             CurrentTaps = 0;
             CircleImage.fillAmount = 0;
+            AttachedHook.parent.gameObject.GetComponent<Boat>().HookAtTop();
             ChangeState(new CooldownState());
         }
     }
