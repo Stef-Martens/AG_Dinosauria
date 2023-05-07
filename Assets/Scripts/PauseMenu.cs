@@ -46,18 +46,23 @@ public class PauseMenu : MonoBehaviour
                 effectsSource.Add(source);
         }
 
-        musicVolume = FindObjectOfType<FirebaseManager>().MadeUser.MusicVolume;
-        effectsVolume = FindObjectOfType<FirebaseManager>().MadeUser.EffectsVolume;
 
-        musicSource.volume = musicVolume;
-
-        foreach (var source in effectsSource)
+        if (FindObjectOfType<FirebaseManager>())
         {
-            source.volume = effectsVolume;
+            musicVolume = FindObjectOfType<FirebaseManager>().MadeUser.MusicVolume;
+            effectsVolume = FindObjectOfType<FirebaseManager>().MadeUser.EffectsVolume;
+
+            musicSource.volume = musicVolume;
+
+            foreach (var source in effectsSource)
+            {
+                source.volume = effectsVolume;
+            }
+
+            MusicSlider.value = musicVolume;
+            EffectsSlider.value = effectsVolume;
         }
 
-        MusicSlider.value = musicVolume;
-        EffectsSlider.value = effectsVolume;
     }
 
     public void PauseGame()

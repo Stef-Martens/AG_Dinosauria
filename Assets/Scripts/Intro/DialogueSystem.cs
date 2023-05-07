@@ -25,7 +25,6 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    // Start the dialogue with the specified animal
     public void StartDialogue()
     {
         // Set the flag and initialize the dialogue text
@@ -40,13 +39,20 @@ public class DialogueSystem : MonoBehaviour
         dialogueBox.SetActive(true);
     }
 
-    // End the dialogue and hide the dialogue box
     public void EndDialogue()
     {
-        if (animal.secondDialogue != null) animal.CurrentDialogue = animal.secondDialogue;
+        if (animal.HasActionAfterFirstDialogue && animal.CurrentDialogue[0] == animal.dialogue[0])
+        {
+            animal.DoFirstAction();
+        }
+        if (animal.HasActionAfterSecondDialogue && animal.CurrentDialogue[0] == animal.secondDialogue[0])
+        {
+            animal.DoSecondAction();
+        }
 
-        // change later, for now always action after dialogue
-        animal.DoAction();
+
+        if (animal.SecondDialogeDirectlyAfterTalking) animal.CurrentDialogue = animal.secondDialogue;
+
         FindObjectOfType<IntroPlayer>().canMove = true;
         dialogueBox.SetActive(false);
     }

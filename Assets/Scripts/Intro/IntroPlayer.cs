@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IntroPlayer : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D coll;
 
-    public GameObject inventory;
+    public ItemInventory inventory;
 
     public bool canMove = true;
 
@@ -17,16 +18,31 @@ public class IntroPlayer : MonoBehaviour
 
     private Vector3 defaultScale;
 
+    public float speed = 8f;
+
+    public Sprite EmptySprite;
+
+    public Image ItemImage;
+    public Text ItemText;
+
+    public void ClearInventory()
+    {
+        inventory = new ItemInventory(EmptySprite);
+    }
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         defaultScale = transform.localScale;
+        ClearInventory();
     }
 
     private void Update()
     {
+        ItemImage.sprite = FindObjectOfType<IntroPlayer>().inventory.Image;
+        ItemText.text = FindObjectOfType<IntroPlayer>().inventory.Name;
         if (canMove)
         {
             Move();
@@ -58,14 +74,14 @@ public class IntroPlayer : MonoBehaviour
 
         if (hDirection < 0)
         {
-            rb.velocity = new Vector2(-5, rb.velocity.y);
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
             Vector3 newScale = defaultScale;
             newScale.x = -defaultScale.x;
             transform.localScale = newScale;
         }
         else if (hDirection > 0)
         {
-            rb.velocity = new Vector2(5, rb.velocity.y);
+            rb.velocity = new Vector2(speed, rb.velocity.y);
             Vector3 newScale = defaultScale;
             newScale.x = defaultScale.x;
             transform.localScale = newScale;
@@ -91,6 +107,18 @@ public class IntroPlayer : MonoBehaviour
             if (collider.CompareTag("Animal"))
             {
                 canMove = false;
+
+                if (collider.gameObject.name == "Skunk" && inventory.Name == "Apple")
+                {
+                    FindObjectOfType<Skunk>().CurrentDialogue = FindObjectOfType<Skunk>().secondDialogue;
+                }
+
+                if (collider.gameObject.name == "Beetle" && inventory.Name == "Ladybug")
+                {
+                    FindObjectOfType<Beetle>().CurrentDialogue = FindObjectOfType<Beetle>().secondDialogue;
+                }
+
+
                 FindObjectOfType<DialogueSystem>().animal = collider.gameObject.GetComponent<AnimalIntro>();
                 FindObjectOfType<DialogueSystem>().StartDialogue();
                 InteractSound.Play();
@@ -102,11 +130,6 @@ public class IntroPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Item"))
-        {
-            inventory = collision.gameObject;
-            Destroy(collision.gameObject);
-            Debug.Log("Picked up an item! Inventory count: " + inventory);
-        }
+
     }
 }
