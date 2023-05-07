@@ -36,7 +36,7 @@ public class FishManager : MonoBehaviour
         LifesText.text = Lifes.ToString();
         if (Lifes <= 0)
         {
-            FindObjectOfType<SceneSwitch>().ChangeScene("Fish");
+            FindObjectOfType<GameOver>().StartGameOver("You lost all 3 of your lifes.");
         }
     }
 

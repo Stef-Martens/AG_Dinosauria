@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!pauseMenuCanvas.activeSelf)
+            if (!pauseMenuCanvas.activeSelf && Time.timeScale != 0)
             {
                 PauseGame();
             }
