@@ -13,6 +13,7 @@ TagManager:
   - ParentObject
   - Insect
   - Teleport
+  - Ocean
   layers:
   - Default
   - TransparentFX

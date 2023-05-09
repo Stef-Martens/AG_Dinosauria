@@ -118,6 +118,11 @@ public class IntroPlayer : MonoBehaviour
                     FindObjectOfType<Beetle>().CurrentDialogue = FindObjectOfType<Beetle>().secondDialogue;
                 }
 
+                if (collider.gameObject.name == "Kangaroo" && inventory.Name == "Ball")
+                {
+                    FindObjectOfType<Kangeroo>().CurrentDialogue = FindObjectOfType<Kangeroo>().secondDialogue;
+                }
+
 
                 FindObjectOfType<DialogueSystem>().animal = collider.gameObject.GetComponent<AnimalIntro>();
                 FindObjectOfType<DialogueSystem>().StartDialogue();
