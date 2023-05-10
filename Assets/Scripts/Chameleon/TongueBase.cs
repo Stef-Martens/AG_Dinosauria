@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
-using Unity.VisualScripting;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI.Table;
 
 public class TongueBase : MonoBehaviour
 {
     public LayerMask DefaultLayers;
+    public LayerMask AnimalsLayer;
     public float IndicatorMoveSpeed = 30f;
     public float RetractionSpeed = 75f;
 
@@ -28,14 +24,13 @@ public class TongueBase : MonoBehaviour
     private bool _isExtended = false;
     private float _extensionDelay = 0.3f;
     private Stopwatch _extensionDelayTimer;
+    private bool _isRetracting = false;
     private bool _canRegisterNewInput = true;
     private bool _canShoot = true;
     private bool _isShotWhenFacingRight;
     private RaycastHit _directHit;
     private bool _hasHitObject = false;
-    private GameObject _currentHitObject;
-    private GameObject _previousHitObject;
-    private bool _canGetPreviousHitObjectPos = true;
+    private GameObject _currentIndirectHitObject;
     private Vector3 _previousHitObjectPos;
     private bool _isDirectHit = false;
 
@@ -62,29 +57,15 @@ public class TongueBase : MonoBehaviour
 
     void Update()
     {
-        SetIndicatorVisualPosition();
         SetBodyVisualPositionAtRoot();
         SetCurlRotation();
         MoveIndicator();
         ShootAndRetract();
+        DirectHit();
         CheckDirectHit();
-        CheckIndirectHit();
+        IndirectHit();
         CheckValidIndirectHit();
         HandleTriggerHitObjects();
-    }
-
-    private void SetIndicatorVisualPosition()
-    {
-        _indicatorVisual.SetPosition(0, _root.transform.position);
-
-        RaycastHit hit;
-        Ray ray = new Ray(_indicator.transform.position, _indicator.transform.TransformDirection(Vector3.right));
-
-        if (Physics.Raycast(ray, out hit, 9999, DefaultLayers))
-        {
-            _indicatorVisual.SetPosition(1, hit.point);
-            _directHit = hit;
-        }
     }
 
     private void SetBodyVisualPositionAtRoot()
@@ -138,6 +119,8 @@ public class TongueBase : MonoBehaviour
 
     private void SetCurlRotationWhenDirectHitObject()
     {
+        // this method is called in ShootAndRetract
+
         if (_chameleonController2D.IsFacingRight)
             Curl.transform.localRotation = Quaternion.Euler(0, 0, _currentIndicatorDegrees);
         else
@@ -230,6 +213,7 @@ public class TongueBase : MonoBehaviour
                                                           Time.deltaTime * RetractionSpeed);
                 _bodyVisual.SetPosition(1, moveTowards);
                 Curl.transform.position = moveTowards;
+                _isRetracting = true;
             }
         }
 
@@ -240,25 +224,96 @@ public class TongueBase : MonoBehaviour
             _isExtended = false;
             _extensionDelayTimer.Stop();
             _extensionDelayTimer.Reset();
+            _isRetracting = false;
             _canShoot = true;
             _hasHitObject = false;
         }
     }
 
-    private void CheckDirectHit()
+    private void DirectHit()
     {
-      
+        _indicatorVisual.SetPosition(0, _root.transform.position);
+
+        LayerMask layerMask = DefaultLayers | AnimalsLayer;
+        RaycastHit hit;
+        Ray ray = new Ray(_indicator.transform.position, _indicator.transform.TransformDirection(Vector3.right));
+
+        if (Physics.Raycast(ray, out hit, 9999, layerMask))
+        {
+            _indicatorVisual.SetPosition(1, hit.point);
+            _directHit = hit;
+        }
     }
 
-    private void CheckIndirectHit()
+    private void CheckDirectHit()
     {
+        GameObject directHitObject = _directHit.transform.gameObject;
 
+        if (_inputs.Action && !_isDirectHit)
+        {
+            _isDirectHit = true;
+            _previousHitObjectPos = _curlMiddle.transform.position;
 
+            if (directHitObject.GetComponent<Fly>())
+                directHitObject.SetActive(false);
+
+            if (directHitObject.GetComponent<RaptorBird>())
+                UnityEngine.Debug.Log(directHitObject.name.ToString());
+        }
+
+        if (_bodyVisual.GetPosition(1) == _root.transform.position)
+        {
+            if (!_inputs.Action)
+            {
+                _isDirectHit = false;
+            }
+        }
+    }
+
+    private void IndirectHit()
+    {
+        if (_isRetracting)
+        {
+            RaycastHit hit;
+            Vector3 curlVisualPos = Curl.transform.GetChild(0).transform.position;
+            Vector3 direction = curlVisualPos - _root.transform.position;
+            direction = new Vector3(direction.x, direction.y, 0);
+
+            Ray ray = new Ray(_root.transform.position, direction);
+            if (Physics.Raycast(ray, out hit, 9999, AnimalsLayer))
+            {
+                _currentIndirectHitObject = hit.transform.gameObject;
+            }
+        }
     }
 
     private void CheckValidIndirectHit()
     {
+        float maxAllowedDistance = 2.0f;
 
+        if(_currentIndirectHitObject != null)
+        {
+            if (_currentIndirectHitObject.transform.position.y <= _previousHitObjectPos.y)
+            {
+                float dist = Vector3.Distance(_currentIndirectHitObject.transform.position, _curlMiddle.transform.position);
+                if (dist <= maxAllowedDistance)
+                {
+                    _previousHitObjectPos = _currentIndirectHitObject.transform.position;
+                    
+                    if(_currentIndirectHitObject.GetComponent<Fly>())
+                        _currentIndirectHitObject.SetActive(false);
+
+                    if(_currentIndirectHitObject.GetComponent<RaptorBird>())
+                        UnityEngine.Debug.Log(_currentIndirectHitObject.name.ToString());
+                }
+            }
+        }
+
+        if(!_isDirectHit)
+        {
+            _currentIndirectHitObject = null;
+            _previousHitObjectPos = Vector3.zero;
+        }
     }
 
     private void HandleTriggerHitObjects()

@@ -8,4 +8,9 @@ public class TongueCurl : MonoBehaviour
     {
         TriggerHitObject = other.transform.gameObject;
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        TriggerHitObject = other.transform.gameObject;
+    }
 }
