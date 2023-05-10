@@ -2,14 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dolphin : AnimalIntro
+public class Ant : AnimalIntro
 {
     public Sprite GivenImage;
+
+    public GameObject RemoveObject;
+
+
 
     public override bool HasActionAfterFirstDialogue { get { return false; } }
     public override bool HasActionAfterSecondDialogue { get { return true; } }
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
+
+    public override void Update()
+    {
+
+    }
 
 
     public override List<string> dialogue
@@ -18,9 +27,7 @@ public class Dolphin : AnimalIntro
         {
             return new List<string>
             {
-                "I will get the fish if you help my friends.",
-                "friends are turtles.",
-                "kwil ook nen bal"
+                "kmoet zoet hebben"
             };
         }
     }
@@ -31,15 +38,14 @@ public class Dolphin : AnimalIntro
         {
             return new List<string>
             {
-                "Danke",
-                "kga vis halen"
+                "danke"
             };
         }
     }
 
     public override Sprite image { get { return GivenImage; } }
 
-    public override string animalName { get { return "Dolphin"; } }
+    public override string animalName { get { return "Ant"; } }
 
 
 
@@ -55,15 +61,8 @@ public class Dolphin : AnimalIntro
 
     public override void DoSecondAction()
     {
-        // vis actief zetten
-        // zelf destroyen
-
-        foreach (var item in FindObjectOfType<SurgeonAnimal>().GetComponents<BoxCollider2D>())
-        {
-            item.enabled = true;
-        }
-        FindObjectOfType<SurgeonAnimal>().GetComponent<SpriteRenderer>().enabled = true;
-
+        Destroy(RemoveObject);
+        FindObjectOfType<ChameleonIntro>().TasksDone++;
         Destroy(gameObject);
     }
 }

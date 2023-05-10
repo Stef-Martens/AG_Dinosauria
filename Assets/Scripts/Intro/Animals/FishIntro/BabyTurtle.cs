@@ -15,6 +15,8 @@ public class BabyTurtle : AnimalIntro
 
     Vector3 StartPosition;
 
+    public bool finished = false;
+
 
     public override List<string> dialogue
     {
@@ -80,7 +82,7 @@ public class BabyTurtle : AnimalIntro
         if (Collider.gameObject.tag == "Ocean")
         {
             GoRight = false;
-            Debug.Log("turtles gelukt");
+            finished = true;
         }
     }
 }

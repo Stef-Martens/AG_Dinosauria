@@ -133,6 +133,16 @@ public class IntroPlayer : MonoBehaviour
                     FindObjectOfType<Lemur>().CurrentDialogue = FindObjectOfType<Lemur>().secondDialogue;
                 }
 
+                if (collider.gameObject.name == "Ant" && (inventory.Name == "Honey" || inventory.Name == "Fruit"))
+                {
+                    FindObjectOfType<Ant>().CurrentDialogue = FindObjectOfType<Ant>().secondDialogue;
+                }
+
+                if (collider.gameObject.name == "Dolphin" && inventory.Name == "Ball" && FindObjectOfType<BabyTurtle>().finished)
+                {
+                    FindObjectOfType<Dolphin>().CurrentDialogue = FindObjectOfType<Dolphin>().secondDialogue;
+                }
+
 
                 FindObjectOfType<DialogueSystem>().animal = collider.gameObject.GetComponent<AnimalIntro>();
                 FindObjectOfType<DialogueSystem>().StartDialogue();
