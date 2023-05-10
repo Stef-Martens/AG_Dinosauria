@@ -318,15 +318,15 @@ public class TongueBase : MonoBehaviour
 
     private void HandleTriggerHitObjects()
     {
-        GameObject TriggerHitObject = Curl.GetComponent<TongueCurl>().TriggerHitObject;
+        GameObject triggerHitObject = Curl.GetComponent<TongueCurl>().TriggerHitObject;
 
-        if (TriggerHitObject != null)
+        if (triggerHitObject != null)
         {
-            if (TriggerHitObject.GetComponent<Fly>())
-                TriggerHitObject.SetActive(false);
+            if (triggerHitObject.GetComponent<Fly>())
+                triggerHitObject.SetActive(false);
 
-            if(TriggerHitObject.GetComponent<RaptorBird>())
-                UnityEngine.Debug.Log(TriggerHitObject.name.ToString());
+            if(triggerHitObject.GetComponent<RaptorBird>())
+                UnityEngine.Debug.Log(triggerHitObject.name.ToString());
         }
     }
 }
