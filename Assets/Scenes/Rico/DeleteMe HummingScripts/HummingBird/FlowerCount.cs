@@ -35,7 +35,8 @@ public class FlowerCount : MonoBehaviour
 
     private void Update()
     {
-        if (count >= Nectar.total)
+        //tijdelijk aangepast om snel naar volgende scene te gaan
+        if (count >= 15 /*Nectar.total*/)
         {
             FindObjectOfType<SceneSwitch>().ChangeScene("QuizBird");
             gameObject.SetActive(false);
