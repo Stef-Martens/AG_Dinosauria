@@ -338,7 +338,7 @@ public class TongueBase : MonoBehaviour
     {
         GameObject triggerHitObject = Curl.GetComponent<TongueCurl>().TriggerHitObject;
 
-        if (triggerHitObject != null)
+        if (triggerHitObject != null && _isExtended)
         {
             if (triggerHitObject.GetComponent<Fly>())
                 triggerHitObject.SetActive(false);

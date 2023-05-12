@@ -20,7 +20,7 @@ public class RaptorBird : MonoBehaviour
 
     private BodyCamo _bodyCamo;
     private GameObject _attackTarget;
-    private Vector3 _chameleonPos;
+    private ChameleonController2D _chameleonController2D;
 
     private Vector3 _startPosParabola;
     private Vector3 _endPosParabola;
@@ -34,24 +34,42 @@ public class RaptorBird : MonoBehaviour
 
     private Stopwatch _staggerTimer;
 
+    private bool _canDamageChameleon = true;
+    private bool _hasDamagedChameleon;
+
     void Start()
     {
         _bodyCamo = Chameleon.transform.GetChild(0).GetChild(1).gameObject.GetComponent<BodyCamo>();
         _attackTarget = Chameleon.transform.GetChild(0).GetChild(2).gameObject;
+        _chameleonController2D = Chameleon.transform.GetChild(0).gameObject.transform.GetComponent<ChameleonController2D>();
 
         _staggerTimer= new Stopwatch();
     }
 
     void Update()
     {
+       HandleAllMovements();
+    }
+
+    private void HandleAllMovements()
+    {
         FaceChameleon();
 
         if (!IsStaggering)
         {
-            SetStartEndPosParabola();
-            BaseMove();
-            Attack();
-            Retreat();
+            if (_canDamageChameleon)
+            {
+                SetStartEndPosParabola();
+                BaseMove();
+                Attack();
+
+                if (_bodyCamo.IsCamo)
+                    Retreat();
+            }
+            else
+            {
+                Retreat();
+            }
         }
 
         Stagger();
@@ -59,18 +77,36 @@ public class RaptorBird : MonoBehaviour
 
     private void FaceChameleon()
     {
-        _chameleonPos = Chameleon.transform.GetChild(0).gameObject.transform.position;
+        if (!IsStaggering)
+        {
+            if (this.transform.position.x < _attackTarget.transform.position.x)
+                _isFacingRight = true;
 
-        if (this.transform.position.x <= _chameleonPos.x)
+            if (this.transform.position.x > _attackTarget.transform.position.x)
+                _isFacingRight = false;
+
+            if (this.transform.position.x == _attackTarget.transform.position.x)
+            {
+                if(_chameleonController2D.IsFacingRight)
+                    _isFacingRight = true;
+                else
+                    _isFacingRight = false;
+            }
+        }
+        else
         {
+            float xOffset = 0.15f;
+
+            if (this.transform.position.x - xOffset <= _attackTarget.transform.position.x)
+                _isFacingRight = true;
+            else
+                _isFacingRight = false;
+        }
+
+        if(_isFacingRight)
             this.transform.localRotation = Quaternion.Euler(this.transform.localRotation.x, -180, this.transform.localRotation.z);
-            _isFacingRight = true;
-        }
-        if (this.transform.position.x > _chameleonPos.x)
-        {
+        else
             this.transform.localRotation = Quaternion.Euler(this.transform.localRotation.x, 0, this.transform.localRotation.z);
-            _isFacingRight = false;
-        }
     }
 
     private void SetStartEndPosParabola()
@@ -132,7 +168,6 @@ public class RaptorBird : MonoBehaviour
 
             _hasStartAttacking = false;
             _isAttacking = false;
-
         }
     }
 
@@ -162,7 +197,7 @@ public class RaptorBird : MonoBehaviour
 
     private void Retreat()
     {
-        if (_bodyCamo.IsCamo && _canRetreat)
+        if (_canRetreat)
         {
             _isAttacking = false;
             Vector3 moveTowards = Vector3.zero;
@@ -192,6 +227,9 @@ public class RaptorBird : MonoBehaviour
                 _startBaseMove = true;
                 _canRetreat = false;
                 Animation = 0;
+
+                if(!_canDamageChameleon)
+                    _canDamageChameleon = true;
             }
         }
     }
@@ -226,5 +264,31 @@ public class RaptorBird : MonoBehaviour
             _staggerTimer.Stop();
             _staggerTimer.Reset();
         }
+    }
+
+    private void DamageChameleon(Collider other)
+    {
+        GameObject bodyTongueBase = Chameleon.transform.GetChild(0).gameObject;
+
+        if (other.gameObject.transform.parent.gameObject == bodyTongueBase
+            && bodyTongueBase.gameObject.transform.parent.gameObject == Chameleon)
+        {
+            _canRetreat = true;
+
+            if(_canDamageChameleon)
+                _hasDamagedChameleon = true;
+
+            if (_hasDamagedChameleon)
+            {
+                Chameleon.GetComponent<LivesChameleon>().CurrentLives -= 1;
+                _canDamageChameleon = false;
+                _hasDamagedChameleon = false;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        DamageChameleon(other);
     }
 }
