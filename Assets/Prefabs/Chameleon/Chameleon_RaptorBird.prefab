@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1044861379648743364}
   - component: {fileID: 2468663986113756582}
   - component: {fileID: 847629586318628260}
+  - component: {fileID: 5404781912294280070}
   m_Layer: 12
   m_Name: Chameleon_RaptorBird
   m_TagString: Untagged
@@ -157,3 +158,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29845d304712e274c9c2acade1be27ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParabolaMoveHeight: -2
+  FlySpeed: 1
+  AttackSpeed: 2.5
+  RetreatSpeed: 2.5
+  StaggerTime: 3
+  RightBound: {fileID: 0}
+  LeftBound: {fileID: 0}
+  Chameleon: {fileID: 0}
+--- !u!54 &5404781912294280070
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374889343193435232}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0

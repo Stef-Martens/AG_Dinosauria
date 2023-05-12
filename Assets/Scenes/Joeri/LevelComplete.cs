@@ -16,6 +16,6 @@ public class LevelComplete : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FlyCount.FliesTakenCount == 4) { FindObjectOfType<SceneSwitch>().ChangeScene("QuizChameleon"); };
+        //if (FlyCount.FliesTakenCount == 4) { FindObjectOfType<SceneSwitch>().ChangeScene("QuizChameleon"); };
     }
 }
