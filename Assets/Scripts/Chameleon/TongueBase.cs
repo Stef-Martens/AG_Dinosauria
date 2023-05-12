@@ -258,7 +258,16 @@ public class TongueBase : MonoBehaviour
                 directHitObject.SetActive(false);
 
             if (directHitObject.GetComponent<RaptorBird>())
-                UnityEngine.Debug.Log(directHitObject.name.ToString());
+            {
+                if (!directHitObject.GetComponent<RaptorBird>().IsStaggering)
+                {
+                    directHitObject.GetComponent<RaptorBird>().IsStaggered = true;
+                }
+                else
+                {
+                    directHitObject.GetComponent<RaptorBird>().IsStaggered = false;
+                }
+            }
         }
 
         if (_bodyVisual.GetPosition(1) == _root.transform.position)
@@ -304,7 +313,16 @@ public class TongueBase : MonoBehaviour
                         _currentIndirectHitObject.SetActive(false);
 
                     if(_currentIndirectHitObject.GetComponent<RaptorBird>())
-                        UnityEngine.Debug.Log(_currentIndirectHitObject.name.ToString());
+                    {
+                        if (!_currentIndirectHitObject.GetComponent<RaptorBird>().IsStaggering)
+                        {
+                            _currentIndirectHitObject.GetComponent<RaptorBird>().IsStaggered = true;
+                        }
+                        else
+                        {
+                            _currentIndirectHitObject.GetComponent<RaptorBird>().IsStaggered = false;
+                        }
+                    }
                 }
             }
         }
@@ -325,8 +343,17 @@ public class TongueBase : MonoBehaviour
             if (triggerHitObject.GetComponent<Fly>())
                 triggerHitObject.SetActive(false);
 
-            if(triggerHitObject.GetComponent<RaptorBird>())
-                UnityEngine.Debug.Log(triggerHitObject.name.ToString());
+            if (triggerHitObject.GetComponent<RaptorBird>())
+            {
+                if (!triggerHitObject.GetComponent<RaptorBird>().IsStaggering)
+                {
+                    triggerHitObject.GetComponent<RaptorBird>().IsStaggered = true;
+                }
+                else
+                {
+                    triggerHitObject.GetComponent<RaptorBird>().IsStaggered = false;
+                }
+            }
         }
     }
 }
