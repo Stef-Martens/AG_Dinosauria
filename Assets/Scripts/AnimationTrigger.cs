@@ -11,7 +11,10 @@ public class AnimationTrigger : MonoBehaviour
     {
         if(collision.GetComponent<IntroPlayer>() != null)
         {
-            _animator.enabled = true;
+            if(_animator!= null)
+            {
+                _animator.enabled = true;
+            }
         }
     }
 
@@ -19,7 +22,10 @@ public class AnimationTrigger : MonoBehaviour
     {
         if (collision.GetComponent<IntroPlayer>() != null)
         {
-            _animator.enabled = false;
+            if(_animator!= null)
+            {
+                _animator.enabled = false;
+            }
         }
     }
 }
