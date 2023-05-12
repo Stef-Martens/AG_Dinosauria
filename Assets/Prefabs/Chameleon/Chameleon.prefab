@@ -1039,7 +1039,6 @@ GameObject:
   - component: {fileID: 3894178828204448185}
   - component: {fileID: 2136160044165894600}
   - component: {fileID: 3659981824923570484}
-  - component: {fileID: 3515680730351422050}
   m_Layer: 0
   m_Name: Chameleon
   m_TagString: Untagged
@@ -1098,18 +1097,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3357c753f3d6b75438d9cc036d038869, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3515680730351422050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5723302778169148336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 476ea5cdcba43de499c5e29c52aef00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6934334726801458457
