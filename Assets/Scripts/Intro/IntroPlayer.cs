@@ -91,7 +91,7 @@ public class IntroPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && coll.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             JumpSound.Play();
-            rb.velocity = new Vector2(rb.velocity.x, 10f);
+            rb.velocity = new Vector2(rb.velocity.x, 12f);
         }
     }
 
