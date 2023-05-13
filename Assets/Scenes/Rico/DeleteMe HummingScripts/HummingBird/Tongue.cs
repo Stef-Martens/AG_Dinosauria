@@ -10,14 +10,15 @@ public class Tongue : MonoBehaviour
     [SerializeField]
     private Collider2D _collider;
 
-    private Bird _bird;
-    private HingeJoint2D _hingeJoint;
+    [SerializeField]
+    private AudioSource _eatingAudioSource;
+    [SerializeField]
+    private AudioSource _nectarAudioSource;
 
     private void Start()
     {
-        _bird = FindObjectOfType<Bird>();
-        _hingeJoint = GetComponent<HingeJoint2D>();
         _renderer= GetComponent<SpriteRenderer>();
+
         _renderer.enabled = false;
         _collider.enabled = false;
     }
@@ -27,16 +28,18 @@ public class Tongue : MonoBehaviour
         Nectar nectar = collision.gameObject.GetComponent<Nectar>();
         SinusoidalMove sinusMove = collision.gameObject.GetComponent<SinusoidalMove>();
 
-        if (nectar != null || sinusMove != null)
+        if (nectar != null )
         {
+            _nectarAudioSource.Play();
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Insect"))
+        if (sinusMove != null)
         {
-            collision.gameObject.transform.parent = _container.transform;
-            collision.gameObject.transform.position = _container.transform.position;
-            Destroy(collision.gameObject, 0.5f);
+            //collision.gameObject.transform.parent = _container.transform;
+            //collision.gameObject.transform.position = _container.transform.position;
+            Destroy(collision.gameObject);
+            _eatingAudioSource.Play();
         }
     }
 

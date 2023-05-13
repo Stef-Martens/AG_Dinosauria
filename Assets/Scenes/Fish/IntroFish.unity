@@ -2618,7 +2618,7 @@ Transform:
   m_GameObject: {fileID: 1203562089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.3812256, y: 4.3812256, z: 4.3812256}
+  m_LocalScale: {x: 4.3812256, y: 6.7361345, z: 4.3812256}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1905803527}
@@ -2754,7 +2754,7 @@ Transform:
   m_GameObject: {fileID: 1216208531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 80.7, y: 0, z: 0}
-  m_LocalScale: {x: 4.3812256, y: 4.3812256, z: 4.3812256}
+  m_LocalScale: {x: 4.3812256, y: 6.7361345, z: 4.3812256}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1905803527}
@@ -5542,13 +5542,17 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 2117832214}
+    - target: {fileID: 7654769692474992094, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 10.37
+      objectReference: {fileID: 0}
     - target: {fileID: 7654769692474992095, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7654769692583022536, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: orthographic size
-      value: 8
+      value: 10.37
       objectReference: {fileID: 0}
     - target: {fileID: 7654769692583022537, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5579,8 +5583,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177111, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654769693753177111, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_SortingOrder
       value: 237
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654769693753177111, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1395341217
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
