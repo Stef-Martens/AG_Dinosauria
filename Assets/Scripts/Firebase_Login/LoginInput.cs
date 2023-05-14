@@ -23,21 +23,27 @@ public class LoginInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && system.currentSelectedGameObject.GetComponent<InputField>())
         {
             Selectable previous = system.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnUp();
             if (previous != null)
                 previous.Select();
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) && system.currentSelectedGameObject.GetComponent<InputField>())
         {
             Selectable next = system.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnDown();
             if (next != null)
                 next.Select();
         }
+        if (Input.GetKeyDown(KeyCode.Tab) && system.currentSelectedGameObject.GetComponent<InputField>())
+        {
+            Selectable next = system.currentSelectedGameObject.GetComponent<Selectable>().FindSelectableOnRight();
+            if (next != null)
+                next.Select();
+        }
 
 
-        else if (Input.GetKeyDown(KeyCode.Space) && system.currentSelectedGameObject.GetComponent<Button>())
+        if (Input.GetKeyDown(KeyCode.Space) && system.currentSelectedGameObject.GetComponent<Button>())
         {
             system.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
         }
@@ -55,6 +61,7 @@ public class LoginInput : MonoBehaviour
     {
         LoginCanvas.SetActive(false);
         ResetCanvas.SetActive(true);
+        ResetCanvas.transform.GetChild(1).gameObject.GetComponent<Selectable>().Select();
     }
 
     public void BackToLogin()
