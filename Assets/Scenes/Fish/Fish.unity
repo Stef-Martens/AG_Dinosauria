@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e494cadb279704189e0f83d22ff83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lifes: 1
+  Lifes: 3
   AlgaeCount: 0
   WormCount: 0
   SnailCount: 0
@@ -221,6 +221,7 @@ MonoBehaviour:
   SnailText: {fileID: 1512382850}
   WormsText: {fileID: 1199991239}
   LifesText: {fileID: 428995648}
+  gameoverObject: {fileID: 156079678}
 --- !u!4 &56300782
 Transform:
   m_ObjectHideFlags: 0
@@ -430,6 +431,22 @@ RectTransform:
   m_AnchoredPosition: {x: -630.0852, y: -295.39}
   m_SizeDelta: {x: 19.674316, y: 6.029907}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &156079678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5970303700954761335, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+  m_PrefabInstance: {fileID: 5970303702482396763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &156079679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5970303700954761334, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+  m_PrefabInstance: {fileID: 5970303702482396763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156079678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec32b6dbd97508418e90cb0ed1270f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &230046546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,6 +4475,26 @@ PrefabInstance:
     - target: {fileID: 5970303700954761335, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
       propertyPath: m_Name
       value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970303700954761335, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970303702677984560, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 156079679}
+    - target: {fileID: 5970303702677984560, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970303703072436758, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 156079679}
+    - target: {fileID: 5970303703072436758, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}

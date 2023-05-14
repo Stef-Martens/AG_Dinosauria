@@ -24,6 +24,8 @@ public class FishManager : MonoBehaviour
 
     public Text LifesText;
 
+    public GameObject gameoverObject;
+
 
     void Start()
     {
@@ -36,7 +38,8 @@ public class FishManager : MonoBehaviour
         LifesText.text = Lifes.ToString();
         if (Lifes <= 0)
         {
-            FindObjectOfType<GameOver>().StartGameOver("You lost all 3 of your lifes.");
+            gameoverObject.SetActive(true);
+            gameoverObject.GetComponent<GameOver>().StartGameOver("You lost all 3 of your lifes.");
         }
     }
 
