@@ -2,17 +2,16 @@ using UnityEngine;
 
 public class WinLoseChameleon : MonoBehaviour
 {
-    public int UserIndex;
     public GameObject GamoverObject;
 
     private int _currentLives;
     private int _currentFlies;
     private int _totalFlies;
     private bool _hasTotalFlyCount = false;
-    
+
     void Update()
     {
-        if(!_hasTotalFlyCount)
+        if (!_hasTotalFlyCount)
         {
             _totalFlies = this.GetComponent<FlyCount>().TotalFlies;
             _hasTotalFlyCount = true;
@@ -30,7 +29,6 @@ public class WinLoseChameleon : MonoBehaviour
         {
             Time.timeScale = 0f;
 
-            StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer(UserIndex));
             FindObjectOfType<SceneSwitch>().ChangeScene("QuizChameleon");
         }
     }
