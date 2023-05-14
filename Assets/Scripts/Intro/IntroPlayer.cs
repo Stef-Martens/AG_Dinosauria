@@ -25,6 +25,9 @@ public class IntroPlayer : MonoBehaviour
     public Image ItemImage;
     public Text ItemText;
 
+    [SerializeField]
+    private LayerMask _layerMask;
+
     public void ClearInventory()
     {
         inventory = new ItemInventory(EmptySprite);
@@ -85,13 +88,13 @@ public class IntroPlayer : MonoBehaviour
             Vector3 newScale = defaultScale;
             newScale.x = defaultScale.x;
             transform.localScale = newScale;
-
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && coll.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             JumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, 12f);
+            rb.gravityScale = 2f;
         }
     }
 
@@ -151,6 +154,22 @@ public class IntroPlayer : MonoBehaviour
                 break;
             }
         }
+    }
+
+    bool IsGrounded()
+    {
+        float extraHeight = 0.5f;
+        RaycastHit2D raycasthit = Physics2D.Raycast(coll.bounds.center, Vector2.down, coll.bounds.extents.y + extraHeight, _layerMask);
+        if (raycasthit.collider != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
