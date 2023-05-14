@@ -27,6 +27,8 @@ public class IntroPlayer : MonoBehaviour
 
     [SerializeField]
     private LayerMask _layerMask;
+    [SerializeField]
+    private float _jumpHeight;
 
     public void ClearInventory()
     {
@@ -93,7 +95,7 @@ public class IntroPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             JumpSound.Play();
-            rb.velocity = new Vector2(rb.velocity.x, 12f);
+            rb.velocity = new Vector2(rb.velocity.x, _jumpHeight);
             rb.gravityScale = 2f;
         }
     }

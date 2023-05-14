@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Follow: {fileID: 7654769693753177108}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8
+    OrthographicSize: 12
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7654769692583022538}
   m_LocalRotation: {x: 1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -570,7 +570,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -620,13 +620,14 @@ MonoBehaviour:
   JumpSound: {fileID: 7654769693753177115}
   InteractSound: {fileID: 7654769693753177114}
   NextScene: QuizBird
-  speed: 8
+  speed: 10
   EmptySprite: {fileID: 0}
   ItemImage: {fileID: 0}
   ItemText: {fileID: 0}
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _jumpHeight: 15
 --- !u!82 &7654769693753177114
 AudioSource:
   m_ObjectHideFlags: 0
