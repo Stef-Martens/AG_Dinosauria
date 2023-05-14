@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
     // Define variables for the master volume and effects volume
     float musicVolume = 1.0f;
     float effectsVolume = 1.0f;
-    AudioSource musicSource;
+    List<AudioSource> musicSource;
     List<AudioSource> effectsSource;
 
     void Update()
@@ -36,23 +36,18 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
-        effectsSource = new List<AudioSource>();
-        foreach (var source in FindObjectsOfType<AudioSource>())
-        {
-            if (source.playOnAwake)
-                musicSource = source;
 
-            else
-                effectsSource.Add(source);
-        }
-
+        FindSources();
 
         if (FindObjectOfType<FirebaseManager>())
         {
             musicVolume = FindObjectOfType<FirebaseManager>().MadeUser.MusicVolume;
             effectsVolume = FindObjectOfType<FirebaseManager>().MadeUser.EffectsVolume;
 
-            musicSource.volume = musicVolume;
+            foreach (var source in musicSource)
+            {
+                source.volume = musicVolume;
+            }
 
             foreach (var source in effectsSource)
             {
@@ -63,6 +58,20 @@ public class PauseMenu : MonoBehaviour
             EffectsSlider.value = effectsVolume;
         }
 
+    }
+
+    void FindSources()
+    {
+        effectsSource = new List<AudioSource>();
+        musicSource = new List<AudioSource>();
+        foreach (AudioSource source in FindObjectsOfType<AudioSource>())
+        {
+            if (source.playOnAwake)
+                musicSource.Add(source);
+
+            else
+                effectsSource.Add(source);
+        }
     }
 
     public void PauseGame()
@@ -101,18 +110,29 @@ public class PauseMenu : MonoBehaviour
 
     public void ChangeVolumeMusic(Slider slider)
     {
-        musicSource.volume = slider.value;
-        FindObjectOfType<FirebaseManager>().MadeUser.MusicVolume = slider.value;
+        if (Time.timeScale == 0)
+        {
+            FindSources();
+            foreach (var source in musicSource)
+            {
+                source.volume = slider.value;
+            }
+            FindObjectOfType<FirebaseManager>().MadeUser.MusicVolume = slider.value;
+        }
+
     }
 
     // Called when the user exits the options menu
     public void ChangeVolumeEffects(Slider slider)
     {
-        foreach (var source in effectsSource)
+        if (Time.timeScale == 0)
         {
-            source.volume = slider.value;
+            foreach (var source in effectsSource)
+            {
+                source.volume = slider.value;
+            }
+            FindObjectOfType<FirebaseManager>().MadeUser.EffectsVolume = slider.value;
         }
-        FindObjectOfType<FirebaseManager>().MadeUser.EffectsVolume = slider.value;
 
     }
 }
