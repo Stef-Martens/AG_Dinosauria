@@ -18,7 +18,10 @@ public class SurgeonAnimal : AnimalIntro
         {
             return new List<string>
             {
-                "ge hebt me gevonden"
+                "Ah hello! Were you looking for me? Sorry, I live underwater!",
+                "I'm a fish, and instead of breathing in the air I breathe underwater using my gills",
+                "Like all fish I was born from an egg - and I have hundreds of brothers and sisters! My parents laid a lot of eggs, you see",
+                "I eat lots of things. In fact, I'm quite hungry. Why don't you help me find some food?"
             };
         }
     }
