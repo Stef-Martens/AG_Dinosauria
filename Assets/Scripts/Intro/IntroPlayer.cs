@@ -29,6 +29,8 @@ public class IntroPlayer : MonoBehaviour
     private LayerMask _layerMask;
     [SerializeField]
     private float _jumpHeight;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
 
     public void ClearInventory()
     {
@@ -38,6 +40,8 @@ public class IntroPlayer : MonoBehaviour
 
     private void Start()
     {
+        _spriteRenderer= GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         defaultScale = transform.localScale;
@@ -76,6 +80,7 @@ public class IntroPlayer : MonoBehaviour
     private void Move()
     {
         float hDirection = Input.GetAxis("Horizontal");
+        _animator.SetFloat("Speed", Mathf.Abs(hDirection));
 
         if (hDirection < 0)
         {
@@ -83,6 +88,7 @@ public class IntroPlayer : MonoBehaviour
             Vector3 newScale = defaultScale;
             newScale.x = -defaultScale.x;
             transform.localScale = newScale;
+            _spriteRenderer.flipX = true;
         }
         else if (hDirection > 0)
         {
@@ -90,6 +96,7 @@ public class IntroPlayer : MonoBehaviour
             Vector3 newScale = defaultScale;
             newScale.x = defaultScale.x;
             transform.localScale = newScale;
+            _spriteRenderer.flipX = false;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
