@@ -25,6 +25,8 @@ public class DELETE_QUIZ : MonoBehaviour
 
     public int Index;
 
+    public SwitchQuiz SwitchQuizke;
+
     private void Start()
     {
         _uiElements.Add(letterIui);
@@ -53,7 +55,9 @@ public class DELETE_QUIZ : MonoBehaviour
         if (allInactive)
         {
             // Do something when all game objects are inactive
-            UpdateAndLoadScene();
+            SwitchQuizke.SwitchToNextQuiz();
+
+           // UpdateAndLoadScene();
         }
 
 
@@ -118,10 +122,10 @@ public class DELETE_QUIZ : MonoBehaviour
         }
     }
 
-    void UpdateAndLoadScene()
+   /* void UpdateAndLoadScene()
     {
         StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer(Index));
         //new WaitForSeconds(2f);
         FindObjectOfType<SceneSwitch>().ChangeScene("Selectionscreen");
-    }
+    }*/
 }

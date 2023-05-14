@@ -2522,7 +2522,7 @@ GameObject:
   - component: {fileID: 807292732}
   - component: {fileID: 807292731}
   - component: {fileID: 807292730}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

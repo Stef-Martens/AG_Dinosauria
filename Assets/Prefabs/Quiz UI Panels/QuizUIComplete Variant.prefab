@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuizUIComplete Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2026065614336788549, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
 --- !u!224 &3336748937677846816 stripped
