@@ -25,7 +25,7 @@ public class Kangeroo : AnimalIntro
                 "I love to eat grass and brushes. I'm one of the bigger herbivores.",
                 "My babies grow in a little pouch on my belly after being born. It's nice and warm in there!",
                 "I don't usually live near the beach, but I wanted to go on vacation.",
-                ""
+                "I want to do something fun though - like kicking a ball. I have very strong legs, you know. Maybe I should become a football star?"
             };
         }
     }
@@ -36,8 +36,9 @@ public class Kangeroo : AnimalIntro
         {
             return new List<string>
             {
-                "Oh a ball.",
-                "ik trap bal weg"
+                "Oh a ball, thanks! Watch, I'll kick it very far!",
+                "*The kangaroo kicks the ball over the head of the seal on the hill, as it lands near the ocean."
+                
             };
         }
     }

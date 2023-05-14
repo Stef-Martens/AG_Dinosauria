@@ -27,7 +27,11 @@ public class Ant : AnimalIntro
         {
             return new List<string>
             {
-                "kmoet zoet hebben"
+                "Behold, human! I am the mighty ant! Greatest of all the insects!",
+                "I may look small and weak, but together with my friends there's nothing we cannot do.",
+                "Like other insects I'm an invertebrate and have my skeleton on the outside of my body. That's what makes us so strong.",
+                "We'll eat anything, but we really like sweet things.",
+                "Can you bring us something sweet, like honey or a piece of fruit? If you do, we'll let you go past our anthill."
             };
         }
     }
@@ -38,7 +42,8 @@ public class Ant : AnimalIntro
         {
             return new List<string>
             {
-                "danke"
+                "Mmm, delicious! Thankyou, human!",
+                "Behold, the power of the ants as we get rid of this rock in your way!"
             };
         }
     }
