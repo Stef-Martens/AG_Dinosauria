@@ -30,13 +30,14 @@ public class FlowerCount : MonoBehaviour
 
     private void UpdateCount()
     {
-        text.text = $"{count} / {Nectar.total}";
+        //  text.text = $"{count} / {Nectar.total}";
+        text.text = $"{count} / {30}";
     }
 
     private void Update()
     {
         //tijdelijk aangepast om snel naar volgende scene te gaan
-        if (count >= 15 /*Nectar.total*/)
+        if (count >= 30 /*Nectar.total*/)
         {
             FindObjectOfType<SceneSwitch>().ChangeScene("QuizBird");
             gameObject.SetActive(false);
