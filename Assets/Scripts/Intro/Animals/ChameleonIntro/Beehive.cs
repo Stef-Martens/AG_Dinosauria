@@ -26,8 +26,8 @@ public class Beehive : AnimalIntro
         {
             return new List<string>
             {
-                "*you pick up the honey",
-                "*move out quick because the bee is angry*"
+                "*There's a beehive full of delicious honey here...*",
+                "*You take some of the honey, but oh no! The bee is angry! Quick, run away!"
             };
         }
     }

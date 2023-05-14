@@ -30,8 +30,14 @@ public class FrogMain : AnimalIntro
         {
             return new List<string>
             {
-                "Hi",
-                "Find all my friends"
+                "Hello human. *croak* I'm a frog. When people think about amphibians they usually think about me! *croak*",
+                "I love being around the water. When I was a baby, fresh out of the egg, I didn't even have any legs! All I could do was swim.",
+                "When I was young I loved to eat plants, but nowadays I usually eat flies with my sticky tongue.",
+                "My best friend - Mister Chameleon - also loves to eat flies with his sticky tongue.",
+                "Oh? You're looking for the chameleon? Well he's pretty shy! He's right there, but he camouflaged himself!",
+                "But he loves friends. If we had a lot of friends here I bet he'd come right out.",
+                "I myself have a lot of frog friends, but they're all over the place. Can you find the other frogs?"
+
             };
         }
     }
@@ -42,7 +48,8 @@ public class FrogMain : AnimalIntro
         {
             return new List<string>
             {
-                "Thank you for finding all my friends"
+                "*croak* Thanks for finding all my friends! You're great!",
+                "We might need a few more friends though. I think if you can get the Red Panda, Lemurs, and Ant to come over, Mr. Chameleon should come out!"
             };
         }
     }

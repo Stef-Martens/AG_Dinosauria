@@ -20,8 +20,9 @@ public class Frog2 : AnimalIntro
         {
             return new List<string>
             {
-                "You found one of the frogs",
-                "*Frog moves to start*"
+                "*ribbit* Hello, I'm one of the frogs! Congratulations on finding me.",
+                "What? Mr. Frog needs us back? Sure, I'll go home! *ribbit*",
+                "*The frog leaves and returns to the other frogs*"
             };
         }
     }

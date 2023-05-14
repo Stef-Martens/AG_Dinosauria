@@ -29,7 +29,11 @@ public class ChameleonIntro : AnimalIntro
         {
             return new List<string>
             {
-                "Congrats",
+                "Wow! Look at all these friends who came here to see me!",
+                "Sorry, I was quite shy! I can change colours, so I hid myself so you wouldn't find me.",
+                "I'm a little reptile that loves to climb in trees with my sticky feet, and I can shoot my sticky tongue out to catch bugs far away from me.",
+                "I do also eat little leaves and fruits though - not just meat.",
+                "Anyways, I've talked long enough! Come, let me show you how I live."
             };
         }
     }

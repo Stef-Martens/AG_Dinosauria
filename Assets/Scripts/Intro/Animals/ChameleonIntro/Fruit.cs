@@ -26,8 +26,9 @@ public class Fruit : AnimalIntro
         {
             return new List<string>
             {
-                "*you pick up the fruit",
-                "*move out quick because the bat is angry*"
+                "*There's a delicious piece of fruit on the ground here... Why is there fruit in a cave?*",
+                "*You pick it up, but you hear something above you. Oh no! It's a fruit bat and you stole its food!*",
+                "*Quick, run away before it catches you!*"
             };
         }
     }

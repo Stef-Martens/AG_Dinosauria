@@ -27,8 +27,10 @@ public class Lemur : AnimalIntro
         {
             return new List<string>
             {
-                "Hi",
-                "wij moeten iets zoet"
+                "Hi, we're ring-tail lemurs! We like to be mischievous and play around a lot!",
+                "We're relatives of the monkey, so in a way we're related to you too. Like you we'll also eat anything.",
+                "We found this carton of milk from another human, though we can't use it!",
+                "Do you want to trade? We'll give you the milk if you give us something sweet. Like honey! Or fruit!"
             };
         }
     }
@@ -39,8 +41,9 @@ public class Lemur : AnimalIntro
         {
             return new List<string>
             {
-                "danke",
-                "jow"
+                "Mmm, this looks delicious! Thankyou! Here's your milk.",
+                "What? You need help finding the chameleon? Sure we'll help!",
+                "*The lemurs leave and go to help the chameleon*"
             };
         }
     }

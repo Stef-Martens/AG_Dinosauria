@@ -20,8 +20,10 @@ public class RedPanda : AnimalIntro
         {
             return new List<string>
             {
-                "Hi",
-                "I need milk"
+                "Hello there! I'm Mrs. Red Panda, and these are my children!",
+                "We're on vacation right now. We don't live in Madagascar. Instead, we come from the Himalayas!",
+                "Like most mammals we also have fur, but so much fur doesn't help when it's so warm! Phew, I'm exhausted...",
+                "My children need to drink. Mammals are unique because they're the only animals that drink milk. Do you have some milk for us?"
             };
         }
     }
@@ -32,7 +34,8 @@ public class RedPanda : AnimalIntro
         {
             return new List<string>
             {
-                "thank you"
+                "Thankyou for the delicious milk! With this my children can drink.",
+                "Oh? Do you need help finding the Chameleon? Sure we can help. Come on kids, let's go help!"
             };
         }
     }
