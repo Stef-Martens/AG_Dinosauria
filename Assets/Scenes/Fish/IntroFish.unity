@@ -11815,9 +11815,9 @@ Transform:
   - {fileID: 783536943}
   - {fileID: 1103004377}
   - {fileID: 1740876219}
-  - {fileID: 1741987776}
   - {fileID: 1136442621}
   - {fileID: 129833961}
+  - {fileID: 1741987776}
   - {fileID: 1232678341}
   - {fileID: 1621103924}
   - {fileID: 1278078155}
@@ -13736,7 +13736,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 847387613809263934, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998477366348, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_Name
@@ -13792,6 +13792,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998878540082, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5978630999107022473, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
