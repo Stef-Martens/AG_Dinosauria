@@ -18,8 +18,11 @@ public class AnnoyingSeal : AnimalIntro
         {
             return new List<string>
             {
-                "hier is bal",
-                "vanboven pakt terug af"
+                "Hello, I am a seal! I'm a marine mammal - which means I'm a mammal that lives in the sea.",
+                "I'm a carnivore, and I usually eat fish and other small animals that live in the ocean.",
+                "When I'm not hunting, I like to lay on the beach. I also love to play, like with this ball!",
+                "Oh, do you want the ball? You can have it!",
+                "Be careful though, my friend at the top of the hill really likes to play and will slap the ball out of your hands back down to me!"
             };
         }
     }
@@ -30,8 +33,8 @@ public class AnnoyingSeal : AnimalIntro
         {
             return new List<string>
             {
-                "test",
-                "test"
+                "If you pick up the ball be careful of my friend at the top of the hill.",
+                "He will slap the ball out of your hands, back down to me!"
             };
         }
     }
