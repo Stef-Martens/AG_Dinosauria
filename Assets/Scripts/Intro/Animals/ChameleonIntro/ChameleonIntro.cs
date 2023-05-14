@@ -63,7 +63,7 @@ public class ChameleonIntro : AnimalIntro
 
     public override void DoFirstAction()
     {
-        FindObjectOfType<SceneSwitch>().ChangeScene("QuizChameleon");
+        FindObjectOfType<SceneSwitch>().ChangeScene("Chameleon");
     }
 
     public override void DoSecondAction()

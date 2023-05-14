@@ -41,7 +41,6 @@ public class SurgeonAnimal : AnimalIntro
 
     public override void DoFirstAction()
     {
-        FindObjectOfType<SceneSwitch>().ChangeScene("QuizFish");
+        FindObjectOfType<SceneSwitch>().ChangeScene("Fish");
     }
-
 }
