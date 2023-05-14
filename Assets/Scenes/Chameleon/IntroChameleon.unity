@@ -431,8 +431,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32380854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.299988, y: 18.7, z: 0}
-  m_LocalScale: {x: 1.926739, y: 1.926739, z: 1.926739}
+  m_LocalPosition: {x: 33.4, y: 11.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104532327}
@@ -838,7 +838,7 @@ Transform:
   m_GameObject: {fileID: 69029498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -378.1, y: 92.31, z: 0}
-  m_LocalScale: {x: 0.506432, y: 0.506432, z: 0.506432}
+  m_LocalScale: {x: 0.2944348, y: 0.2944348, z: 0.2944348}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104532327}
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c2ced96e5d66e48871f2c589ad2380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: 1f555bbf9b8ba724abf3ed5553f4e11a, type: 3}
+  GivenImage: {fileID: 21300000, guid: 28c8591f4d45db0438c31f0fa4b49ce4, type: 3}
 --- !u!1 &117012981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,7 +1810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You are going back to start.
+  TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &167528695
 BoxCollider2D:
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You are going to the red pandas.
+  TextToSay: You go to the red pandas
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &168258562
 BoxCollider2D:
@@ -3064,8 +3064,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361378305}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -343.7, y: -96, z: 0}
-  m_LocalScale: {x: 0.74367, y: 0.74367, z: 0.74367}
+  m_LocalPosition: {x: -343.7, y: -98.64, z: 0}
+  m_LocalScale: {x: 0.2944348, y: 0.2944348, z: 0.2944348}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104532327}
@@ -3215,7 +3215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You are going to the lemurs.
+  TextToSay: You go to the lemurs
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &380182584
 BoxCollider2D:
@@ -3894,8 +3894,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145ace9509e57cc4288b01e758272f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: 3e7cad8a35ed39b4f982939a532b33df, type: 3}
-  MilkImage: {fileID: 21300000, guid: 3e7cad8a35ed39b4f982939a532b33df, type: 3}
+  GivenImage: {fileID: 21300000, guid: 789b84c0239de8f468def416dd2c46c3, type: 3}
+  MilkImage: {fileID: 21300000, guid: 789b84c0239de8f468def416dd2c46c3, type: 3}
 --- !u!4 &442430851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4037626934127403304, guid: b23df91c8cdabfb4e836b13d315575b3, type: 3}
@@ -5112,8 +5112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658797569}
   m_LocalRotation: {x: -0, y: -0, z: -0.65780044, w: 0.75319237}
-  m_LocalPosition: {x: -477.45, y: -76.37, z: 0}
-  m_LocalScale: {x: 1.2924999, y: 1.2924999, z: 1.2924999}
+  m_LocalPosition: {x: -478.84, y: -83.32, z: 0}
+  m_LocalScale: {x: 0.8222429, y: 0.8222429, z: 0.8222429}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104532327}
@@ -5157,7 +5157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d73250105f8cd44abbeb9c0a64129ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: a526618d1465207479477de29c69e4b9, type: 3}
+  GivenImage: {fileID: 21300000, guid: c72aa369d9a11624a8ab2c41ff23b542, type: 3}
 --- !u!4 &669934553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4037626934127403304, guid: b23df91c8cdabfb4e836b13d315575b3, type: 3}
@@ -5613,8 +5613,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694842547}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -362.3, y: -90.63, z: 0}
-  m_LocalScale: {x: 1.2666094, y: 1.2666094, z: 1.2666094}
+  m_LocalPosition: {x: -363.18, y: -93.14, z: 0}
+  m_LocalScale: {x: 0.96433306, y: 0.96433306, z: 0.96433306}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104532327}
@@ -5658,7 +5658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80be22b0d40004141a654aaf25410e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: c558cb63d1245ed469e69901d6956342, type: 3}
+  GivenImage: {fileID: 21300000, guid: bfc4d5743139ae84eaa43403a4a073c6, type: 3}
 --- !u!4 &718466428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4037626934127403304, guid: b23df91c8cdabfb4e836b13d315575b3, type: 3}
@@ -7410,8 +7410,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894001119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -369.59, y: -85.04, z: 0}
-  m_LocalScale: {x: 0.8102162, y: 0.8102162, z: 0.8102162}
+  m_LocalPosition: {x: -364.7, y: -85.77, z: 0}
+  m_LocalScale: {x: 0.6526696, y: 0.6526696, z: 0.6526696}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104532327}
@@ -8075,7 +8075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You are going back to start.
+  TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &1007709225
 BoxCollider2D:
@@ -9170,7 +9170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You are going back to start.
+  TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &1120645174
 BoxCollider2D:
@@ -10402,8 +10402,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1301358677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: -1.04, z: 0}
-  m_LocalScale: {x: 0.59248185, y: 0.59248185, z: 0.59248185}
+  m_LocalPosition: {x: 0.1, y: -1.88, z: 0}
+  m_LocalScale: {x: 0.2944348, y: 0.2944348, z: 0.2944348}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 104532327}
@@ -12390,7 +12390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae3607c5eb338824e8ec7b700b2582b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 0}
+  GivenImage: {fileID: 21300000, guid: eceab81c5688be947baae6b534328a9b, type: 3}
   RemoveObject: {fileID: 1330627206}
 --- !u!4 &1465001330 stripped
 Transform:
@@ -15898,7 +15898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You enter the cave.
+  TextToSay: You enter the cave
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &2133826284
 BoxCollider2D:
@@ -16021,6 +16021,10 @@ PrefabInstance:
     - target: {fileID: 835566089394982096, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_Name
       value: BasicsIntro
+      objectReference: {fileID: 0}
+    - target: {fileID: 835566089394982096, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6593841818223796299, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_RootOrder
