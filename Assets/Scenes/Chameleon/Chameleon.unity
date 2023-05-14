@@ -1868,24 +1868,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5970303700954761335, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
   m_PrefabInstance: {fileID: 1609616348}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &519024700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519024697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55631c4108d25c14e9f7e01a0ccaf2c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Chameleon: {fileID: 1404483523}
 --- !u!4 &519024702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5970303700954761333, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
   m_PrefabInstance: {fileID: 1609616348}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &519024703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5970303700954761334, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+  m_PrefabInstance: {fileID: 1609616348}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519024697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec32b6dbd97508418e90cb0ed1270f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &529358686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5161,6 +5159,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3659981824923570484, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
+      propertyPath: GamoverObject
+      value: 
+      objectReference: {fileID: 519024697}
     - target: {fileID: 4303507424886721087, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: RetractionSpeed
       value: 75
@@ -5339,7 +5341,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484059249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.027773857, y: -0.015000343, z: -0.5}
+  m_LocalPosition: {x: 0.12019062, y: -0.015000343, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6317,7 +6319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5970303700954761335, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5970303701608654225, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
       propertyPath: m_IsActive
@@ -6330,6 +6332,22 @@ PrefabInstance:
     - target: {fileID: 5970303702120332714, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
       propertyPath: m_Text
       value: The RaptorBird attacked you too many times.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970303702677984560, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 519024703}
+    - target: {fileID: 5970303702677984560, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970303703072436758, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 519024703}
+    - target: {fileID: 5970303703072436758, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db3beb4b6dafa9a4f801d89b2a06a313, type: 3}

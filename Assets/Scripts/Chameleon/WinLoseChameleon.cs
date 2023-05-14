@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class WinLoseChameleon : MonoBehaviour
 {
-    public bool HasWon { get; private set; } = false;
-    public bool HasLost { get; private set; } = false;
-
     public int UserIndex;
+    public GameObject GamoverObject;
 
     private int _currentLives;
     private int _currentFlies;
@@ -30,9 +28,6 @@ public class WinLoseChameleon : MonoBehaviour
 
         if (_currentFlies == _totalFlies)
         {
-            HasWon = true;
-            HasLost = false;
-
             Time.timeScale = 0f;
 
             StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer(UserIndex));
@@ -46,10 +41,10 @@ public class WinLoseChameleon : MonoBehaviour
 
         if (_currentLives == 0)
         {
-            HasWon = false;
-            HasLost = true;
-
             Time.timeScale = 0f;
+
+            GamoverObject.SetActive(true);
+            FindObjectOfType<GameOver>().StartGameOver("The Raptorbird attacked you too many times.");
         }
     }
 }
