@@ -5,6 +5,8 @@ public class WinLoseChameleon : MonoBehaviour
     public bool HasWon { get; private set; } = false;
     public bool HasLost { get; private set; } = false;
 
+    public int UserIndex;
+
     private int _currentLives;
     private int _currentFlies;
     private int _totalFlies;
@@ -32,6 +34,9 @@ public class WinLoseChameleon : MonoBehaviour
             HasLost = false;
 
             Time.timeScale = 0f;
+
+            StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer(UserIndex));
+            FindObjectOfType<SceneSwitch>().ChangeScene("QuizChameleon");
         }
     }
 
