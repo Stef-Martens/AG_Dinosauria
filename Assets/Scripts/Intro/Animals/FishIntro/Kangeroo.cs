@@ -21,8 +21,11 @@ public class Kangeroo : AnimalIntro
         {
             return new List<string>
             {
-                "Ik kan hard schoppe",
-                "fix bal"
+                "Well hello. I'm a kangaroo. I'm a big mammal - a marsupial, to be exact.",
+                "I love to eat grass and brushes. I'm one of the bigger herbivores.",
+                "My babies grow in a little pouch on my belly after being born. It's nice and warm in there!",
+                "I don't usually live near the beach, but I wanted to go on vacation.",
+                ""
             };
         }
     }
@@ -33,7 +36,7 @@ public class Kangeroo : AnimalIntro
         {
             return new List<string>
             {
-                "mercikes",
+                "Oh a ball.",
                 "ik trap bal weg"
             };
         }

@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8874232a425756445a8699ddca9ac8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 0}
+  GivenImage: {fileID: 21300000, guid: 3888b38e1ecb65347af9a1812267ebd2, type: 3}
 --- !u!1 &108637292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You go to the beach.
+  TextToSay: You head to the turtle's beach
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &450034194
 BoxCollider2D:
@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You back back to start.
+  TextToSay: You return to the dolphin
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &882753328
 BoxCollider2D:
@@ -2548,7 +2548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You back back to start.
+  TextToSay: You return to the dolphin's beach
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &1094517144
 BoxCollider2D:
@@ -2715,7 +2715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173720335f6b4fd46858fb42a9f4e7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: 60ff847033bd1a94bbcc4d9eb6cc6b8e, type: 3}
+  GivenImage: {fileID: 21300000, guid: be3c94cd7f6b8ae4eb379f1d30779b7c, type: 3}
 --- !u!1 &1203562089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b8db1f876e2024bbe9fdc344f96ba7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 0}
+  GivenImage: {fileID: 21300000, guid: 3ecd463d45fd43148919c4e153bc7021, type: 3}
 --- !u!61 &1323042594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3534,7 +3534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173720335f6b4fd46858fb42a9f4e7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: 60ff847033bd1a94bbcc4d9eb6cc6b8e, type: 3}
+  GivenImage: {fileID: 21300000, guid: be3c94cd7f6b8ae4eb379f1d30779b7c, type: 3}
 --- !u!1001 &1416150290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4062,7 +4062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3586ad6d559e1d4487d399042974956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: 59088f52693a28a42938c36c358f9dae, type: 3}
+  GivenImage: {fileID: 21300000, guid: a526618d1465207479477de29c69e4b9, type: 3}
   finished: 0
 --- !u!61 &1508292599
 BoxCollider2D:
@@ -5348,7 +5348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da356e2a6f485cf4dbd36c4f8067f45e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextToSay: You go to the seals.
+  TextToSay: You go to the seals
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
 --- !u!61 &2038247749
 BoxCollider2D:
@@ -5557,7 +5557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173720335f6b4fd46858fb42a9f4e7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GivenImage: {fileID: 21300000, guid: 60ff847033bd1a94bbcc4d9eb6cc6b8e, type: 3}
+  GivenImage: {fileID: 21300000, guid: be3c94cd7f6b8ae4eb379f1d30779b7c, type: 3}
 --- !u!1 &2117832213
 GameObject:
   m_ObjectHideFlags: 0
@@ -5694,7 +5694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998477366348, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998477366349, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
@@ -5880,7 +5880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177104, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: speed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177104, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: ItemText

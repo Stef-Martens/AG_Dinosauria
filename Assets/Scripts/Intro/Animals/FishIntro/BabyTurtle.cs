@@ -24,8 +24,12 @@ public class BabyTurtle : AnimalIntro
         {
             return new List<string>
             {
-                "Hi",
-                "jow"
+                "Hey, I'm a baby sea turtle. Nice to meet you!",
+                "I'm a reptile that lives in the water. You might think I'm an amphibian, but I have scales! Amphibians do not.",
+                "My mother came to this beach to lay eggs. When we're born, we make a run for the sea to be safe from the predators on the land.",
+                "My sisters and brothers have already escaped, but I'm too scared! I'm afraid I'll get pinched. Did you know crabs like to eat baby turtles?",
+                "Do you want to help me? Can you get rid of the crab claws on the beach? If you do, I'll be able to escape.",
+                "Talk to me again and I'll try to make a run for the ocean!"
             };
         }
     }
@@ -36,7 +40,8 @@ public class BabyTurtle : AnimalIntro
         {
             return new List<string>
             {
-                "Im going to the right."
+                "Alright, I'm going to try and make a run for the ocean!. I hope it's safe now.",
+                "If I run into any crab claws, I'll probably run back to my nest here..."
             };
         }
     }

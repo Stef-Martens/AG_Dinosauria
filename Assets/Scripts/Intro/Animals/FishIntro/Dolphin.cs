@@ -18,9 +18,13 @@ public class Dolphin : AnimalIntro
         {
             return new List<string>
             {
-                "I will get the fish if you help my friends.",
-                "friends are turtles.",
-                "kwil ook nen bal"
+                "Hello, who are you? I'm the dolphin. Everyone loves me!",
+                "I'm a marine mammal, and I'm a carnivore - I love to eat meat, like little fishes. What do you like to eat?",
+                "I can help you find the Surgeonfish - she lives out in the reef. I can take you there!",
+                "But before I help you, you need to help me! I need you to do two things:",
+                "First, I need you to help the baby turtle get to the sea.",
+                "Second, I need my ball back - I think the seals took my ball. Can you go look?",
+                "If you've done everything you can come back to me"
             };
         }
     }
@@ -31,8 +35,8 @@ public class Dolphin : AnimalIntro
         {
             return new List<string>
             {
-                "Danke",
-                "kga vis halen"
+                "Thankyou for helping me! You did a great job!",
+                "Come, I'll bring you to the Surgeonfish now."
             };
         }
     }

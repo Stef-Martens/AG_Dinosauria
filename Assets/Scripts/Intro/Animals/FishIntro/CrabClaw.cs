@@ -18,7 +18,8 @@ public class CrabClaw : AnimalIntro
         {
             return new List<string>
             {
-                "You remove the crab claw."
+                "There is a crab claw poking out of the ground here.",
+                "You scare away the crab hiding under the sand before it can hurt anyone."
             };
         }
     }

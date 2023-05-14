@@ -18,8 +18,12 @@ public class Crab : AnimalIntro
         {
             return new List<string>
             {
-                "test",
-                "test"
+                "Yo! I'm a big crab! Look at me!",
+                "I'm not like you, because I am an invertebrate. That means I don't have bones in my body.",
+                "In my case my strong armour is my skeleton on the outside of my body - that's why they call it an exoskeleton.",
+                "I'm an omnivore. I'll eat anything! I can use my claws to pinch creatures that scare me or grab my food.",
+                "We can also use our claws to dig. There's a lot of my friends hidden under the ground here. We hide under rocks and sand.",
+                "Don't worry about me. I'm a happy crab. I'm not hungry. I'll leave everyone alone."
             };
         }
     }
