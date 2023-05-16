@@ -491,6 +491,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1220707250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2026065614336788549, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+  m_PrefabInstance: {fileID: 2099483064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1265907043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,8 +1255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsFirstQuiz: 0
   IsLastQuiz: 1
+  QuizUIBase: {fileID: 1220707250}
   NextQuiz: {fileID: 0}
-  UserIndex: 1
 --- !u!114 &1894129234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,6 +1438,10 @@ PrefabInstance:
       propertyPath: UserIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4390911475677256136, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
+      propertyPath: QuizUIBase
+      value: 
+      objectReference: {fileID: 1220707250}
     - target: {fileID: 4390911475677256137, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
       propertyPath: m_Name
       value: Quiz1_LetterQuizNoSound-DELETE
@@ -1636,6 +1645,10 @@ PrefabInstance:
       value: 'I love to eat nectar,
 
         but i also eat.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737885617512328734, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: AnimalIndex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}

@@ -4,14 +4,19 @@ public class SwitchQuiz : MonoBehaviour
 {
     public bool IsFirstQuiz = false;
     public bool IsLastQuiz = false;
+
+    public GameObject QuizUIBase;
     public GameObject NextQuiz = null;
-    public int UserIndex;
+
+    private int _animalIndex;
 
     public delegate void OnSwitchQuizDelegate();
     public static event OnSwitchQuizDelegate SwitchQuizEvent;
 
     void Start()
     {
+        _animalIndex = QuizUIBase.GetComponent<QuizBase>().AnimalIndex;
+
         if (IsFirstQuiz)
             this.transform.GetChild(0).gameObject.SetActive(true);
         else
@@ -28,7 +33,7 @@ public class SwitchQuiz : MonoBehaviour
         }
         else
         {
-            StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer(UserIndex));
+            StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer(_animalIndex));
             FindObjectOfType<SceneSwitch>().ChangeScene("Selectionscreen");
         }
     }

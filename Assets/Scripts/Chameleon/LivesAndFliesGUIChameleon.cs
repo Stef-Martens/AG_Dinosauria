@@ -17,23 +17,32 @@ public class LivesAndFliesGUIChameleon : MonoBehaviour
     void Start()
     {
         _currentLivesTxt = LivesAndFlies.transform.GetChild(1).GetChild(1).GetComponent<Text>();
-        _currentFliesTxt = LivesAndFlies.transform.GetChild(2).GetChild(1).GetComponent<Text>(); 
+        _currentFliesTxt = LivesAndFlies.transform.GetChild(2).GetChild(1).GetComponent<Text>();
+
+        _totalLivesTxt = LivesAndFlies.transform.GetChild(1).GetChild(3).GetComponent<Text>();
+        _totalFliesTxt = LivesAndFlies.transform.GetChild(2).GetChild(3).GetComponent<Text>();
     }
 
     void Update()
     {
-        if(_setTotalLivesAndFlies)
-        {
-            _totalLivesTxt = LivesAndFlies.transform.GetChild(1).GetChild(3).GetComponent<Text>();
-            _totalLivesTxt.text = Chameleon.GetComponent<LivesChameleon>().TotalLives.ToString();
+        SetCurrentLivesAndFlies();
+        SetTotalLivesAndFlies();
+    }
 
-            _totalFliesTxt = LivesAndFlies.transform.GetChild(2).GetChild(3).GetComponent<Text>();
+    private void SetCurrentLivesAndFlies()
+    {
+        _currentLivesTxt.text = Chameleon.GetComponent<LivesChameleon>().CurrentLives.ToString();
+        _currentFliesTxt.text = Chameleon.GetComponent<FlyCount>().CurrentFlies.ToString();
+    }
+
+    private void SetTotalLivesAndFlies()
+    {
+        if (_setTotalLivesAndFlies)
+        {
+            _totalLivesTxt.text = Chameleon.GetComponent<LivesChameleon>().TotalLives.ToString();
             _totalFliesTxt.text = Chameleon.GetComponent<FlyCount>().TotalFlies.ToString();
 
             _setTotalLivesAndFlies = false;
         }
-
-        _currentLivesTxt.text = Chameleon.GetComponent<LivesChameleon>().CurrentLives.ToString();
-        _currentFliesTxt.text = Chameleon.GetComponent<FlyCount>().CurrentFlies.ToString();
     }
 }

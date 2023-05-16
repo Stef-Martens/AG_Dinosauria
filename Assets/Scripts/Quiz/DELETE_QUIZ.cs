@@ -23,7 +23,7 @@ public class DELETE_QUIZ : MonoBehaviour
 
     private List<GameObject> _uiElements = new List<GameObject>();
 
-    public int Index;
+   // public int Index;
 
     public SwitchQuiz SwitchQuizke;
 

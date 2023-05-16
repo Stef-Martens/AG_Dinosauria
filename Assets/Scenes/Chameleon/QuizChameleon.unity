@@ -1060,8 +1060,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5737885617512328734, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: AnimalIndex
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+--- !u!1 &944951256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2026065614336788549, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+  m_PrefabInstance: {fileID: 944951255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &987335823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1394,8 +1403,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsFirstQuiz: 0
   IsLastQuiz: 1
+  QuizUIBase: {fileID: 944951256}
   NextQuiz: {fileID: 0}
-  UserIndex: 2
 --- !u!1001 &1277990402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1872,6 +1881,10 @@ PrefabInstance:
       propertyPath: UserIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4390911475677256136, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
+      propertyPath: QuizUIBase
+      value: 
+      objectReference: {fileID: 944951256}
     - target: {fileID: 4390911475677256137, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
       propertyPath: m_Name
       value: Quiz1:LetterQuizNoSound-DELETE

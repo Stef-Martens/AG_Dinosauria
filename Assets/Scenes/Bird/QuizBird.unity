@@ -475,8 +475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsFirstQuiz: 0
   IsLastQuiz: 1
+  QuizUIBase: {fileID: 560830776}
   NextQuiz: {fileID: 0}
-  UserIndex: 0
 --- !u!1001 &560830774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -591,6 +591,11 @@ PrefabInstance:
 --- !u!223 &560830775 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 2026065614336788550, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+  m_PrefabInstance: {fileID: 560830774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &560830776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2026065614336788549, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
   m_PrefabInstance: {fileID: 560830774}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &637504329
@@ -1257,6 +1262,10 @@ PrefabInstance:
       propertyPath: NextQuiz
       value: 
       objectReference: {fileID: 124257781}
+    - target: {fileID: 4390911475677256136, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
+      propertyPath: QuizUIBase
+      value: 
+      objectReference: {fileID: 560830776}
     - target: {fileID: 4390911475677256137, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
       propertyPath: m_Name
       value: Quiz1_LetterQuizNoSound-DELETE

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class QuizBase : MonoBehaviour
 {
     public Text QuizQuestionText { get;  set; }
+    public int AnimalIndex;
 
     void Start()
     {
