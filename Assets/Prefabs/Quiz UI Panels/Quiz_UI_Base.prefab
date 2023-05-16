@@ -245,8 +245,8 @@ GameObject:
   - component: {fileID: 2026065614336788550}
   - component: {fileID: 2026065614336788551}
   - component: {fileID: 2026065614336788548}
-  - component: {fileID: 5737885617512328734}
   - component: {fileID: 3034426468074497366}
+  - component: {fileID: 101578609097069407}
   m_Layer: 5
   m_Name: Quiz_UI_Base
   m_TagString: Untagged
@@ -337,18 +337,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5737885617512328734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026065614336788549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce015b57b66899b40a6c3a6d41a63551, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3034426468074497366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +349,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87f8be8924247d4dacbdb17a0f3a274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &101578609097069407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026065614336788549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45e4eccbce9ee54d9e708f24c55d485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalIndex: 0
+  Quizzes: []
 --- !u!1 &2026065614444963646
 GameObject:
   m_ObjectHideFlags: 0

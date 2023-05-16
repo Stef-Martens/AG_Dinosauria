@@ -23,9 +23,12 @@ public class DELETE_QUIZ : MonoBehaviour
 
     private List<GameObject> _uiElements = new List<GameObject>();
 
-   // public int Index;
 
-    public SwitchQuiz SwitchQuizke;
+
+
+
+
+
 
     private void Start()
     {
@@ -55,9 +58,9 @@ public class DELETE_QUIZ : MonoBehaviour
         if (allInactive)
         {
             // Do something when all game objects are inactive
-            SwitchQuizke.SwitchToNextQuiz();
+            FindObjectOfType<SwitchToNextQuiz>().SwitchQuiz();
 
-           // UpdateAndLoadScene();
+            // UpdateAndLoadScene();
         }
 
 

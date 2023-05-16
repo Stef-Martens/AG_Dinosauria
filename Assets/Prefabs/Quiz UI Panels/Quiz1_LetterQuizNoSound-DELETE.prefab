@@ -876,7 +876,6 @@ GameObject:
   - component: {fileID: 4390911475677256132}
   - component: {fileID: 4390911475677256133}
   - component: {fileID: 4390911475677256134}
-  - component: {fileID: 4390911475677256136}
   - component: {fileID: 4390911475677256130}
   m_Layer: 5
   m_Name: Quiz1_LetterQuizNoSound-DELETE
@@ -967,22 +966,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4390911475677256136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4390911475677256137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45e4eccbce9ee54d9e708f24c55d485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsFirstQuiz: 1
-  IsLastQuiz: 0
-  NextQuiz: {fileID: 0}
-  UserIndex: 0
 --- !u!114 &4390911475677256130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,8 +994,6 @@ MonoBehaviour:
   letterEui: {fileID: 4390911476599171432}
   letterCui: {fileID: 4390911477255474217}
   letterTui: {fileID: 4390911476506596195}
-  Index: 0
-  SwitchQuizke: {fileID: 4390911475677256136}
 --- !u!1 &4390911475746902429
 GameObject:
   m_ObjectHideFlags: 0

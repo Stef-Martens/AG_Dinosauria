@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class QuizSelection : MonoBehaviour
+public class SelectionQuiz : MonoBehaviour
 {
     public Inputs Inputs;
-    public Canvas QuizBase;
     public Selectable FirstInput;
     public bool IsWithSound = false;
 
@@ -37,91 +36,68 @@ public class QuizSelection : MonoBehaviour
     private bool _hasSelectedAnswer = false;
 
     // Question text
-    private bool _setQuestionTxt = true;
+    private bool _canSetQuestionTxt = true;
 
     // Animal text
-    private bool _setAnimalTxt = true;
-
     private Text _firstAnimalTxt;
     private Text _secondAnimalTxt;
     private Text _thirdAnimalTxt;
 
     // Animal Image
-    private bool _setAnimalImg = true;
-
     private Image _firstAnimalImg;
     private Image _secondAnimalImg;
     private Image _thirdAnimalImg;
 
     // Extra Variables
     private bool _isEndQuizKeyReleased = false;
-    private SwitchQuiz _switchQuiz;
 
-    private void Start()
+    private void Awake()
     {
-        if (transform.root.gameObject.activeSelf)
-        {
-            FirstInput.Select();
-            _deactiveButtons = this.GetComponent<DeactiveButtons>();
-            this.transform.GetChild(0).gameObject.SetActive(true);
-            this.transform.GetChild(1).gameObject.SetActive(false);
-
-            _switchQuiz= this.gameObject.transform.root.GetComponent<SwitchQuiz>();
-        }
+        SetAnimalTexts();
+        SetAnimalImages();
+        
+        FirstInput.Select();
+        _deactiveButtons = this.GetComponent<DeactiveButtons>();
+        this.transform.GetChild(0).gameObject.SetActive(true);
+        this.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     void Update()
     {
-        if (transform.root.gameObject.activeSelf)
-        {
-            SetQuestionText();
-            SetAnimalText();
-            SetAnimalImage();
-            CheckAnswer();
-            EndQuiz();
-        }
+        SetQuestionText();
+        CheckAnswer();
+        EndQuiz();
     }
 
     private void SetQuestionText()
-    {
-        if (_setQuestionTxt)
+    { 
+        if(_canSetQuestionTxt)
         {
-            QuizBase.GetComponent<QuizBase>().QuizQuestionText.text = QuestionText;
-
-            _setQuestionTxt = false;
+            FindObjectOfType<SwitchToNextQuiz>().QuestionText.text = QuestionText;
+            _canSetQuestionTxt = false;
         }
     }
 
-    private void SetAnimalText()
+    private void SetAnimalTexts()
     {
-        if (_setAnimalTxt)
-        {
-            _firstAnimalTxt = this.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>();
-            _secondAnimalTxt = this.transform.GetChild(0).transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>();
-            _thirdAnimalTxt = this.transform.GetChild(0).transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Text>();
-
-            _firstAnimalTxt.text = FirstAnimalTxt;
-            _secondAnimalTxt.text = SecondAnimalTxt;
-            _thirdAnimalTxt.text = ThirdAnimalTxt;
-
-            _setAnimalTxt = false;
-        }
+        _firstAnimalTxt = this.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>();
+        _secondAnimalTxt = this.transform.GetChild(0).transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>();
+        _thirdAnimalTxt = this.transform.GetChild(0).transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Text>();
+        
+        _firstAnimalTxt.text = FirstAnimalTxt;
+        _secondAnimalTxt.text = SecondAnimalTxt;
+        _thirdAnimalTxt.text = ThirdAnimalTxt;
     }
 
-    private void SetAnimalImage()
+    private void SetAnimalImages()
     {
-        if (_setAnimalImg)
-        {
-            _firstAnimalImg = this.transform.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-            _secondAnimalImg = this.transform.transform.GetChild(0).GetChild(1).GetComponent<Image>();
-            _thirdAnimalImg = this.transform.transform.GetChild(0).GetChild(2).GetComponent<Image>();
-
-            _firstAnimalImg.sprite = FirstAnimalImg;
-            _secondAnimalImg.sprite = SecondAnimalImg;
-            _thirdAnimalImg.sprite = ThirdAnimalImg;
-
-            _setAnimalImg = false;
-        }
+        _firstAnimalImg = this.transform.transform.GetChild(0).GetChild(0).GetComponent<Image>();
+        _secondAnimalImg = this.transform.transform.GetChild(0).GetChild(1).GetComponent<Image>();
+        _thirdAnimalImg = this.transform.transform.GetChild(0).GetChild(2).GetComponent<Image>();
+        
+        _firstAnimalImg.sprite = FirstAnimalImg;
+        _secondAnimalImg.sprite = SecondAnimalImg;
+        _thirdAnimalImg.sprite = ThirdAnimalImg;
     }
 
     private void CheckAnswer()
@@ -172,7 +148,7 @@ public class QuizSelection : MonoBehaviour
                 if (_isEndQuizKeyReleased)
                 {
                     _isEndQuizKeyReleased = false;
-                    _switchQuiz.SwitchToNextQuiz();
+                    FindObjectOfType<SwitchToNextQuiz>().SwitchQuiz();
                 }
             }
             else

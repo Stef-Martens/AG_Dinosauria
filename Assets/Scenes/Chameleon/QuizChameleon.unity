@@ -246,7 +246,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &237229044 stripped
 Transform:
@@ -880,6 +880,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50eb90e9744b3944581a4f272c02f950, type: 3}
+--- !u!1 &738817429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4390911475677256137, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
+  m_PrefabInstance: {fileID: 4390911476412968927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &814381574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6515381220065475681, guid: 50eb90e9744b3944581a4f272c02f950, type: 3}
@@ -932,7 +937,7 @@ Transform:
   - {fileID: 942493291}
   - {fileID: 1738367789}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &942493291 stripped
 Transform:
@@ -946,6 +951,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: AnimalIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: Quizzes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: Quizzes.Array.data[0]
+      value: 
+      objectReference: {fileID: 738817429}
+    - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: Quizzes.Array.data[1]
+      value: 
+      objectReference: {fileID: 1269816421}
     - target: {fileID: 2026065614336788545, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -956,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2026065614336788545, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2026065614336788545, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1088,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3223715811858993399, guid: 58b7067fc874fb742894c33b4f0932ba, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3223715811858993399, guid: 58b7067fc874fb742894c33b4f0932ba, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1299,7 +1320,6 @@ GameObject:
   - component: {fileID: 1269816424}
   - component: {fileID: 1269816423}
   - component: {fileID: 1269816422}
-  - component: {fileID: 1269816426}
   m_Layer: 5
   m_Name: Quiz2:SelectionNoSound
   m_TagString: Untagged
@@ -1382,29 +1402,13 @@ RectTransform:
   m_Children:
   - {fileID: 633832580}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1269816426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269816421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45e4eccbce9ee54d9e708f24c55d485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsFirstQuiz: 0
-  IsLastQuiz: 1
-  QuizUIBase: {fileID: 944951256}
-  NextQuiz: {fileID: 0}
 --- !u!1001 &1277990402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1799,7 +1803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4390911475677256131, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4390911475677256131, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
       propertyPath: m_AnchorMax.x
