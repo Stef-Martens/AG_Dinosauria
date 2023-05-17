@@ -1,52 +1,38 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SelectionQuiz : MonoBehaviour
 {
     public Inputs Inputs;
-    public Selectable FirstInput;
     public bool IsWithSound = false;
 
     // Right Answer
-    [Header("Correct Answer")]
+    [Space(10)]
     public Button CorrectAnswerBtn;
     public string CorrectAnswerTxt;
     public Sprite CorrectAnswerImg;
 
     // Question text
-    [Header("Quiz Question")]
+    [Space(10)]
+    [TextArea]
     public string QuestionText;
 
     // Animal text
-    [Header("Animals Text")]
-    public string FirstAnimalTxt;
-    public string SecondAnimalTxt;
-    public string ThirdAnimalTxt;
+    [Space(10)]
+    public List<string> AnimalTxts = new List<string>();
 
     // Animal Image
-    [Header("Animals Images")]
-    public Sprite FirstAnimalImg;
-    public Sprite SecondAnimalImg;
-    public Sprite ThirdAnimalImg;
+    [Space(10)]
+    public List<Sprite> AnimalImgs = new List<Sprite>();
 
     // Correct Answer
     private bool _setRecapAnswer = false;
-
-    private DeactiveButtons _deactiveButtons;
+    private BtnNavigationSelectionQuiz _deactiveButtons;
     private bool _hasSelectedAnswer = false;
 
     // Question text
     private bool _canSetQuestionTxt = true;
-
-    // Animal text
-    private Text _firstAnimalTxt;
-    private Text _secondAnimalTxt;
-    private Text _thirdAnimalTxt;
-
-    // Animal Image
-    private Image _firstAnimalImg;
-    private Image _secondAnimalImg;
-    private Image _thirdAnimalImg;
 
     // Extra Variables
     private bool _isEndQuizKeyReleased = false;
@@ -56,8 +42,7 @@ public class SelectionQuiz : MonoBehaviour
         SetAnimalTexts();
         SetAnimalImages();
         
-        FirstInput.Select();
-        _deactiveButtons = this.GetComponent<DeactiveButtons>();
+        _deactiveButtons = this.GetComponent<BtnNavigationSelectionQuiz>();
         this.transform.GetChild(0).gameObject.SetActive(true);
         this.transform.GetChild(1).gameObject.SetActive(false);
     }
@@ -80,24 +65,18 @@ public class SelectionQuiz : MonoBehaviour
 
     private void SetAnimalTexts()
     {
-        _firstAnimalTxt = this.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0).GetComponent<Text>();
-        _secondAnimalTxt = this.transform.GetChild(0).transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<Text>();
-        _thirdAnimalTxt = this.transform.GetChild(0).transform.GetChild(2).GetChild(0).GetChild(0).GetComponent<Text>();
-        
-        _firstAnimalTxt.text = FirstAnimalTxt;
-        _secondAnimalTxt.text = SecondAnimalTxt;
-        _thirdAnimalTxt.text = ThirdAnimalTxt;
+        for (int buttonIndex = 0; buttonIndex < AnimalTxts.Count; buttonIndex ++)
+        {
+            this.transform.GetChild(0).GetChild(buttonIndex).GetChild(0).GetChild(0).GetComponent<Text>().text = AnimalTxts[buttonIndex];
+        }
     }
 
     private void SetAnimalImages()
     {
-        _firstAnimalImg = this.transform.transform.GetChild(0).GetChild(0).GetComponent<Image>();
-        _secondAnimalImg = this.transform.transform.GetChild(0).GetChild(1).GetComponent<Image>();
-        _thirdAnimalImg = this.transform.transform.GetChild(0).GetChild(2).GetComponent<Image>();
-        
-        _firstAnimalImg.sprite = FirstAnimalImg;
-        _secondAnimalImg.sprite = SecondAnimalImg;
-        _thirdAnimalImg.sprite = ThirdAnimalImg;
+        for (int buttonIndex = 0; buttonIndex < AnimalImgs.Count; buttonIndex++)
+        {
+            this.transform.transform.GetChild(0).GetChild(buttonIndex).GetComponent<Image>().sprite = AnimalImgs[buttonIndex];
+        }
     }
 
     private void CheckAnswer()

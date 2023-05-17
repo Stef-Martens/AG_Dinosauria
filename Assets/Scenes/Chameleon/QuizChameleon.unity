@@ -270,7 +270,9 @@ PrefabInstance:
       objectReference: {fileID: 528387724}
     - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: QuestionText
-      value: Which animal is NOT from Madagascar?
+      value: 'Which animal is NOT
+
+        from Madagascar?'
       objectReference: {fileID: 0}
     - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: FirstAnimalImg
@@ -318,6 +320,38 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e5d92030ec3e0f64ebdaf2499c5fc4cd, type: 3}
     - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: CorrectAnswerTxt
+      value: Skunk
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f61e7d516707414a99ed1d2cf5108fd, type: 3}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: eceab81c5688be947baae6b534328a9b, type: 3}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: e5d92030ec3e0f64ebdaf2499c5fc4cd, type: 3}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.data[0]
+      value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.data[1]
+      value: Ant
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.data[2]
       value: Skunk
       objectReference: {fileID: 0}
     - target: {fileID: 1103213145366133412, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
@@ -382,15 +416,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
-      value: 0.28235295
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.g
-      value: 0.47843137
+      value: 0.72156864
       objectReference: {fileID: 0}
     - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
-      value: 0.98039216
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2369405263093265155, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Enabled
@@ -402,15 +448,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3276045737946803234, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
-      value: 0.28235295
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 3276045737946803234, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.g
-      value: 0.47843137
+      value: 0.72156864
       objectReference: {fileID: 0}
     - target: {fileID: 3276045737946803234, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
-      value: 0.98039216
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 3472203164927335577, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Interactable
@@ -674,15 +720,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142714855386011295, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.b
-      value: 0.28235295
+      value: 0.09019608
       objectReference: {fileID: 0}
     - target: {fileID: 6142714855386011295, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.g
-      value: 0.47843137
+      value: 0.72156864
       objectReference: {fileID: 0}
     - target: {fileID: 6142714855386011295, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Colors.m_PressedColor.r
-      value: 0.98039216
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 6190806951144051434, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Text

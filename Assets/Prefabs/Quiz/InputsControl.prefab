@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 534518838218788464}
   - component: {fileID: 2829085523111948790}
   - component: {fileID: 2018655953394897818}
+  - component: {fileID: 6521582413243248815}
   m_Layer: 0
   m_Name: InputsControl
   m_TagString: Untagged
@@ -144,3 +145,15 @@ MonoBehaviour:
   Confirm: 0
   Return: 0
   AnalogMovement: 0
+--- !u!114 &6521582413243248815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631030319324814334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87f8be8924247d4dacbdb17a0f3a274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

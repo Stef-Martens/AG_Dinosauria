@@ -245,7 +245,6 @@ GameObject:
   - component: {fileID: 2026065614336788550}
   - component: {fileID: 2026065614336788551}
   - component: {fileID: 2026065614336788548}
-  - component: {fileID: 3034426468074497366}
   - component: {fileID: 101578609097069407}
   m_Layer: 5
   m_Name: Quiz_UI_Base
@@ -337,18 +336,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3034426468074497366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026065614336788549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d87f8be8924247d4dacbdb17a0f3a274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &101578609097069407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +386,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 336}
-  m_SizeDelta: {x: 550, y: 150}
+  m_SizeDelta: {x: 706.8, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2026065614444963643
 CanvasRenderer:

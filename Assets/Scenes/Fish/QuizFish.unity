@@ -838,7 +838,9 @@ PrefabInstance:
       objectReference: {fileID: 2099483065}
     - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: QuestionText
-      value: Who does NOT live in the ocean?
+      value: 'Who does NOT live
+
+        in the ocean?'
       objectReference: {fileID: 0}
     - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: FirstAnimalImg
@@ -887,6 +889,62 @@ PrefabInstance:
     - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: CorrectAnswerTxt
       value: Lemur
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 789b84c0239de8f468def416dd2c46c3, type: 3}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 53b4aa98e0702a6419bc5d7cfa765ab9, type: 3}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalImgs.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3888b38e1ecb65347af9a1812267ebd2, type: 3}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.data[0]
+      value: Lemur
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.data[1]
+      value: Dolpin
+      objectReference: {fileID: 0}
+    - target: {fileID: 190137553725995172, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: AnimalTxts.Array.data[2]
+      value: Seal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.09019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.72156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.9019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1331381025151574529, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4820630681925614898, guid: 28ee69e5ac842cd4a8f8ff1eefa6f7ed, type: 3}
       propertyPath: m_Pivot.x
