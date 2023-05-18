@@ -926,11 +926,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50eb90e9744b3944581a4f272c02f950, type: 3}
---- !u!1 &738817429 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4390911475677256137, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
-  m_PrefabInstance: {fileID: 4390911476412968927}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &814381574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6515381220065475681, guid: 50eb90e9744b3944581a4f272c02f950, type: 3}
@@ -1003,12 +998,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[0]
       value: 
-      objectReference: {fileID: 738817429}
+      objectReference: {fileID: 1269816421}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[1]
       value: 
@@ -1938,6 +1933,10 @@ PrefabInstance:
     - target: {fileID: 4390911475677256137, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
       propertyPath: m_Name
       value: Quiz1:LetterQuizNoSound-DELETE
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390911475677256137, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4390911476932614565, guid: 0f7bfed3a1dc01c4d9fd9366c3cb5a29, type: 3}
       propertyPath: m_Enabled

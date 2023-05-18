@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class SwitchToNextQuiz : MonoBehaviour
 {
-    public Text QuestionText { get; set; }
+    private Text _questionText;
+    public List<string> Questions { get; set; } = new List<string>();
 
     public int AnimalIndex;
     public List<GameObject> Quizzes = new List<GameObject>();
@@ -20,7 +21,8 @@ public class SwitchToNextQuiz : MonoBehaviour
             Quizzes[0].transform.gameObject.SetActive(true);
         }
 
-        QuestionText = this.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+        _questionText = this.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+        _questionText.text = Questions[0];
     }
 
     public void SwitchQuiz()
@@ -31,10 +33,11 @@ public class SwitchToNextQuiz : MonoBehaviour
         if (_currentQuizIndex <= Quizzes.Count - 1)
         {
             Quizzes[_currentQuizIndex].transform.root.gameObject.SetActive(true);
+            _questionText.text = Questions[_currentQuizIndex];
         }
         else
         {
-            QuestionText.text = "";
+            _questionText.text = "";
             StartCoroutine(FindObjectOfType<FirebaseManager>().UpdateUSer(AnimalIndex));
             FindObjectOfType<SceneSwitch>().ChangeScene("Selectionscreen");
         }

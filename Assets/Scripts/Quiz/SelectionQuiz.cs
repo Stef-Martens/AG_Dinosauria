@@ -2,68 +2,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SelectionQuiz : MonoBehaviour
+public class SelectionQuiz : QuizBase
 {
-    public Inputs Inputs;
-    public bool IsWithSound = false;
+    public List<string> AnimalTxts = new List<string>();
 
-    // Right Answer
+    [Space(10)]
+    public List<Sprite> AnimalImgs = new List<Sprite>();
+
     [Space(10)]
     public Button CorrectAnswerBtn;
     public string CorrectAnswerTxt;
     public Sprite CorrectAnswerImg;
 
-    // Question text
-    [Space(10)]
-    [TextArea]
-    public string QuestionText;
+    private BtnNavigationSelectionQuiz _btnNavigation;
 
-    // Animal text
-    [Space(10)]
-    public List<string> AnimalTxts = new List<string>();
-
-    // Animal Image
-    [Space(10)]
-    public List<Sprite> AnimalImgs = new List<Sprite>();
-
-    // Correct Answer
-    private bool _setRecapAnswer = false;
-    private BtnNavigationSelectionQuiz _deactiveButtons;
-    private bool _hasSelectedAnswer = false;
-
-    // Question text
-    private bool _canSetQuestionTxt = true;
-
-    // Extra Variables
-    private bool _isEndQuizKeyReleased = false;
-
-    private void Awake()
+    protected override void Awake()
     {
-        SetAnimalTexts();
-        SetAnimalImages();
+        base.Awake();
         
-        _deactiveButtons = this.GetComponent<BtnNavigationSelectionQuiz>();
-        this.transform.GetChild(0).gameObject.SetActive(true);
-        this.transform.GetChild(1).gameObject.SetActive(false);
+        _btnNavigation = this.GetComponent<BtnNavigationSelectionQuiz>();
     }
 
-    void Update()
+    protected override void OnEnable()
     {
-        SetQuestionText();
-        CheckAnswer();
-        EndQuiz();
+        _btnNavigation.ButtonPressedEvent += HandleButtonPressed;
+
+        base.OnEnable();
     }
 
-    private void SetQuestionText()
-    { 
-        if(_canSetQuestionTxt)
-        {
-            FindObjectOfType<SwitchToNextQuiz>().QuestionText.text = QuestionText;
-            _canSetQuestionTxt = false;
-        }
+    protected override void OnDisable()
+    {
+        _btnNavigation.ButtonPressedEvent -= HandleButtonPressed;
+
+        base.OnDisable();
     }
 
-    private void SetAnimalTexts()
+    protected override void SetAnimalTexts()
     {
         for (int buttonIndex = 0; buttonIndex < AnimalTxts.Count; buttonIndex ++)
         {
@@ -71,7 +45,7 @@ public class SelectionQuiz : MonoBehaviour
         }
     }
 
-    private void SetAnimalImages()
+    protected override void SetAnimalImages()
     {
         for (int buttonIndex = 0; buttonIndex < AnimalImgs.Count; buttonIndex++)
         {
@@ -79,24 +53,24 @@ public class SelectionQuiz : MonoBehaviour
         }
     }
 
-    private void CheckAnswer()
+    protected override void CheckAnswer()
     {
-        if (_deactiveButtons.HasPressedBtn && !_hasSelectedAnswer)
+        if (_btnNavigation.HasPressedBtn && !HasSelectedAnswer)
         {
-            _hasSelectedAnswer = true;
+            HasSelectedAnswer = true;
 
-            if (_deactiveButtons.PressedBtn == CorrectAnswerBtn)
+            if (_btnNavigation.PressedBtn == CorrectAnswerBtn)
                 ShowRecapAnswer(true);
             else
                 ShowRecapAnswer(false);
         }
     }
 
-    private void ShowRecapAnswer(bool isRightAswer)
+    protected override void ShowRecapAnswer(bool isRightAnswer)
     {
-        if (!_setRecapAnswer)
+        if (!HasSetRecapAnswer)
         {
-            _setRecapAnswer = true;
+            HasSetRecapAnswer = true;
 
             this.transform.GetChild(0).gameObject.SetActive(false);
 
@@ -105,7 +79,7 @@ public class SelectionQuiz : MonoBehaviour
             recapAnswer.transform.GetChild(0).GetComponent<Image>().sprite = CorrectAnswerImg;
             recapAnswer.transform.GetChild(4).GetComponent<Text>().text = CorrectAnswerTxt;
 
-            if (isRightAswer)
+            if (isRightAnswer)
             {
                 recapAnswer.transform.GetChild(1).gameObject.SetActive(true);
                 recapAnswer.transform.GetChild(2).gameObject.SetActive(false);
@@ -115,23 +89,6 @@ public class SelectionQuiz : MonoBehaviour
                 recapAnswer.transform.GetChild(1).gameObject.SetActive(false);
                 recapAnswer.transform.GetChild(2).gameObject.SetActive(true);
             }
-        }
-    }
-
-    private void EndQuiz()
-    {
-        if (_setRecapAnswer)
-        {
-            if (Inputs.Action || Inputs.Confirm)
-            {
-                if (_isEndQuizKeyReleased)
-                {
-                    _isEndQuizKeyReleased = false;
-                    FindObjectOfType<SwitchToNextQuiz>().SwitchQuiz();
-                }
-            }
-            else
-                _isEndQuizKeyReleased = true;
         }
     }
 }

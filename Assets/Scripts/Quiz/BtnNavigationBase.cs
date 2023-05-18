@@ -1,11 +1,13 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public abstract class BtnNavigationBase : MonoBehaviour
 {
-    public Selectable FirstInput { get; set; }
+    public Selectable FirstSelectable { get; set; }
     public bool HasPressedBtn { get; private set; } = false;
     public Button PressedBtn { get; private set; }
 
@@ -14,22 +16,27 @@ public abstract class BtnNavigationBase : MonoBehaviour
 
     private HashSet<Button> _permanentlyDisabledBtns;
     private Color _pressedColor;
-    private Color _normalColor;
 
-    private void Start()
+    public event Action<Button> ButtonPressedEvent;
+
+    private void OnEnable()
     {
-        _pressedColor = Buttons[0].colors.pressedColor;
-        _normalColor = Buttons[0].colors.normalColor;
+        FirstSelectable = Buttons?.FirstOrDefault();
+        FirstSelectable?.Select();
+    }
 
+    protected virtual void Start()
+    {
         _permanentlyDisabledBtns = new HashSet<Button>();
+        _pressedColor = Buttons[0].colors.pressedColor;
 
         foreach (Button btn in Buttons)
         {
-            btn.onClick.AddListener(() => OnButtonPressed(btn));
+            btn.onClick.AddListener(() => HandleButtonPressed(btn));
         }
     }
 
-    private void OnButtonPressed(Button pressedBtn)
+    private void HandleButtonPressed(Button pressedBtn)
     {
         if (_permanentlyDisabledBtns.Contains(pressedBtn))
             return;
@@ -50,9 +57,14 @@ public abstract class BtnNavigationBase : MonoBehaviour
                 btn.interactable = false;
                 EventSystem.current.SetSelectedGameObject(null);
 
-                Buttons.Remove(pressedBtn); // Remove the permanently disabled button
+                // Remove the permanently disabled button
+                Buttons.Remove(pressedBtn); 
 
                 ResetButtonNavigation();
+
+                // Raise the event when a button is pressed and permanently disabled
+                ButtonPressedEvent?.Invoke(pressedBtn);
+
                 break;
             }
         }
@@ -104,23 +116,6 @@ public abstract class BtnNavigationBase : MonoBehaviour
 
             btn.navigation = navigation;
         }
-    }
-
-    public void ResetButtons()
-    {
-        _permanentlyDisabledBtns.Clear();
-        Buttons.AddRange(_permanentlyDisabledBtns); // Restore the permanently disabled buttons
-
-        foreach (Button btn in Buttons)
-        {
-            btn.interactable = true;
-            ColorBlock colors = btn.colors;
-            colors.disabledColor = _normalColor;
-            btn.colors = colors;
-        }
-
-        HasPressedBtn = false;
-        PressedBtn = null;
     }
 
     public void ResetHasPressedButton()

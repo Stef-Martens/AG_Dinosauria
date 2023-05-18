@@ -1,8 +1,6 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
-#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
-#endif
 
 public class Inputs : MonoBehaviour
 {
@@ -23,7 +21,8 @@ public class Inputs : MonoBehaviour
     private InputAction _anyKeyInputAction;
     private bool _isAnyKeyPressed = false;
 
-#if ENABLE_INPUT_SYSTEM
+    public event System.Action<bool> ActionInputEvent;
+    public event System.Action<bool> ConfirmInputEvent;
 
     public void OnEnable()
     {
@@ -131,8 +130,6 @@ public class Inputs : MonoBehaviour
         }
     }
 
-#endif
-
     public void HorizontalMoveInput(Vector2 newHorizontalMoveDirection)
     {
         HorizontalMove = newHorizontalMoveDirection;
@@ -146,6 +143,7 @@ public class Inputs : MonoBehaviour
     public void ActionInput(bool newActionState)
     {
         Action = newActionState;
+        ActionInputEvent?.Invoke(newActionState);
     }
 
     public void InteractInput(bool newInteractState)
@@ -166,6 +164,7 @@ public class Inputs : MonoBehaviour
     public void ConfirmInput(bool newConfirmState)
     {
         Confirm = newConfirmState;
+        ConfirmInputEvent?.Invoke(newConfirmState);
     }
 
     public void ReturnInput(bool newReturnState)
