@@ -460,6 +460,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &235362577 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5034633753028949185, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
+  m_PrefabInstance: {fileID: 998634462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &560830774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -768,6 +773,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &823723787 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6226740125842527565, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
+  m_PrefabInstance: {fileID: 998634462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &998634462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -783,6 +793,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConnectionQuizPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1013399100576064307, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
+      propertyPath: Lineroot1
+      value: 
+      objectReference: {fileID: 235362577}
+    - target: {fileID: 1013399100576064307, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
+      propertyPath: Lineroot2
+      value: 
+      objectReference: {fileID: 823723787}
     - target: {fileID: 1308766348371834674, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.07
@@ -839,6 +857,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4318423306543880065, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5031391099271876729, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.19
@@ -850,6 +872,10 @@ PrefabInstance:
     - target: {fileID: 5031391099271876729, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 46.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5219124711163711220, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5390236850236228034, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
       propertyPath: m_IsActive
@@ -933,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5991954611800995350, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.800049
+      value: 0.4000244
       objectReference: {fileID: 0}
     - target: {fileID: 5991954611800995350, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1069,6 +1095,10 @@ PrefabInstance:
       propertyPath: AnimalRightColImgs.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: 8240e40b2cdc2ac4b89303278e19265e, type: 3}
+    - target: {fileID: 7824688507726954634, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8295069486148806460, guid: 65a27564331d6994ebcfed17441ae4ae, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.07

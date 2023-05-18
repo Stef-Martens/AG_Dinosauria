@@ -10,6 +10,7 @@ public abstract class BtnNavigationBase : MonoBehaviour
     public Selectable FirstSelectable { get; set; }
     public bool HasPressedBtn { get; private set; } = false;
     public Button PressedBtn { get; private set; }
+    public List<Button> ButtonsOrigList { get; private set; }
 
     public bool IsVerticalLayout = false;
     public List<Button> Buttons;
@@ -34,6 +35,8 @@ public abstract class BtnNavigationBase : MonoBehaviour
         {
             btn.onClick.AddListener(() => HandleButtonPressed(btn));
         }
+
+        ButtonsOrigList = Buttons.ToList();
     }
 
     private void HandleButtonPressed(Button pressedBtn)

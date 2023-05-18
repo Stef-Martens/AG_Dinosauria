@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class BtnNavigationConnectionQuiz : MonoBehaviour
 {
+    public List<Button> LeftColBtnsOrigList { get; private set; }
+    public List<Button> RightColBtnsOrigList { get; private set; }
+
     public bool IsVerticalLayout = true;
 
     public List<Button> LeftColBtns;
@@ -18,10 +21,12 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
         _btnLeftColNavigation = gameObject.AddComponent<BtnLeftColNavigation>();
         _btnLeftColNavigation.IsVerticalLayout = IsVerticalLayout;
         _btnLeftColNavigation.Buttons = LeftColBtns;
+        LeftColBtnsOrigList = LeftColBtns.ToList();
 
         _btnRightColNavigation = gameObject.AddComponent<BtnRightColNavigation>();
         _btnRightColNavigation.IsVerticalLayout = IsVerticalLayout;
         _btnRightColNavigation.Buttons = RightColBtns;
+        RightColBtnsOrigList = RightColBtns.ToList();
 
         _btnLeftColNavigation.DerivedButtonPressedEvent += OnLeftColButtonPressed;
         _btnRightColNavigation.DerivedButtonPressedEvent += OnRightColButtonPressed;
