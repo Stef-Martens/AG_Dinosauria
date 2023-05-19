@@ -17,21 +17,54 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
-  m_PPtrCurves: []
-  m_SampleRate: 60
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 376af928780982b44bfdc5022b6d3c99, type: 3}
+    - time: 0.071428575
+      value: {fileID: 21300000, guid: 4852009d0f049304e94669cb4886161b, type: 3}
+    - time: 0.14285715
+      value: {fileID: 21300000, guid: 7ed78d8f26bee8d44ab9a478d92fb5a1, type: 3}
+    - time: 0.21428572
+      value: {fileID: 21300000, guid: f51c996996bb8734a9d960e1d8cf19ce, type: 3}
+    - time: 0.2857143
+      value: {fileID: 21300000, guid: 6c2db7f772b904142944ec3b168ff47e, type: 3}
+    - time: 0.35714287
+      value: {fileID: 21300000, guid: 188476c560e73a34289c22497c0f2c4c, type: 3}
+    - time: 0.42857143
+      value: {fileID: 21300000, guid: 26744d4a6a4adc348aa810706addb60f, type: 3}
+    attribute: m_Sprite
+    path: 
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 14
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 376af928780982b44bfdc5022b6d3c99, type: 3}
+    - {fileID: 21300000, guid: 4852009d0f049304e94669cb4886161b, type: 3}
+    - {fileID: 21300000, guid: 7ed78d8f26bee8d44ab9a478d92fb5a1, type: 3}
+    - {fileID: 21300000, guid: f51c996996bb8734a9d960e1d8cf19ce, type: 3}
+    - {fileID: 21300000, guid: 6c2db7f772b904142944ec3b168ff47e, type: 3}
+    - {fileID: 21300000, guid: 188476c560e73a34289c22497c0f2c4c, type: 3}
+    - {fileID: 21300000, guid: 26744d4a6a4adc348aa810706addb60f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
