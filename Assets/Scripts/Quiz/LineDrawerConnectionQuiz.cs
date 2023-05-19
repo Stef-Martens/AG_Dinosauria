@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -23,10 +22,14 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
     private Image _activeLineImg;
 
     private List<Image> _permaActiveLines = new List<Image>();
-    private List<Image> _LineImgsOrigList = new List<Image>();
+    private List<Image> _lineImgsOrigList = new List<Image>();
 
-    private bool test = false;
-    int bleg;
+    #region New Solution
+    private bool _hasClickedLeftColBtn = false;
+    private int _currentLeftColBtnIndex;
+    private bool _canDrawNewLine = true;
+    #endregion
+
     private void Awake()
     {
         foreach(Image img in LineImgs)
@@ -38,30 +41,16 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         _rightColBtns= _btnNavigation.RightColBtns;
         _leftColBtnsOrigList = _leftColBtns.ToList();
 
-        _LineImgsOrigList = LineImgs.ToList();
+        _lineImgsOrigList = LineImgs.ToList();
 
         SetLineRootsLists();
     }
 
     private void Update()
     {
-        if (test && bleg >= 0 && bleg < LineImgs.Count)
-        {
-            LineImgs[bleg].gameObject.SetActive(true);
-
-            for (int index = 0; index < LineImgs.Count; index++)
-            {
-                if (index != bleg)
-                {
-                    LineImgs[index].gameObject.SetActive(false);
-                }
-            }
-
-
-        }
-
         HandleLineValues();
-        if(_startPnt!= null && _endPnt != null && _activeLineImg != null && test)
+
+        if(_hasClickedLeftColBtn)
         {
             DrawLine(_startPnt, _endPnt, _activeLineImg);
         }
@@ -114,69 +103,81 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         lineImage.rectTransform.rotation =
             Quaternion.Euler(0, 0, Mathf.Atan2(endPointLocalPos.y - startPointLocalPos.y, endPointLocalPos.x - startPointLocalPos.x) * Mathf.Rad2Deg);
     }
-    private void ButtonClicked()
+
+    #region New Solution
+    private void LeftColButtonClicked()
     {
-        test = true;
- 
+        _hasClickedLeftColBtn = true;
     }
 
-    private void buttonRightclick()
+    private void RightColButtonClicked()
     {
-        test = false;
+        _hasClickedLeftColBtn = false;
+        _canDrawNewLine= true;
     }
 
-
-    private void bla(int meuh)
+    private void GetCurrentLeftColButtonIndex(int index)
     {
-
-        bleg = meuh;
-
+        _currentLeftColBtnIndex = index;
     }
+    #endregion
 
     private void HandleLineValues()
     {
-      
-
+        #region New Solution
+        if (_hasClickedLeftColBtn && _canDrawNewLine)
+        {
+            LineImgs[_currentLeftColBtnIndex].gameObject.SetActive(true);
+            _canDrawNewLine = false;
+        }
+        #endregion
 
         _permaActiveLines = _leftColBtnsOrigList
             .Where(btn => !btn.interactable)
-            .Select(btn => _LineImgsOrigList[_leftColBtnsOrigList.IndexOf(btn)])
+            .Select(btn => _lineImgsOrigList[_leftColBtnsOrigList.IndexOf(btn)])
             .Distinct()
             .OrderBy(line => line.name)
             .ToList();
 
         LineImgs = LineImgs.Except(_permaActiveLines).ToList();
 
-
-
         for (int indexLftCol = 0; indexLftCol <_leftColBtns.Count; indexLftCol ++)
         {
             if (_leftColBtns[indexLftCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
             {
-                _leftColBtns[indexLftCol].onClick.AddListener(ButtonClicked);
+                #region New Solution
+                _leftColBtns[indexLftCol].onClick.AddListener(LeftColButtonClicked);
+                #endregion
 
                 _startPnt = _leftColBtns[indexLftCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
                 _endPnt = _rightColBtns[0].transform.parent.GetChild(2).GetComponent<RectTransform>();
                 _activeLineImg = LineImgs[indexLftCol];
 
-                bla(indexLftCol);
+                #region New Solution
+                GetCurrentLeftColButtonIndex(indexLftCol);
+                #endregion
 
-               // LineImgs[indexLftCol].gameObject.SetActive(true);
-
+                #region Old Solution
+                /*LineImgs[indexLftCol].gameObject.SetActive(true);
+                
                 for (int index = 0; index < LineImgs.Count; index++)
                  {
                      if (index != indexLftCol )
                      {
                          LineImgs[index].gameObject.SetActive(false);
                      }
-                 }
+                 }*/
+                #endregion
             }
 
             for (int indexRghtCol = 0; indexRghtCol < _rightColBtns.Count; indexRghtCol++)
             {
                 if (_rightColBtns[indexRghtCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
                 {
-                    _rightColBtns[indexRghtCol].onClick.AddListener(buttonRightclick);
+                    #region New Solution
+                    _rightColBtns[indexRghtCol].onClick.AddListener(RightColButtonClicked);
+                    #endregion
+
                     _endPnt = _rightColBtns[indexRghtCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
                 }
             }
