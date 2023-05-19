@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +19,6 @@ public abstract class QuizBase : MonoBehaviour
 
     protected virtual void Awake()
     {
-        SetQuestionText();
         SetAnimalTexts();
         SetAnimalImages();
 
@@ -27,6 +28,7 @@ public abstract class QuizBase : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        SetQuestionText();
         Inputs.ActionInputEvent += OnAction;
         Inputs.ConfirmInputEvent += OnConfirm;
     }
@@ -39,7 +41,18 @@ public abstract class QuizBase : MonoBehaviour
 
     private void SetQuestionText()
     {
-        FindObjectOfType<SwitchToNextQuiz>()?.Questions?.Add(QuestionText);
+        List<GameObject> quizzes = FindObjectOfType<SwitchToNextQuiz>()?.Quizzes;
+        
+        if(quizzes != null && quizzes.Count > 0)
+        {
+            FindObjectOfType<SwitchToNextQuiz>().Questions.AddRange(Enumerable.Repeat("", quizzes.Count - 1));
+            int index = quizzes.IndexOf(this.transform.root.gameObject);
+
+            if (index >= 0)
+            {
+                FindObjectOfType<SwitchToNextQuiz>()?.Questions.Insert(index, QuestionText);
+            }
+        }
     }
 
     protected virtual void SetAnimalTexts()

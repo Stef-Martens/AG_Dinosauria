@@ -1728,9 +1728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2026065614444963640, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: m_Text
-      value: 'I love to eat nectar,
-
-        but i also eat.'
+      value: Enter Quiz Question Text Here
       objectReference: {fileID: 0}
     - target: {fileID: 5737885617512328734, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: AnimalIndex
