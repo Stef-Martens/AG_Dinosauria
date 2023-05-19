@@ -85,6 +85,8 @@ public class Fish : MonoBehaviour
                     break;
             }
 
+            FindObjectOfType<PickupsText>().ShowText(collider.gameObject.tag);
+
             FindObjectOfType<FishManager>().EditPickupsText();
             Destroy(collider.gameObject);
             PickupSound.Play();
