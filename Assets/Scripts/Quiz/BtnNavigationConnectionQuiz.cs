@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,19 +17,35 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
     private BtnLeftColNavigation _btnLeftColNavigation;
     private BtnRightColNavigation _btnRightColNavigation;
 
+    public List<Tuple<Button, Button>> PressedBtnsList { get; private set; } = new List<Tuple<Button, Button>>();
+
+    private Tuple<Button, Button> _currentBtnTuple;
+
+    public event Action<List<Tuple<Button, Button>>> ButtonPressedEvent;
+
     private void Start()
+    {
+        SetLeftColumnValues();
+        SetRightColumnValues();
+    }
+
+    private void SetLeftColumnValues()
     {
         _btnLeftColNavigation = gameObject.AddComponent<BtnLeftColNavigation>();
         _btnLeftColNavigation.IsVerticalLayout = IsVerticalLayout;
         _btnLeftColNavigation.Buttons = LeftColBtns;
         LeftColBtnsOrigList = LeftColBtns.ToList();
 
+        _btnLeftColNavigation.DerivedButtonPressedEvent += OnLeftColButtonPressed;
+    }
+
+    private void SetRightColumnValues()
+    {
         _btnRightColNavigation = gameObject.AddComponent<BtnRightColNavigation>();
         _btnRightColNavigation.IsVerticalLayout = IsVerticalLayout;
         _btnRightColNavigation.Buttons = RightColBtns;
         RightColBtnsOrigList = RightColBtns.ToList();
 
-        _btnLeftColNavigation.DerivedButtonPressedEvent += OnLeftColButtonPressed;
         _btnRightColNavigation.DerivedButtonPressedEvent += OnRightColButtonPressed;
     }
 
@@ -37,6 +54,10 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
         _btnLeftColNavigation.FirstSelectable = _btnLeftColNavigation.Buttons?.FirstOrDefault();
         _btnLeftColNavigation.ResetHasPressedButton();
         _btnRightColNavigation.FirstSelectable?.Select();
+        
+        _currentBtnTuple = new Tuple<Button, Button>(pressedButton, null);
+        PressedBtnsList.Add(_currentBtnTuple);
+        ButtonPressedEvent?.Invoke(PressedBtnsList);
     }
 
     private void OnRightColButtonPressed(Button pressedButton)
@@ -44,6 +65,10 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
         _btnRightColNavigation.FirstSelectable = _btnRightColNavigation.Buttons?.FirstOrDefault();
         _btnRightColNavigation.ResetHasPressedButton();
         _btnLeftColNavigation.FirstSelectable?.Select();
+        
+        _currentBtnTuple = new Tuple<Button, Button>(_currentBtnTuple.Item1, pressedButton);
+        PressedBtnsList[PressedBtnsList.Count - 1] = _currentBtnTuple;
+        ButtonPressedEvent?.Invoke(PressedBtnsList);
     }
 }
 

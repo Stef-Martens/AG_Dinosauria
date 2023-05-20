@@ -25,14 +25,14 @@ public class SelectionQuiz : QuizBase
 
     protected override void OnEnable()
     {
-        _btnNavigation.ButtonPressedEvent += HandleButtonPressed;
+        _btnNavigation.ButtonPressedEvent += OnButtonPressed;
 
         base.OnEnable();
     }
 
     protected override void OnDisable()
     {
-        _btnNavigation.ButtonPressedEvent -= HandleButtonPressed;
+        _btnNavigation.ButtonPressedEvent -= OnButtonPressed;
 
         base.OnDisable();
     }

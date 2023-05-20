@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,18 +9,39 @@ public class ConnectionQuiz : QuizBase
     public List<Sprite> AnimalLeftColImgs = new List<Sprite>();
     public List<Sprite> AnimalRightColImgs = new List<Sprite>();
 
+    [Space(10)]
+    public Button FirstCorrectAnswerLftBtn;
+    public Button FirstCorrectAnswerRghtBtn;
+    public Button SecondCorrectAnswerLftBtn;
+    public Button SecondCorrectAnswerRghtBtn;
+    public Button ThirdCorrectAnswerLftBtn;
+    public Button ThirdCorrectAnswerRghtBtn;
+
+    private BtnNavigationConnectionQuiz _btnNavigation;
+    private LineDrawerConnectionQuiz _lineDrawer;
+    private List<Tuple<Button, Button>> _answers = new List<Tuple<Button, Button>>();
+    private List<Tuple<Button, Button>> _correctAnswers = new List<Tuple<Button, Button>>();
+
     protected override void Awake()
     {
         base.Awake();
+
+        _btnNavigation = this.GetComponent<BtnNavigationConnectionQuiz>();
+        _lineDrawer = this.GetComponent<LineDrawerConnectionQuiz>();
+        SetAnswersList();
     }
 
     protected override void OnEnable()
     {
+        _btnNavigation.ButtonPressedEvent += OnButtonsPressedList;
+
         base.OnEnable();
     }
 
     protected override void OnDisable()
     {
+        _btnNavigation.ButtonPressedEvent -= OnButtonsPressedList;
+
         base.OnDisable();
     }
 
@@ -41,13 +63,77 @@ public class ConnectionQuiz : QuizBase
         }
     }
 
+    private void SetAnswersList()
+    {
+        _answers = _btnNavigation.PressedBtnsList;
+
+        _correctAnswers = new List<Tuple<Button, Button>>
+        {
+            new Tuple<Button, Button>(FirstCorrectAnswerLftBtn, FirstCorrectAnswerRghtBtn),
+            new Tuple<Button, Button>(SecondCorrectAnswerLftBtn, SecondCorrectAnswerRghtBtn),
+            new Tuple<Button, Button>(ThirdCorrectAnswerLftBtn, ThirdCorrectAnswerRghtBtn)
+        };
+    }
+
+    private void SetCorrectAnswerLines()
+    {
+        Transform quizPanel = transform.GetChild(0);
+
+        for (int i = 0; i < _correctAnswers.Count; i++)
+        {
+            Transform animalPanel1 = _correctAnswers[i].Item1.transform.parent;
+            Transform animalPanel2 = _correctAnswers[i].Item2.transform.parent;
+
+            Image line = quizPanel.GetChild(i + 2).GetComponent<Image>();
+            RectTransform root1 = animalPanel1.GetChild(2).GetComponent<RectTransform>();
+            RectTransform root2 = animalPanel2.GetChild(2).GetComponent<RectTransform>();
+
+            _lineDrawer.DrawLine(root1, root2, line);
+        }
+    }
+
     protected override void CheckAnswer()
     {
-        base.CheckAnswer();
+        HashSet<Tuple<Button, Button>> answersSet = new HashSet<Tuple<Button, Button>>(_answers);
+        HashSet<Tuple<Button, Button>> correctAnswersSet = new HashSet<Tuple<Button, Button>>(_correctAnswers);
+
+        bool areAnswersCorrect = false;
+
+        if (_answers.Count == _correctAnswers.Count)
+        {
+            if (_answers[_correctAnswers.Count- 1].Item2 != null && !HasSelectedAnswer)
+            {
+                areAnswersCorrect = answersSet.SetEquals(correctAnswersSet);
+
+                HasSelectedAnswer= true;
+
+                ShowRecapAnswer(areAnswersCorrect);
+            }
+        }
     }
 
     protected override void ShowRecapAnswer(bool isRightAnswer)
     {
-        base.ShowRecapAnswer(isRightAnswer);
+        if (!HasSetRecapAnswer)
+        {
+            HasSetRecapAnswer = true;
+            this.transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+
+            GameObject recapAnswer = this.transform.GetChild(1).gameObject;
+            recapAnswer.SetActive(true);
+
+            SetCorrectAnswerLines();
+
+            if (isRightAnswer)
+            {
+                recapAnswer.transform.GetChild(0).gameObject.SetActive(true);
+                recapAnswer.transform.GetChild(1).gameObject.SetActive(false);
+            }
+            else
+            {
+                recapAnswer.transform.GetChild(0).gameObject.SetActive(false);
+                recapAnswer.transform.GetChild(1).gameObject.SetActive(true);
+            }
+        }
     }
 }

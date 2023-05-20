@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -65,7 +66,12 @@ public abstract class QuizBase : MonoBehaviour
       
     }
 
-    protected void HandleButtonPressed(Button pressedBtn)
+    protected void OnButtonPressed(Button pressedBtn)
+    {
+        CheckAnswer();
+    }
+
+    protected void OnButtonsPressedList(List<Tuple<Button, Button>> pressedBtnsList)
     {
         CheckAnswer();
     }

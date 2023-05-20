@@ -75,7 +75,7 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         }
     }
 
-    private void DrawLine(RectTransform startPoint, RectTransform endPoint, Image lineImage)
+    public void DrawLine(RectTransform startPoint, RectTransform endPoint, Image lineImage)
     {
         RectTransform canvasRectTransform = lineImage.canvas.GetComponent<RectTransform>();
 
