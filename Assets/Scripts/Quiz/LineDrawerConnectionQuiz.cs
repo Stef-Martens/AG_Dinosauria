@@ -150,7 +150,9 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
                 #endregion
 
                 _startPnt = _leftColBtns[indexLftCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
-                _endPnt = _rightColBtns[0].transform.parent.GetChild(2).GetComponent<RectTransform>();
+                #region Old Solution
+                //_endPnt = _rightColBtns[0].transform.parent.GetChild(2).GetComponent<RectTransform>();
+                #endregion
                 _activeLineImg = LineImgs[indexLftCol];
 
                 #region New Solution
@@ -169,17 +171,17 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
                  }*/
                 #endregion
             }
+        }
 
-            for (int indexRghtCol = 0; indexRghtCol < _rightColBtns.Count; indexRghtCol++)
+        for (int indexRghtCol = 0; indexRghtCol < _rightColBtns.Count; indexRghtCol++)
+        {
+            if (_rightColBtns[indexRghtCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
             {
-                if (_rightColBtns[indexRghtCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
-                {
-                    #region New Solution
-                    _rightColBtns[indexRghtCol].onClick.AddListener(RightColButtonClicked);
-                    #endregion
+                #region New Solution
+                _rightColBtns[indexRghtCol].onClick.AddListener(RightColButtonClicked);
+                #endregion
 
-                    _endPnt = _rightColBtns[indexRghtCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
-                }
+                _endPnt = _rightColBtns[indexRghtCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
             }
         }
     }
