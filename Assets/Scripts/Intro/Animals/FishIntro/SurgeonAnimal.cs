@@ -11,6 +11,9 @@ public class SurgeonAnimal : AnimalIntro
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
+    public override bool ArrowLeft { get { return false; } }
+    public override bool ArrowRight { get { return false; } }
+
 
     public override List<string> dialogue
     {

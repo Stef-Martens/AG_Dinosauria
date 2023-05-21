@@ -35,6 +35,9 @@ public class DialogueSystem : MonoBehaviour
         if (animal.image != null) dialogueBox.transform.GetChild(1).GetComponent<Image>().sprite = animal.image;
         dialogueBox.transform.GetChild(2).GetComponent<Text>().text = dialogueText;
 
+        if (animal.ArrowLeft) dialogueBox.transform.GetChild(3).gameObject.SetActive(true);
+        if (animal.ArrowRight) dialogueBox.transform.GetChild(4).gameObject.SetActive(true);
+
         // Show the dialogue box
         dialogueBox.SetActive(true);
     }
@@ -52,6 +55,9 @@ public class DialogueSystem : MonoBehaviour
 
 
         if (animal.SecondDialogeDirectlyAfterTalking) animal.CurrentDialogue = animal.secondDialogue;
+
+        dialogueBox.transform.GetChild(3).gameObject.SetActive(false);
+        dialogueBox.transform.GetChild(4).gameObject.SetActive(false);
 
         FindObjectOfType<IntroPlayer>().canMove = true;
         dialogueBox.SetActive(false);

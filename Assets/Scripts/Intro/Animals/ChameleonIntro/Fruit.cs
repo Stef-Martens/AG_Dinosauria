@@ -19,6 +19,9 @@ public class Fruit : AnimalIntro
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
+    public override bool ArrowLeft { get { return true; } }
+    public override bool ArrowRight { get { return false; } }
+
 
     public override List<string> dialogue
     {

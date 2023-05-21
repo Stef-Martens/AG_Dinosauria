@@ -2949,6 +2949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &167528695
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3088,6 +3089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go to the red pandas
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &168258562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5334,6 +5336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go to the lemurs
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &380182584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13583,6 +13586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &1007709225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14929,6 +14933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &1120645174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27662,6 +27667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You enter the cave
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &2133826284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27903,6 +27909,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7654769692583022537, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654769692583022537, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.3699996
       objectReference: {fileID: 0}
@@ -27968,3 +27978,8 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: b9afedff409f4ff4784169556b111fbe, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+--- !u!95 &7654769693070095875 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4966988058723724457, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+  m_PrefabInstance: {fileID: 7654769693070095874}
+  m_PrefabAsset: {fileID: 0}

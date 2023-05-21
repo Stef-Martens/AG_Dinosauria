@@ -16,6 +16,9 @@ public class Apples : AnimalIntro
     public override bool HasActionAfterFirstDialogue { get { return true; } }
     public override bool HasActionAfterSecondDialogue { get { return false; } }
 
+    public override bool ArrowLeft { get { return false; } }
+    public override bool ArrowRight { get { return false; } }
+
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
 

@@ -11,6 +11,9 @@ public class Beetle2 : AnimalIntro
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
+    public override bool ArrowLeft { get { return false; } }
+    public override bool ArrowRight { get { return true; } }
+
 
     public override List<string> dialogue
     {
