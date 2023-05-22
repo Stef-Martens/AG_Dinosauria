@@ -104,6 +104,7 @@ public class IntroPlayer : MonoBehaviour
             JumpSound.Play();
             rb.velocity = new Vector2(rb.velocity.x, _jumpHeight);
             rb.gravityScale = 2f;
+            //_animator.SetBool("IsJumping", true);
         }
     }
 
@@ -177,8 +178,6 @@ public class IntroPlayer : MonoBehaviour
         {
             return false;
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

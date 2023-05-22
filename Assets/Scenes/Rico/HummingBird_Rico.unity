@@ -21810,6 +21810,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137964319843652105}
   - component: {fileID: 1137964319843652106}
+  - component: {fileID: 1137964319843652108}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -21817,6 +21818,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &1137964319843652108
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137964319843652107}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 204fc8d935b58f241a15aa47ec9d6f00, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &1137964320104363276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22467,6 +22488,7 @@ MonoBehaviour:
   characterDirection: 0
   isFacingRight: 1
   insideFlower: 0
+  _animator: {fileID: 0}
 --- !u!58 &3203559342335924388
 CircleCollider2D:
   m_ObjectHideFlags: 0
