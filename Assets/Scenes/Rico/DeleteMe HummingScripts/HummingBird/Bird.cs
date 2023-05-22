@@ -47,24 +47,11 @@ public class Bird : MonoBehaviour
             insideFlower = false;
         }
 
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    _rb.velocity = Vector2.up * velocity;
-        //    _rb.gravityScale = 2;
-        //    _animator.SetBool("Fly", true);
-        //}
-
-        // Check for Space key press
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Toggle flying state
-            _isFlying = !_isFlying;
             _rb.velocity = Vector2.up * velocity;
-
             _rb.gravityScale = 2;
-
-            // Toggle the animator bool
-            _animator.SetBool("Fly", _isFlying);
+            _animator.SetBool("Fly", true);
         }
 
         float rotationDelta = Input.GetAxis("Vertical") * rotationSpeed * Time.deltaTime;
