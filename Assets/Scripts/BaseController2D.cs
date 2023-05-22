@@ -66,7 +66,7 @@ public abstract class BaseController2D : MonoBehaviour
         _fallTimeoutDelta = FallTimeout;
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         GroundedCheck();
         CeilingCheck();
