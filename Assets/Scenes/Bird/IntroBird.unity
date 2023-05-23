@@ -2033,6 +2033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go down the tree.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &318079437
 Animator:
   serializedVersion: 4
@@ -3231,6 +3232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go up the river.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &394159340
 Animator:
   serializedVersion: 4
@@ -3815,6 +3817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go up in the tree.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &460176712
 Animator:
   serializedVersion: 4
@@ -11646,6 +11649,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1709562786 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7654769693753177114, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+  m_PrefabInstance: {fileID: 7654769693070095874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1709562792 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7654769693753177115, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+  m_PrefabInstance: {fileID: 7654769693070095874}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1709562793 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7654769693753177108, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+  m_PrefabInstance: {fileID: 7654769693070095874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1721498223
 GameObject:
   m_ObjectHideFlags: 0
@@ -12134,6 +12152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go down the river.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &1770070843
 Animator:
   serializedVersion: 4
@@ -14813,6 +14832,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicsIntro
       objectReference: {fileID: 0}
+    - target: {fileID: 1152298965561786909, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: ItemText
+      value: 
+      objectReference: {fileID: 87640142}
+    - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: ItemImage
+      value: 
+      objectReference: {fileID: 205162946}
+    - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: JumpSound
+      value: 
+      objectReference: {fileID: 1709562792}
+    - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: NextScene
+      value: HummingBird_Rico
+      objectReference: {fileID: 0}
+    - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: EmptySprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f4e679458dce4941a00b8181b4971a6, type: 3}
+    - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: InteractSound
+      value: 
+      objectReference: {fileID: 1709562786}
+    - target: {fileID: 4230262245970352376, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230262245970352376, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230262245970352376, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_SortingOrder
+      value: 148
+      objectReference: {fileID: 0}
+    - target: {fileID: 4230262245970352376, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1395341217
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268427116211003417, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268427116211003417, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5545198190035140948, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6593841818223796299, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -14866,6 +14941,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7654769692474992094, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Follow
+      value: 
+      objectReference: {fileID: 1709562793}
+    - target: {fileID: 7654769692474992094, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_Lens.OrthographicSize
       value: 12
       objectReference: {fileID: 0}
@@ -14918,12 +14997,20 @@ PrefabInstance:
       value: HummingBird_Rico
       objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177104, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654769693753177104, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: EmptySprite
       value: 
       objectReference: {fileID: 21300000, guid: 7f4e679458dce4941a00b8181b4971a6, type: 3}
     - target: {fileID: 7654769693753177104, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: _jumpHeight
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654769693753177107, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177108, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14933,9 +15020,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -13
       objectReference: {fileID: 0}
+    - target: {fileID: 7654769693753177109, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177110, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_LinearDrag
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654769693753177111, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177111, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_SortingLayer
@@ -14950,9 +15045,17 @@ PrefabInstance:
       value: 1395341217
       objectReference: {fileID: 0}
     - target: {fileID: 7654769693753177114, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654769693753177114, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: b9afedff409f4ff4784169556b111fbe, type: 3}
+    - target: {fileID: 7654769693753177115, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7654769694171009248, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -15015,6 +15118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+--- !u!95 &7654769693070095875 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4966988058723724457, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+  m_PrefabInstance: {fileID: 7654769693070095874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8723234453794230345
 PrefabInstance:
   m_ObjectHideFlags: 0

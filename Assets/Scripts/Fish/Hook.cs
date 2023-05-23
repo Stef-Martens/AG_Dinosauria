@@ -35,6 +35,7 @@ public class Hook : MonoBehaviour
                     FindObjectOfType<Fish>().UpdateCircleImage();
                     FindObjectOfType<Fish>().gameObject.transform.position -= new Vector3(0, -2f, 0);
                     FindObjectOfType<Fish>().ChangeState(new CooldownState());
+                    FindObjectOfType<Fish>().CircleImage.transform.GetChild(0).gameObject.SetActive(false);
                 }
 
                 Destroy(gameObject);

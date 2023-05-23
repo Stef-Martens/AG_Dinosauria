@@ -14,6 +14,9 @@ public class Kangeroo : AnimalIntro
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
+    public override bool ArrowLeft { get { return false; } }
+    public override bool ArrowRight { get { return true; } }
+
 
     public override List<string> dialogue
     {
@@ -38,7 +41,7 @@ public class Kangeroo : AnimalIntro
             {
                 "Oh a ball, thanks! Watch, I'll kick it very far!",
                 "*The kangaroo kicks the ball over the head of the seal on the hill, as it lands near the ocean."
-                
+
             };
         }
     }

@@ -11,6 +11,10 @@ public class Teleport : AnimalIntro
     public override bool HasActionAfterFirstDialogue { get { return true; } }
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
+    public override bool ArrowLeft { get { return false; } }
+    public override bool ArrowRight { get { return false; } }
+    public Animator AnimatorTransition;
+
     public override List<string> dialogue
     {
         get
@@ -37,6 +41,15 @@ public class Teleport : AnimalIntro
 
     public override void DoFirstAction()
     {
+        AnimatorTransition.Play("CameraTransition");
+
+        StartCoroutine(DelayTransform(0.25f));
+    }
+
+    private IEnumerator DelayTransform(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+
         FindObjectOfType<IntroPlayer>().gameObject.transform.position = transform.GetChild(0).transform.position;
     }
 

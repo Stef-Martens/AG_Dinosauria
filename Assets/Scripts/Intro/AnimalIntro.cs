@@ -18,6 +18,8 @@ public abstract class AnimalIntro : MonoBehaviour
     public virtual List<string> CurrentDialogue { get; set; }
     public abstract bool HasActionAfterFirstDialogue { get; }
     public virtual bool HasActionAfterSecondDialogue { get; }
+    public abstract bool ArrowLeft { get; }
+    public abstract bool ArrowRight { get; }
 
     public abstract bool SecondDialogeDirectlyAfterTalking { get; }
 

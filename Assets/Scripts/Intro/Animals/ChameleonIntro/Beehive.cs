@@ -13,6 +13,8 @@ public class Beehive : AnimalIntro
         CurrentDialogue = dialogue;
     }
 
+public override bool ArrowLeft { get { return true; } }
+    public override bool ArrowRight { get { return false; } }
 
     public override bool HasActionAfterFirstDialogue { get { return true; } }
     public override bool HasActionAfterSecondDialogue { get { return false; } }

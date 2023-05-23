@@ -31,6 +31,7 @@ public class IntroPlayer : MonoBehaviour
     private float _jumpHeight;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private bool _isFacingRight;
 
     public void ClearInventory()
     {
@@ -59,22 +60,15 @@ public class IntroPlayer : MonoBehaviour
             {
                 Interact();
             }
-            /*if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
-            {
-                if()
-            }*/
         }
         else
         {
-
             if (Input.GetKeyDown(KeyCode.E))
             {
                 FindObjectOfType<DialogueSystem>().NextLine();
                 InteractSound.Play();
             }
-
         }
-
     }
 
     private void Move()
@@ -85,18 +79,22 @@ public class IntroPlayer : MonoBehaviour
         if (hDirection < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            Vector3 newScale = defaultScale;
-            newScale.x = -defaultScale.x;
-            transform.localScale = newScale;
             _spriteRenderer.flipX = true;
         }
         else if (hDirection > 0)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
-            Vector3 newScale = defaultScale;
-            newScale.x = defaultScale.x;
-            transform.localScale = newScale;
             _spriteRenderer.flipX = false;
+        }
+
+        if(hDirection < 0 && !_isFacingRight)
+        {
+            Flip();
+        }
+
+        if(hDirection > 0 && _isFacingRight)
+        {
+            Flip();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
@@ -177,12 +175,15 @@ public class IntroPlayer : MonoBehaviour
         {
             return false;
         }
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
+    }
+
+    private void Flip()
+    {
+        _isFacingRight = !_isFacingRight;
     }
 }

@@ -13,6 +13,9 @@ public class ChameleonIntro : AnimalIntro
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
+    public override bool ArrowLeft { get { return false; } }
+    public override bool ArrowRight { get { return false; } }
+
     public override void Update()
     {
         if (TasksDone >= 3)

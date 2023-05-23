@@ -53,6 +53,7 @@ public class Fish : MonoBehaviour
                 {
                     AttachedHook = Collider.gameObject.transform;
                     ChangeState(new FishHookState());
+                    CircleImage.transform.GetChild(0).gameObject.SetActive(true);
                 }
                 break;
 
@@ -106,6 +107,7 @@ public class Fish : MonoBehaviour
             CurrentTaps = 0;
             CircleImage.fillAmount = 0;
             AttachedHook.parent.gameObject.GetComponent<Boat>().HookAtTop();
+            CircleImage.transform.GetChild(0).gameObject.SetActive(false);
             ChangeState(new CooldownState());
         }
     }

@@ -25,6 +25,8 @@ public class Bird : MonoBehaviour
     private Vector2 _movement;
 
     public bool insideFlower;
+    [SerializeField] private Animator _animator;
+    private bool _isFlying;
 
     private void Start()
     {

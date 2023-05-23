@@ -13,6 +13,9 @@ public class Lemur : AnimalIntro
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
+    public override bool ArrowLeft { get { return false; } }
+    public override bool ArrowRight { get { return true; } }
+
     ItemInventory Milk;
     void Start()
     {
