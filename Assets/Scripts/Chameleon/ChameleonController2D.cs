@@ -1,11 +1,16 @@
-using System.Diagnostics;
+using UnityEngine;
 
 public class ChameleonController2D : BaseController2D
 {
+    [SerializeField] private Animator _baseAnimator;
+    [SerializeField] private Animator _brownAnimator;
+    [SerializeField] private Animator _greenAnimator;
+
     protected override void Update()
     {
-
-        UnityEngine.Debug.Log(Movement.x);
+        _baseAnimator.SetFloat("ChameleonBaseSpeed", Mathf.Abs(Movement.x));
+        _brownAnimator.SetFloat("ChameleonBrownSpeed", Mathf.Abs(Movement.x));
+        _greenAnimator.SetFloat("ChameleonGreenSpeed", Mathf.Abs(Movement.x));
 
         base.Update();
     }
