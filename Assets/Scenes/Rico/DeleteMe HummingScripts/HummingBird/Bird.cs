@@ -51,7 +51,6 @@ public class Bird : MonoBehaviour
         {
             _rb.velocity = Vector2.up * velocity;
             _rb.gravityScale = 2;
-            _animator.SetBool("Fly", true);
         }
 
         float rotationDelta = Input.GetAxis("Vertical") * rotationSpeed * Time.deltaTime;
