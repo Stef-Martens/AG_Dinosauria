@@ -736,10 +736,10 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: isGreen
     m_EventTreshold: 0
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: isBrown
     m_EventTreshold: 0
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: isBase
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
