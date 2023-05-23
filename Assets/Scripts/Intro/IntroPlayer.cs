@@ -89,13 +89,11 @@ public class IntroPlayer : MonoBehaviour
 
         if(hDirection < 0 && !_isFacingRight)
         {
-            //transform.eulerAngles = new Vector3(0, 180f, 0);
             Flip();
         }
 
         if(hDirection > 0 && _isFacingRight)
         {
-            //transform.eulerAngles = new Vector3(0, 0, 0);
             Flip();
         }
 
@@ -186,10 +184,6 @@ public class IntroPlayer : MonoBehaviour
 
     private void Flip()
     {
-        Vector3 currentScale = transform.localScale;
-        currentScale.x *= -1;
-        transform.localScale = currentScale;
-
         _isFacingRight = !_isFacingRight;
     }
 }

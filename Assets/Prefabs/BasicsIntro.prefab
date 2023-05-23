@@ -189,7 +189,7 @@ MonoBehaviour:
   JumpSound: {fileID: 1413237678734243065}
   InteractSound: {fileID: 4353836325180292579}
   NextScene: QuizBird
-  speed: 10
+  speed: 12
   EmptySprite: {fileID: 0}
   ItemImage: {fileID: 0}
   ItemText: {fileID: 0}
@@ -1114,7 +1114,7 @@ MonoBehaviour:
   JumpSound: {fileID: 7654769693753177115}
   InteractSound: {fileID: 7654769693753177114}
   NextScene: QuizBird
-  speed: 10
+  speed: 12
   EmptySprite: {fileID: 0}
   ItemImage: {fileID: 0}
   ItemText: {fileID: 0}
