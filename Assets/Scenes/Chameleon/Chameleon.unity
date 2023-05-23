@@ -913,6 +913,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (1)
@@ -1200,31 +1208,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6515381220065475681, guid: 50eb90e9744b3944581a4f272c02f950, type: 3}
   m_PrefabInstance: {fileID: 586073568}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &262664347 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5127332960512038169, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
-  m_PrefabInstance: {fileID: 1469854017}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &262664350
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 262664347}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20f19cbff7eb485498237eb324533b4d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &268066563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2453,31 +2436,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 439478993483943887, guid: 97011a98183af984787d9f798aa0c899, type: 3}
   m_PrefabInstance: {fileID: 1248934048}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &723701119 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6934334726801458457, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
-  m_PrefabInstance: {fileID: 1469854017}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &723701122
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723701119}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ff201ce9d5bcf94c8366280888827a9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &726834352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4114,6 +4072,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 855739610}
     m_Modifications:
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5750788130751062639, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
       propertyPath: m_Name
       value: Chameleon_LeavesPile
@@ -5340,7 +5306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934334726801458457, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218513777533379587, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_RootOrder
@@ -5406,33 +5372,9 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnHorizontalMove
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1261556464103175932, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
---- !u!1 &1469854021 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5575616969075092651, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
-  m_PrefabInstance: {fileID: 1469854017}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1469854024
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469854021}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96f338e55a7e1864d8eeac5dce94039b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1483244428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8183468531378175986, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
@@ -5776,6 +5718,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (2)
@@ -6297,6 +6247,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 855739610}
     m_Modifications:
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5750788130751062639, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
       propertyPath: m_Name
       value: Chameleon_LeavesPile (1)
@@ -7973,6 +7931,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 174863842}
     m_Modifications:
+    - target: {fileID: 6639747714966897162, guid: 650e76da012b6c24090dfc2bf9702c05, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639747714966897162, guid: 650e76da012b6c24090dfc2bf9702c05, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8487162993941452938, guid: 650e76da012b6c24090dfc2bf9702c05, type: 3}
       propertyPath: m_Name
       value: Chameleon_Trunk (1)

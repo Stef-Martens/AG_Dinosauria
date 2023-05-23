@@ -524,9 +524,6 @@ MonoBehaviour:
   CeilingLayers:
     serializedVersion: 2
     m_Bits: 1
-  _baseAnimator: {fileID: 0}
-  _brownCamoAnimator: {fileID: 1261556464103175932}
-  _greenCamoAnimator: {fileID: 0}
 --- !u!1 &2777701294007421249
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +953,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8034412431741267459}
   - component: {fileID: 1536413172433776790}
-  - component: {fileID: 1261556464103175932}
   m_Layer: 0
   m_Name: BrownVisual
   m_TagString: Untagged
@@ -1031,26 +1027,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1261556464103175932
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5575616969075092651}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 96f338e55a7e1864d8eeac5dce94039b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5723302778169148336
 GameObject:
   m_ObjectHideFlags: 0
