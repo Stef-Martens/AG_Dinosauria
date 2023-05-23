@@ -48,7 +48,6 @@ public abstract class BaseController2D : MonoBehaviour
 
     private PlayerInput _playerInput;
     private CharacterController _controller;
-    protected Vector3 Movement;
 
     // Properties
     public bool IsFacingRight { get; private set; } = true;
@@ -139,8 +138,7 @@ public abstract class BaseController2D : MonoBehaviour
         }
 
         // move the player
-        Movement = inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, VerticalVelocity, 0.0f) * Time.deltaTime;
-        _controller.Move(Movement);
+        _controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, VerticalVelocity, 0.0f) * Time.deltaTime);
     }
 
     private void SetFacingRight()

@@ -528,6 +528,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (12)
@@ -918,6 +922,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -1782,7 +1790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &448496931
 Transform:
   m_ObjectHideFlags: 0
@@ -2124,6 +2132,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (3)
@@ -3737,6 +3749,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (5)
@@ -3880,6 +3896,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (6)
@@ -3942,6 +3962,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (4)
@@ -4269,6 +4293,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (7)
@@ -4326,6 +4354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (11)
@@ -4484,6 +4516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (10)
@@ -4833,6 +4869,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (13)
@@ -5271,11 +5311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1162508841456628539, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1498513763492861617, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1574722195484199653, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_Enabled
@@ -5319,7 +5359,7 @@ PrefabInstance:
       objectReference: {fileID: 1988401574}
     - target: {fileID: 5127332960512038169, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5437559734073570079, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_IsActive
@@ -5327,7 +5367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5575616969075092651, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723302778169148336, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_Name
@@ -5335,7 +5375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6934334726801458457, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7675511633316133016, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_Enabled
@@ -5399,6 +5439,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8218513777533379587, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531290488609270885, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8719751419732388800, guid: 0d56ba1bf7042a44fae56eb22bb9a696, type: 3}
@@ -5497,7 +5541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484059249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.027773857, y: -0.015000343, z: -0.5}
+  m_LocalPosition: {x: -4.52551, y: -0.015000343, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5755,6 +5799,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -7015,7 +7063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4374889343193435232, guid: 4e52220ad51cb2745a828ceaba206380, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5363634788756288312, guid: 4e52220ad51cb2745a828ceaba206380, type: 3}
       propertyPath: m_RootOrder
@@ -7543,6 +7591,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (9)
@@ -7610,6 +7662,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground (8)
@@ -8132,6 +8188,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 530162684}
     m_Modifications:
+    - target: {fileID: 1075600536460648107, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106281924013606618, guid: 5ae9d5fc091bd534f9d112e77ebb0c9f, type: 3}
       propertyPath: m_Name
       value: Chameleon_Ground
