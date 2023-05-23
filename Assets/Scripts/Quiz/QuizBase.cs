@@ -17,6 +17,7 @@ public abstract class QuizBase : MonoBehaviour
     public string QuestionText;
 
     private bool _isEndQuizKeyReleased = false;
+    private bool _hasQuizEnded = false;
 
     protected virtual void Awake()
     {
@@ -30,12 +31,21 @@ public abstract class QuizBase : MonoBehaviour
     protected virtual void OnEnable()
     {
         SetQuestionText();
+
         Inputs.ActionInputEvent += OnAction;
         Inputs.ConfirmInputEvent += OnConfirm;
     }
 
     protected virtual void OnDisable()
     {
+        if (_hasQuizEnded)
+        {
+            HasSelectedAnswer = false;
+            HasSetRecapAnswer = false;
+
+            _hasQuizEnded = false;
+        }
+
         Inputs.ActionInputEvent -= OnAction;
         Inputs.ConfirmInputEvent -= OnConfirm;
     }
@@ -100,6 +110,8 @@ public abstract class QuizBase : MonoBehaviour
     {
         if (HasSetRecapAnswer)
         {
+            _hasQuizEnded = true;
+
             if (Inputs.Action || Inputs.Confirm)
             {
                 if (_isEndQuizKeyReleased)
@@ -110,6 +122,14 @@ public abstract class QuizBase : MonoBehaviour
             }
             else
                 _isEndQuizKeyReleased = true;
+
+            FindObjectOfType<BtnNavigationBase>().SetEndQuizKeyReleased(_isEndQuizKeyReleased);
+            FindObjectOfType<BtnNavigationBase>().SetHasQuizEnded(_hasQuizEnded);
         }
     }
+
+ /*   private void Update()
+    {
+        Debug.Log(HasSelectedAnswer);
+    }*/
 }

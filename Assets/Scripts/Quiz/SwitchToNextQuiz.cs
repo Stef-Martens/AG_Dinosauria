@@ -32,7 +32,16 @@ public class SwitchToNextQuiz : MonoBehaviour
 
         if (_currentQuizIndex <= Quizzes.Count - 1)
         {
+
+            ////////////////////////
             Quizzes[_currentQuizIndex].transform.root.gameObject.SetActive(true);
+            Quizzes[_currentQuizIndex].transform.root.GetChild(0).gameObject.SetActive(true);
+            Quizzes[_currentQuizIndex].transform.root.GetChild(0).GetChild(0).gameObject.SetActive(true);
+            Quizzes[_currentQuizIndex].transform.root.GetChild(0).GetChild(1).gameObject.SetActive(false);
+            ////////////////////////////////////////
+            
+
+
             _questionText.text = Questions[_currentQuizIndex];
         }
         else

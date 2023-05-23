@@ -478,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Questions.Array.size
@@ -487,13 +487,25 @@ PrefabInstance:
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[0]
       value: 
-      objectReference: {fileID: 1476092233}
+      objectReference: {fileID: 124257781}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[1]
       value: 
       objectReference: {fileID: 124257781}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[2]
+      value: 
+      objectReference: {fileID: 124257781}
+    - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: Quizzes.Array.data[3]
+      value: 
+      objectReference: {fileID: 1476092233}
+    - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: Quizzes.Array.data[4]
+      value: 
+      objectReference: {fileID: 124257781}
+    - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: Quizzes.Array.data[5]
       value: 
       objectReference: {fileID: 1476092233}
     - target: {fileID: 2026065614336788545, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
@@ -1334,7 +1346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476092233}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
