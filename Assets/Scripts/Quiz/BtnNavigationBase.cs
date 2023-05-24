@@ -21,7 +21,8 @@ public abstract class BtnNavigationBase : MonoBehaviour
     private HashSet<Button> _permanentlyDisabledBtns;
     private Color _pressedColor;
 
-    private bool _hasQuizStarted = true;
+    private bool _hasQuizBeenEnabled = false;
+    private bool _hasQuizStarted = false;
     private bool _isEndQuizKeyReleased = false;
     private bool _isEndRecapKeyReleased = false;
     private bool _hasQuizEnded = false;
@@ -35,7 +36,7 @@ public abstract class BtnNavigationBase : MonoBehaviour
         _inputs.ActionInputEvent += OnBtnActionConfirmInput;
         _inputs.ConfirmInputEvent += OnBtnActionConfirmInput;
 
-        _hasQuizStarted = true;
+        _hasQuizBeenEnabled = true;
         _inputs.ActionInputEvent += OnStartQuizActionConfirmInput;
         _inputs.ConfirmInputEvent += OnStartQuizActionConfirmInput;
 
@@ -105,9 +106,6 @@ public abstract class BtnNavigationBase : MonoBehaviour
 
     protected virtual void Start()
     {
-
-    
-
         _permanentlyDisabledBtns = new HashSet<Button>();
         _pressedColor = Buttons[0].colors.pressedColor;
         
@@ -115,7 +113,7 @@ public abstract class BtnNavigationBase : MonoBehaviour
             foreach (Button btn in Buttons)
                 btn.onClick.AddListener(ButtonPressed);
 
-        InitOriginalLists();
+        InitOriginalLists(); 
     }
 
     private void ButtonPressed()
@@ -185,6 +183,8 @@ public abstract class BtnNavigationBase : MonoBehaviour
             {
                 _isEndRecapKeyReleased = true;
             }
+
+            _hasQuizStarted = true;
         }
     }
 
@@ -197,7 +197,7 @@ public abstract class BtnNavigationBase : MonoBehaviour
     {
         if (ButtonsOrigList != null)
         {
-            if (_hasQuizStarted)
+            if (_hasQuizBeenEnabled && _hasQuizStarted)
             {
                 foreach (Button btn in ButtonsOrigList)
                     btn.onClick.RemoveListener(ButtonPressed);
@@ -207,7 +207,7 @@ public abstract class BtnNavigationBase : MonoBehaviour
                     foreach (Button btn in ButtonsOrigList)
                         btn.onClick.AddListener(ButtonPressed);
 
-                    _hasQuizStarted = false;
+                    _hasQuizBeenEnabled = false;
                 }
             }
         }
