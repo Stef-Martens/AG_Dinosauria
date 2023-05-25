@@ -1,23 +1,25 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class QuizBase : MonoBehaviour
 {
+    public BtnNavigationBase BtnNavigation { get; set; } = null;
     public bool HasSelectedAnswer { get; set; } = false;
     public bool HasSetRecapAnswer { get; set; } = false;
+    public bool CanSwitchQuiz { get; private set; } = false;
 
-    public Inputs Inputs;
     public bool IsWithSound = false;
 
     [Space(10)]
     [TextArea]
     public string QuestionText;
 
-    private bool _isEndQuizKeyReleased = false;
-    private bool _hasQuizEnded = false;
+    private Inputs _inputs;
+
+    private bool _isEndQuestionKeyReleased = false;
+    private bool _hasQuestionEnded = false;
 
     protected virtual void Awake()
     {
@@ -30,40 +32,24 @@ public abstract class QuizBase : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        SetQuestionText();
+        _inputs = FindObjectOfType<Inputs>();
 
-        Inputs.ActionInputEvent += OnAction;
-        Inputs.ConfirmInputEvent += OnConfirm;
+        _inputs.ActionInputEvent += OnActionConfirmInput;
+        _inputs.ConfirmInputEvent += OnActionConfirmInput;
     }
 
     protected virtual void OnDisable()
     {
-        if (_hasQuizEnded)
+        if (_hasQuestionEnded)
         {
             HasSelectedAnswer = false;
             HasSetRecapAnswer = false;
 
-            _hasQuizEnded = false;
+            _hasQuestionEnded = false;
         }
 
-        Inputs.ActionInputEvent -= OnAction;
-        Inputs.ConfirmInputEvent -= OnConfirm;
-    }
-
-    private void SetQuestionText()
-    {
-        List<GameObject> quizzes = FindObjectOfType<SwitchToNextQuiz>()?.Quizzes;
-        
-        if(quizzes != null && quizzes.Count > 0)
-        {
-            FindObjectOfType<SwitchToNextQuiz>().Questions.AddRange(Enumerable.Repeat("", quizzes.Count - 1));
-            int index = quizzes.IndexOf(this.transform.root.gameObject);
-
-            if (index >= 0)
-            {
-                FindObjectOfType<SwitchToNextQuiz>()?.Questions.Insert(index, QuestionText);
-            }
-        }
+        _inputs.ActionInputEvent -= OnActionConfirmInput;
+        _inputs.ConfirmInputEvent -= OnActionConfirmInput;
     }
 
     protected virtual void SetAnimalTexts()
@@ -86,12 +72,12 @@ public abstract class QuizBase : MonoBehaviour
         CheckAnswer();
     }
 
-    private void OnAction(bool isPressed)
+    private void OnActionConfirmInput(bool newActionConfirmState)
     {
-        EndQuiz();
+        EndQuestion();
     }
 
-    private void OnConfirm(bool isPressed)
+    private void Update()
     {
         EndQuiz();
     }
@@ -106,30 +92,42 @@ public abstract class QuizBase : MonoBehaviour
 
     }
 
-    private void EndQuiz()
+    private void EndQuestion()
     {
         if (HasSetRecapAnswer)
         {
-            _hasQuizEnded = true;
+            _hasQuestionEnded = true;
 
-            if (Inputs.Action || Inputs.Confirm)
+            if (_inputs.Action || _inputs.Confirm)
             {
-                if (_isEndQuizKeyReleased)
-                {
-                    _isEndQuizKeyReleased = false;
-                    FindObjectOfType<SwitchToNextQuiz>().SwitchQuiz();
-                }
+                if (_isEndQuestionKeyReleased)
+                    _isEndQuestionKeyReleased = false;
             }
             else
-                _isEndQuizKeyReleased = true;
+                _isEndQuestionKeyReleased = true;
 
-            FindObjectOfType<BtnNavigationBase>().SetEndQuizKeyReleased(_isEndQuizKeyReleased);
-            FindObjectOfType<BtnNavigationBase>().SetHasQuizEnded(_hasQuizEnded);
+            if (BtnNavigation != null)
+            {
+                BtnNavigation.SetEndQuestionKeyReleased(_isEndQuestionKeyReleased);
+                BtnNavigation.SetHasQuestionEnded(_hasQuestionEnded);
+            }
         }
     }
 
- /*   private void Update()
+    private void EndQuiz()
     {
-        Debug.Log(HasSelectedAnswer);
-    }*/
+        if (BtnNavigation != null)
+        {
+            if (_inputs.Action || _inputs.Confirm)
+            {
+                if (!_isEndQuestionKeyReleased && _hasQuestionEnded && !BtnNavigation.GetIsEndRecapKeyReleased())
+                {
+                    CanSwitchQuiz = true;
+                    FindObjectOfType<SwitchToNextQuiz>().SwitchQuiz();
+                }
+                else
+                    CanSwitchQuiz = false;
+            }
+        }
+    }
 }

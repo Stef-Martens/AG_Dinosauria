@@ -26,6 +26,7 @@ public class SelectionQuiz : QuizBase
     protected override void OnEnable()
     {
         _btnNavigation.ButtonPressedEvent += OnButtonPressed;
+        BtnNavigation = _btnNavigation;
 
         base.OnEnable();
     }

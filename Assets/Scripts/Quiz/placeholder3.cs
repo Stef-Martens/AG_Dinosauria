@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public abstract class BtnNavigationBase : MonoBehaviour
+public abstract class placeholder3 : MonoBehaviour
 {
     public Selectable FirstSelectable { get; set; }
     public bool HasPressedBtn { get; private set; } = false;
@@ -23,9 +23,9 @@ public abstract class BtnNavigationBase : MonoBehaviour
 
     private bool _hasBtnsBeenReset = false;
     private bool _hasQuizBeenEnabled = false;
-    public bool _hasQuestionEnded = false;    /////////////// aanpassen
+    public bool _hasQuestionEnded = false;
     private bool _isEndQuestionKeyReleased = false;
-    public bool _isEndRecapKeyReleased = false;       /////////////////// aanpassen
+    public bool _isEndRecapKeyReleased = false;
 
     public event Action<Button> ButtonPressedEvent;
 
@@ -33,19 +33,27 @@ public abstract class BtnNavigationBase : MonoBehaviour
     {
         _inputs = FindObjectOfType<Inputs>();
 
-        _inputs.ActionInputEvent += OnActionConfirmInput;
-        _inputs.ConfirmInputEvent += OnActionConfirmInput;
+        _inputs.ActionInputEvent += OnBtnActionConfirmInput;
+        _inputs.ConfirmInputEvent += OnBtnActionConfirmInput;
 
         _hasQuizBeenEnabled = true;
+        _inputs.ActionInputEvent += OnStartQuizActionConfirmInput;
+        _inputs.ConfirmInputEvent += OnStartQuizActionConfirmInput;
 
         if (_hasQuestionEnded)
         {
             _permanentlyDisabledBtns?.Clear();
             _permanentlyDisabledBtns = new HashSet<Button>();
 
-            ResetButtonsList();
+            _inputs.ActionInputEvent += OnEndQuizActionConfirmInput;
+            _inputs.ConfirmInputEvent += OnEndQuizActionConfirmInput;
 
-            _hasQuestionEnded = false;
+            if (_isEndQuestionKeyReleased && !_isEndRecapKeyReleased)
+                if (ButtonsOrigList != null)
+                    foreach (Button btn in ButtonsOrigList)
+                        btn.onClick.RemoveListener(ButtonPressed);
+
+            ResetButtonsList();
         }
 
         FirstSelectable = Buttons?.FirstOrDefault();
@@ -136,9 +144,44 @@ public abstract class BtnNavigationBase : MonoBehaviour
         }
     }
 
-    private void OnActionConfirmInput(bool isPressed)
+    private void OnBtnActionConfirmInput(bool isPressed)
     {
         ResetButtonsStates();
+    }
+
+    private void OnStartQuizActionConfirmInput(bool newActionConfirmState)
+    {
+        if (ButtonsOrigList != null)
+        {
+            if (_hasQuizBeenEnabled && _hasBtnsBeenReset)
+            {
+                foreach (Button btn in ButtonsOrigList)
+                    btn.onClick.RemoveListener(ButtonPressed);
+
+                if (!newActionConfirmState)
+                {
+                    foreach (Button btn in ButtonsOrigList)
+                        btn.onClick.AddListener(ButtonPressed);
+
+                    _hasQuizBeenEnabled = false;
+                }
+            }
+        }
+    }
+
+    private void OnEndQuizActionConfirmInput(bool newActionConfirmState)
+    {
+        if (!newActionConfirmState)
+        {
+            if (ButtonsOrigList != null)
+            {
+                foreach (Button btn in ButtonsOrigList)
+                {
+                    btn.onClick.RemoveListener(ButtonPressed);
+                    btn.onClick.AddListener(ButtonPressed);
+                }
+            }
+        }
     }
 
     public void SetEndQuestionKeyReleased(bool isEndQuestionKeyReleased)
@@ -234,7 +277,9 @@ public abstract class BtnNavigationBase : MonoBehaviour
     }
 
     public void ResetHasPressedButton()
-        => HasPressedBtn = false;
+    {
+        HasPressedBtn = false;
+    }
 
     public bool GetHasBtnsBeenReset()
         => _hasBtnsBeenReset;
@@ -246,7 +291,7 @@ public abstract class BtnNavigationBase : MonoBehaviour
         => _isEndRecapKeyReleased;
 }
 
-public abstract class SetOriginalButtonValues : MonoBehaviour
+/*public abstract class SetOriginalButtonValues : MonoBehaviour
 {
     private BtnNavigationBase _btnNavigationBase;
     private List<Button> _buttonsOrigList;
@@ -257,4 +302,4 @@ public abstract class SetOriginalButtonValues : MonoBehaviour
         _btnNavigationBase.SetOriginalButtons(_buttonsOrigList);
         _btnNavigationBase.SetOriginalNavigations(_navigationsOrigList);
     }
-}
+}*/

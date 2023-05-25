@@ -4,25 +4,28 @@ using UnityEngine.UI;
 
 public class SwitchToNextQuiz : MonoBehaviour
 {
-    private Text _questionText;
-    public List<string> Questions { get; set; } = new List<string>();
-
     public int AnimalIndex;
     public List<GameObject> Quizzes = new List<GameObject>();
+    
     private int _currentQuizIndex = 0;
+    private Text _questionText;
+    private List<string> _questions = new List<string>();
 
     void Start()
     {
+        _questionText = this.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+
         if (Quizzes.Count > 0)
         {
-            foreach (GameObject quiz in Quizzes)
-                quiz.transform.gameObject.SetActive(false);
+            for (int quizIndex = 0; quizIndex < Quizzes.Count; quizIndex++)
+            {
+                Quizzes[quizIndex].transform.gameObject.SetActive(false);
+                _questions.Add(Quizzes[quizIndex].transform.GetChild(0).GetComponent<QuizBase>().QuestionText);
+            }
 
             Quizzes[0].transform.gameObject.SetActive(true);
+            _questionText.text = _questions[0];
         }
-
-        _questionText = this.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-        _questionText.text = Questions[0];
     }
 
     public void SwitchQuiz()
@@ -34,6 +37,7 @@ public class SwitchToNextQuiz : MonoBehaviour
         {
 
             ////////////////////////
+
             Quizzes[_currentQuizIndex].transform.root.gameObject.SetActive(true);
             Quizzes[_currentQuizIndex].transform.root.GetChild(0).gameObject.SetActive(true);
             Quizzes[_currentQuizIndex].transform.root.GetChild(0).GetChild(0).gameObject.SetActive(true);
@@ -42,7 +46,7 @@ public class SwitchToNextQuiz : MonoBehaviour
             
 
 
-            _questionText.text = Questions[_currentQuizIndex];
+            _questionText.text = _questions[_currentQuizIndex];
         }
         else
         {

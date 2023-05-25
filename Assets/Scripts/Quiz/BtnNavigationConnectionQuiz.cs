@@ -22,6 +22,7 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
     private Tuple<Button, Button> _currentBtnTuple;
 
     public event Action<List<Tuple<Button, Button>>> ButtonPressedEvent;
+    public Selectable FirstSelectable { get; set; }   ////// ?????
 
     private void Start()
     {
@@ -70,6 +71,31 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
         PressedBtnsList[PressedBtnsList.Count - 1] = _currentBtnTuple;
         ButtonPressedEvent?.Invoke(PressedBtnsList);
     }
+
+    private void Update()
+    {
+        this.GetComponent<BtnLeftColNavigation>()._hasQuestionEnded =
+                this.GetComponent<BtnRightColNavigation>()._hasQuestionEnded;
+
+        if (this.GetComponent<QuizBase>().CanSwitchQuiz)
+        {
+            FirstSelectable = this.GetComponent<BtnLeftColNavigation>().Buttons?.FirstOrDefault();
+            FirstSelectable?.Select();
+
+            this.GetComponent<ConnectionQuiz>()?._answers.Clear();
+
+            foreach (Image line in this.GetComponent<LineDrawerConnectionQuiz>().LineImgs)
+                line.transform.gameObject.SetActive(false);
+
+            this.GetComponent<LineDrawerConnectionQuiz>()._permaActiveLines.Clear();
+
+
+
+            this.GetComponent<LineDrawerConnectionQuiz>()._leftColBtns = this.GetComponent<BtnLeftColNavigation>().Buttons.ToList();
+
+            this.GetComponent<LineDrawerConnectionQuiz>()._rightColBtns = this.GetComponent<BtnRightColNavigation>().Buttons.ToList();
+        }
+    }
 }
 
 public class BtnLeftColNavigation : BtnNavigationBase
@@ -81,9 +107,7 @@ public class BtnLeftColNavigation : BtnNavigationBase
         base.Start();
 
         foreach (Button btn in Buttons)
-        {
             btn.onClick.AddListener(() => DerivedButtonPressedEvent?.Invoke(btn));
-        }
 
         // Set the initial input focus to the first button in the left column
         FirstSelectable = Buttons?.FirstOrDefault();
@@ -100,8 +124,6 @@ public class BtnRightColNavigation : BtnNavigationBase
         base.Start();
 
         foreach (Button btn in Buttons)
-        {
             btn.onClick.AddListener(() => DerivedButtonPressedEvent?.Invoke(btn));
-        }
     }
 }

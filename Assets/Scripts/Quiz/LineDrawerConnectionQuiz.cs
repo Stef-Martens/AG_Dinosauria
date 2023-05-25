@@ -8,10 +8,11 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
 {
     public List<Image> LineImgs = new List<Image>();
 
+    private Inputs _inputs;
     private BtnNavigationConnectionQuiz _btnNavigation;
    
-    private List<Button> _leftColBtns;
-    private List<Button> _rightColBtns;
+    public List<Button> _leftColBtns;
+    public List<Button> _rightColBtns;
     private List<Button> _leftColBtnsOrigList;
 
     private List<RectTransform> _leftColLineRoots = new List<RectTransform>();
@@ -21,7 +22,7 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
     private RectTransform _endPnt;
     private Image _activeLineImg;
 
-    private List<Image> _permaActiveLines = new List<Image>();
+    public List<Image> _permaActiveLines = new List<Image>();
     private List<Image> _lineImgsOrigList = new List<Image>();
 
     #region New Solution
@@ -32,7 +33,7 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
 
     private void Awake()
     {
-        foreach(Image img in LineImgs)
+        foreach (Image img in LineImgs)
             img.transform.gameObject.SetActive(false);
 
         _btnNavigation= GetComponent<BtnNavigationConnectionQuiz>();
@@ -44,6 +45,13 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         _lineImgsOrigList = LineImgs.ToList();
 
         SetLineRootsLists();
+    }
+
+    private void OnEnable()   ///////////////////////// misschien niet nodig
+    {
+        _inputs = FindObjectOfType<Inputs>();
+
+      //  _inputs.ActionInputEvent += OnEndQuizActionConfirmInput;
     }
 
     private void Update()
@@ -141,48 +149,77 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
 
         LineImgs = LineImgs.Except(_permaActiveLines).ToList();
 
-        for (int indexLftCol = 0; indexLftCol <_leftColBtns.Count; indexLftCol ++)
+        if (_leftColBtns != null && _leftColBtns.Count > 0)
         {
-            if (_leftColBtns[indexLftCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
+            for (int indexLftCol = 0; indexLftCol < _leftColBtns.Count; indexLftCol++)
             {
-                #region New Solution
-                _leftColBtns[indexLftCol].onClick.AddListener(LeftColButtonClicked);
-                #endregion
+                if (_leftColBtns[indexLftCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
+                {
+                    #region New Solution
+                    _leftColBtns[indexLftCol].onClick.AddListener(LeftColButtonClicked);
+                    #endregion
 
-                _startPnt = _leftColBtns[indexLftCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
-                #region Old Solution
-                //_endPnt = _rightColBtns[0].transform.parent.GetChild(2).GetComponent<RectTransform>();
-                #endregion
-                _activeLineImg = LineImgs[indexLftCol];
+                    _startPnt = _leftColBtns[indexLftCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
+                    #region Old Solution
+                    //_endPnt = _rightColBtns[0].transform.parent.GetChild(2).GetComponent<RectTransform>();
+                    #endregion
+                    _activeLineImg = LineImgs[indexLftCol];
 
-                #region New Solution
-                GetCurrentLeftColButtonIndex(indexLftCol);
-                #endregion
+                    #region New Solution
+                    GetCurrentLeftColButtonIndex(indexLftCol);
+                    #endregion
 
-                #region Old Solution
-                /*LineImgs[indexLftCol].gameObject.SetActive(true);
-                
-                for (int index = 0; index < LineImgs.Count; index++)
-                 {
-                     if (index != indexLftCol )
+                    #region Old Solution
+                    /*LineImgs[indexLftCol].gameObject.SetActive(true);
+
+                    for (int index = 0; index < LineImgs.Count; index++)
                      {
-                         LineImgs[index].gameObject.SetActive(false);
-                     }
-                 }*/
-                #endregion
+                         if (index != indexLftCol )
+                         {
+                             LineImgs[index].gameObject.SetActive(false);
+                         }
+                     }*/
+                    #endregion
+                }
             }
         }
 
-        for (int indexRghtCol = 0; indexRghtCol < _rightColBtns.Count; indexRghtCol++)
+        if (_rightColBtns != null && _rightColBtns.Count > 0)
         {
-            if (_rightColBtns[indexRghtCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
+            for (int indexRghtCol = 0; indexRghtCol < _rightColBtns.Count; indexRghtCol++)
             {
-                #region New Solution
-                _rightColBtns[indexRghtCol].onClick.AddListener(RightColButtonClicked);
-                #endregion
+                if (_rightColBtns[indexRghtCol].transform.gameObject == EventSystem.current.currentSelectedGameObject)
+                {
+                    #region New Solution
+                    _rightColBtns[indexRghtCol].onClick.AddListener(RightColButtonClicked);
+                    #endregion
 
-                _endPnt = _rightColBtns[indexRghtCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
+                    _endPnt = _rightColBtns[indexRghtCol].transform.parent.GetChild(2).GetComponent<RectTransform>();
+                }
             }
         }
     }
 }
+
+
+/*  private void ResetLines()
+   {
+       BtnRightColNavigation btnRightColNav = this.GetComponent<BtnRightColNavigation>();
+
+       if (btnRightColNav != null)
+       {
+           if (btnRightColNav.GetHasBtnsBeenReset()
+               && btnRightColNav.GetHasQuizBeenEnabled()
+               && !btnRightColNav.GetIsEndRecapKeyReleased())
+           {
+               foreach (Image img in LineImgs)
+                   img.transform.gameObject.SetActive(false);
+           }
+       }
+   }
+
+private void OnEndQuizActionConfirmInput(bool newActionConfirmState)
+{
+    // if (newActionConfirmState)
+    //  ResetLines();
+}*/

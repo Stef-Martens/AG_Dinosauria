@@ -245,6 +245,9 @@ GameObject:
   - component: {fileID: 2026065614336788550}
   - component: {fileID: 2026065614336788551}
   - component: {fileID: 2026065614336788548}
+  - component: {fileID: 6494136777179462986}
+  - component: {fileID: 5840674264565547647}
+  - component: {fileID: 4737714032666541214}
   - component: {fileID: 101578609097069407}
   m_Layer: 5
   m_Name: Quiz_UI_Base
@@ -336,6 +339,129 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6494136777179462986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026065614336788549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 300b66297fcacee4ab140ffa94649ae1, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1215f4dc-806f-4564-b1ba-a62f1dd683b5
+    m_ActionName: Player/HorizontalMove[/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b2373c6-f66b-4be7-9a0f-2fcfffe78c6d
+    m_ActionName: Player/VerticalMove[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5840674264565547647}
+        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
+        m_MethodName: OnAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c94203d8-4188-465f-9967-a427a69c33fe
+    m_ActionName: Player/Action[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a4e1abff-e9d0-498b-a7a2-2f6e9d695257
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20d0f3b0-5205-4e7a-a401-709c009007b7
+    m_ActionName: Player/OpenMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dec95eb0-a6a4-41c3-afc0-982adfe3cec2
+    m_ActionName: Player/NavigateMenu[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5840674264565547647}
+        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
+        m_MethodName: OnConfirm
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 85d55986-043f-4605-876d-08d8994fdbed
+    m_ActionName: Player/Confirm[/Keyboard/enter,/Keyboard/numpadEnter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 392bbaa0-a480-41f3-8975-0cea38596839
+    m_ActionName: Player/Return[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4d1d2810-aad1-4e25-b5b6-d3f61c8912c8
+    m_ActionName: Player/AlphabetKeyPress[/Keyboard/anyKey]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &5840674264565547647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026065614336788549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6240a08681b0df04b93e13ecd117ad64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalMove: {x: 0, y: 0}
+  VerticalMove: {x: 0, y: 0}
+  Action: 0
+  Interact: 0
+  OpenMenu: 0
+  NavigateMenu: 0
+  Confirm: 0
+  Return: 0
+  AnalogMovement: 0
+--- !u!114 &4737714032666541214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026065614336788549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87f8be8924247d4dacbdb17a0f3a274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &101578609097069407
 MonoBehaviour:
   m_ObjectHideFlags: 0

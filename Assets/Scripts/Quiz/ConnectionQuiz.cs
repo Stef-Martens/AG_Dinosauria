@@ -19,7 +19,7 @@ public class ConnectionQuiz : QuizBase
 
     private BtnNavigationConnectionQuiz _btnNavigation;
     private LineDrawerConnectionQuiz _lineDrawer;
-    private List<Tuple<Button, Button>> _answers = new List<Tuple<Button, Button>>();
+    public List<Tuple<Button, Button>> _answers = new List<Tuple<Button, Button>>();
     private List<Tuple<Button, Button>> _correctAnswers = new List<Tuple<Button, Button>>();
 
     protected override void Awake()
@@ -28,11 +28,13 @@ public class ConnectionQuiz : QuizBase
 
         _btnNavigation = this.GetComponent<BtnNavigationConnectionQuiz>();
         _lineDrawer = this.GetComponent<LineDrawerConnectionQuiz>();
+
         SetAnswersList();
     }
 
     protected override void OnEnable()
     {
+        BtnNavigation = this.GetComponent<BtnRightColNavigation>();
         _btnNavigation.ButtonPressedEvent += OnButtonsPressedList;
 
         base.OnEnable();
