@@ -33,8 +33,11 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
 
     private void Awake()
     {
-        foreach (Image img in LineImgs)
-            img.transform.gameObject.SetActive(false);
+        foreach (Image line in LineImgs)
+        {
+            line.transform.gameObject.SetActive(false);
+            line.color = this.GetComponent<ConnectionQuiz>().BaseLineColor;
+        }
 
         _btnNavigation= GetComponent<BtnNavigationConnectionQuiz>();
 
@@ -57,8 +60,11 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         {
             LineImgs = _lineImgsOrigList.ToList();
 
-            foreach (Image img in LineImgs)
-                img.transform.gameObject.SetActive(false);
+            foreach (Image line in LineImgs)
+            {
+                line.transform.gameObject.SetActive(false);
+                line.color = this.GetComponent<ConnectionQuiz>().BaseLineColor;
+            }
         }
 
         _permaActiveLines?.Clear();

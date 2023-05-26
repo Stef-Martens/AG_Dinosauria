@@ -317,6 +317,9 @@ MonoBehaviour:
   - {fileID: 8464678359418603077}
   - {fileID: 2659339157673093222}
   - {fileID: 9059334335197063808}
+  _leftColBtns: []
+  _rightColBtns: []
+  _permaActiveLines: []
 --- !u!114 &7740737296471346376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,11 +332,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a7b58c995e9cc45836a2670424e61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inputs: {fileID: 0}
   IsWithSound: 0
   QuestionText: 
   AnimalLeftColImgs: []
   AnimalRightColImgs: []
+  BaseLineColor: {r: 0.2735849, g: 0.25015745, b: 0.21267354, a: 1}
+  CorrectAnswerLineColor: {r: 0.47058824, g: 0.8, b: 0.30980393, a: 1}
+  WrongAnswerLineColor: {r: 0.9372549, g: 0.46526575, b: 0.3843137, a: 1}
   FirstCorrectAnswerLftBtn: {fileID: 0}
   FirstCorrectAnswerRghtBtn: {fileID: 0}
   SecondCorrectAnswerLftBtn: {fileID: 0}
@@ -1687,7 +1692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4c88c64d45c7f6f4985283195e9e3e67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c73e4ec876a88694db2405634fe95acc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2285,7 +2290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4c88c64d45c7f6f4985283195e9e3e67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c73e4ec876a88694db2405634fe95acc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3725,7 +3730,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4c88c64d45c7f6f4985283195e9e3e67, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c73e4ec876a88694db2405634fe95acc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

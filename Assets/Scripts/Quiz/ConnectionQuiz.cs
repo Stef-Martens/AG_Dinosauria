@@ -10,6 +10,11 @@ public class ConnectionQuiz : QuizBase
     public List<Sprite> AnimalRightColImgs = new List<Sprite>();
 
     [Space(10)]
+    public Color BaseLineColor;
+    public Color CorrectAnswerLineColor;
+    public Color WrongAnswerLineColor;
+
+    [Space(10)]
     public Button FirstCorrectAnswerLftBtn;
     public Button FirstCorrectAnswerRghtBtn;
     public Button SecondCorrectAnswerLftBtn;
@@ -89,6 +94,11 @@ public class ConnectionQuiz : QuizBase
             Image line = quizPanel.GetChild(i + 2).GetComponent<Image>();
             RectTransform root1 = animalPanel1.GetChild(2).GetComponent<RectTransform>();
             RectTransform root2 = animalPanel2.GetChild(2).GetComponent<RectTransform>();
+
+            if (_answers.Contains(_correctAnswers[i]))
+                line.color = this.GetComponent<ConnectionQuiz>().CorrectAnswerLineColor;
+            else
+                line.color = this.GetComponent<ConnectionQuiz>().WrongAnswerLineColor;
 
             _lineDrawer.DrawLine(root1, root2, line);
         }
