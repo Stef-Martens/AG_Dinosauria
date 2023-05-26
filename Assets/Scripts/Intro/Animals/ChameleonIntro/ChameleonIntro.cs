@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChameleonIntro : AnimalIntro
 {
     public Sprite GivenImage;
+    public GameObject question;
+    public GameObject interact;
 
     public int TasksDone = 0;
 
@@ -23,6 +25,9 @@ public class ChameleonIntro : AnimalIntro
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            question.SetActive(false);
+            interact.SetActive(true);
+
         }
     }
 

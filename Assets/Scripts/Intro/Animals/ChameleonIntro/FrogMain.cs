@@ -79,7 +79,7 @@ public class FrogMain : AnimalIntro
     {
         if (!finished)
             FindObjectOfType<ChameleonIntro>().TasksDone++;
-
+        interactItem.SetActive(false);
         finished = true;
     }
 }

@@ -48,6 +48,7 @@ public class Frog2 : AnimalIntro
     {
         //aantal frogs optellen
         FindObjectOfType<FrogMain>().AmountOfFrogsFound++;
+        interactItem.SetActive(false);
         Destroy(gameObject);
 
 

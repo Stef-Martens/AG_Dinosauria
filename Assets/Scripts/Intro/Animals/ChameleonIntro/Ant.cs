@@ -71,6 +71,8 @@ public class Ant : AnimalIntro
     {
         Destroy(RemoveObject);
         FindObjectOfType<ChameleonIntro>().TasksDone++;
+        FindObjectOfType<IntroPlayer>().ClearInventory();
+        interactItem.SetActive(false);
         Destroy(gameObject);
     }
 }

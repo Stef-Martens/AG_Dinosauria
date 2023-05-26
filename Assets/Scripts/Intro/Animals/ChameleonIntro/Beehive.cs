@@ -49,8 +49,6 @@ public override bool ArrowLeft { get { return true; } }
     {
         FindObjectOfType<IntroPlayer>().inventory = beehive;
 
-
-
         foreach (FruitBat ding in FindObjectsOfType<FruitBat>())
         {
             if (ding.IsBee)

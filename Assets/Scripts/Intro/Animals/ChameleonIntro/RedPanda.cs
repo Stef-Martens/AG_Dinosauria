@@ -5,6 +5,9 @@ using UnityEngine;
 public class RedPanda : AnimalIntro
 {
     public Sprite GivenImage;
+    public GameObject kid1;
+    public GameObject kid2;
+    public GameObject kid3;
 
     bool finished = false;
 
@@ -66,7 +69,11 @@ public class RedPanda : AnimalIntro
             FindObjectOfType<ChameleonIntro>().TasksDone++;
 
         finished = true;
-
+        interactItem.SetActive(false);
+        GetComponent<SpriteRenderer>().enabled = false;
+        kid1.SetActive(false);
+        kid2.SetActive(false);
+        kid3.SetActive(false);
         FindObjectOfType<IntroPlayer>().ClearInventory();
     }
 }
