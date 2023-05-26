@@ -35,16 +35,14 @@ public class SwitchToNextQuiz : MonoBehaviour
 
         if (_currentQuizIndex <= Quizzes.Count - 1)
         {
+            Transform quizRoot = Quizzes[_currentQuizIndex].transform.root;
+            Transform quizPanel = quizRoot.transform.GetChild(0);
 
-            ////////////////////////
-
-            Quizzes[_currentQuizIndex].transform.root.gameObject.SetActive(true);
-            Quizzes[_currentQuizIndex].transform.root.GetChild(0).gameObject.SetActive(true);
-            Quizzes[_currentQuizIndex].transform.root.GetChild(0).GetChild(0).gameObject.SetActive(true);
-            Quizzes[_currentQuizIndex].transform.root.GetChild(0).GetChild(1).gameObject.SetActive(false);
-            ////////////////////////////////////////
+            quizRoot.gameObject.SetActive(true);
             
-
+            quizPanel.gameObject.SetActive(true);
+            quizPanel.GetChild(0).gameObject.SetActive(true);
+            quizPanel.GetChild(1).gameObject.SetActive(false);
 
             _questionText.text = _questions[_currentQuizIndex];
         }

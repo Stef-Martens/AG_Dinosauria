@@ -20,14 +20,38 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
     public List<Tuple<Button, Button>> PressedBtnsList { get; private set; } = new List<Tuple<Button, Button>>();
 
     private Tuple<Button, Button> _currentBtnTuple;
+    private Selectable _firstSelectable;
+
+    private Inputs _inputs;
 
     public event Action<List<Tuple<Button, Button>>> ButtonPressedEvent;
-    public Selectable FirstSelectable { get; set; }   ////// ?????
+
+    private void OnEnable()
+    {
+        _inputs = FindObjectOfType<Inputs>();
+        _inputs.ActionInputEvent += OnActionConfirmInput;
+    }
 
     private void Start()
     {
         SetLeftColumnValues();
         SetRightColumnValues();
+    }
+
+    private void Update()
+    {
+        if (this.GetComponent<QuizBase>().CanSwitchQuiz)
+        {
+            _firstSelectable = this.GetComponent<BtnLeftColNavigation>().Buttons?.FirstOrDefault();
+            _firstSelectable?.Select();
+
+            this.GetComponent<ConnectionQuiz>()?._answers.Clear();
+        }
+    }
+
+    private void OnActionConfirmInput(bool isPressed)
+    {
+        this.GetComponent<BtnLeftColNavigation>().SetHasQuestionEnded(this.GetComponent<BtnRightColNavigation>().GetHasQuestionEnded());
     }
 
     private void SetLeftColumnValues()
@@ -70,31 +94,6 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
         _currentBtnTuple = new Tuple<Button, Button>(_currentBtnTuple.Item1, pressedButton);
         PressedBtnsList[PressedBtnsList.Count - 1] = _currentBtnTuple;
         ButtonPressedEvent?.Invoke(PressedBtnsList);
-    }
-
-    private void Update()
-    {
-        this.GetComponent<BtnLeftColNavigation>()._hasQuestionEnded =
-                this.GetComponent<BtnRightColNavigation>()._hasQuestionEnded;
-
-        if (this.GetComponent<QuizBase>().CanSwitchQuiz)
-        {
-            FirstSelectable = this.GetComponent<BtnLeftColNavigation>().Buttons?.FirstOrDefault();
-            FirstSelectable?.Select();
-
-            this.GetComponent<ConnectionQuiz>()?._answers.Clear();
-
-            foreach (Image line in this.GetComponent<LineDrawerConnectionQuiz>().LineImgs)
-                line.transform.gameObject.SetActive(false);
-
-            this.GetComponent<LineDrawerConnectionQuiz>()._permaActiveLines.Clear();
-
-
-
-            this.GetComponent<LineDrawerConnectionQuiz>()._leftColBtns = this.GetComponent<BtnLeftColNavigation>().Buttons.ToList();
-
-            this.GetComponent<LineDrawerConnectionQuiz>()._rightColBtns = this.GetComponent<BtnRightColNavigation>().Buttons.ToList();
-        }
     }
 }
 

@@ -23,9 +23,9 @@ public abstract class BtnNavigationBase : MonoBehaviour
 
     private bool _hasBtnsBeenReset = false;
     private bool _hasQuizBeenEnabled = false;
-    public bool _hasQuestionEnded = false;    /////////////// aanpassen
+    private bool _hasQuestionEnded = false;
     private bool _isEndQuestionKeyReleased = false;
-    public bool _isEndRecapKeyReleased = false;       /////////////////// aanpassen
+    private bool _isEndRecapKeyReleased = false;
 
     public event Action<Button> ButtonPressedEvent;
 
@@ -241,6 +241,9 @@ public abstract class BtnNavigationBase : MonoBehaviour
 
     public bool GetHasQuizBeenEnabled()
         => _hasQuizBeenEnabled;
+
+    public bool GetHasQuestionEnded()
+        => _hasQuestionEnded;
 
     public bool GetIsEndRecapKeyReleased()
         => _isEndRecapKeyReleased;

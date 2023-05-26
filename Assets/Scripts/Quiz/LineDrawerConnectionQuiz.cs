@@ -47,11 +47,27 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         SetLineRootsLists();
     }
 
-    private void OnEnable()   ///////////////////////// misschien niet nodig
+    private void OnEnable()
     {
         _inputs = FindObjectOfType<Inputs>();
+        _inputs.ActionInputEvent += OnActionConfirmInput;
+        
+        if (_lineImgsOrigList != null && _lineImgsOrigList.Count > 0)
+        {
+            LineImgs = _lineImgsOrigList.ToList();
 
-      //  _inputs.ActionInputEvent += OnEndQuizActionConfirmInput;
+            foreach (Image img in LineImgs)
+                img.transform.gameObject.SetActive(false);
+        }
+
+        _permaActiveLines?.Clear();
+        _permaActiveLines = new List<Image>();
+    }
+
+    private void OnActionConfirmInput(bool isPressed)
+    {
+        _leftColBtns = this.GetComponent<BtnLeftColNavigation>().Buttons;
+        _rightColBtns = this.GetComponent<BtnRightColNavigation>().Buttons;
     }
 
     private void Update()
@@ -200,26 +216,3 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         }
     }
 }
-
-
-/*  private void ResetLines()
-   {
-       BtnRightColNavigation btnRightColNav = this.GetComponent<BtnRightColNavigation>();
-
-       if (btnRightColNav != null)
-       {
-           if (btnRightColNav.GetHasBtnsBeenReset()
-               && btnRightColNav.GetHasQuizBeenEnabled()
-               && !btnRightColNav.GetIsEndRecapKeyReleased())
-           {
-               foreach (Image img in LineImgs)
-                   img.transform.gameObject.SetActive(false);
-           }
-       }
-   }
-
-private void OnEndQuizActionConfirmInput(bool newActionConfirmState)
-{
-    // if (newActionConfirmState)
-    //  ResetLines();
-}*/
