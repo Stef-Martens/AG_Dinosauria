@@ -30,6 +30,7 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
     {
         _inputs = FindObjectOfType<Inputs>();
         _inputs.ActionInputEvent += OnActionConfirmInput;
+        _inputs.ConfirmInputEvent += OnActionConfirmInput;
     }
 
     private void Start()

@@ -51,7 +51,8 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
     {
         _inputs = FindObjectOfType<Inputs>();
         _inputs.ActionInputEvent += OnActionConfirmInput;
-        
+        _inputs.ConfirmInputEvent += OnActionConfirmInput;
+
         if (_lineImgsOrigList != null && _lineImgsOrigList.Count > 0)
         {
             LineImgs = _lineImgsOrigList.ToList();
