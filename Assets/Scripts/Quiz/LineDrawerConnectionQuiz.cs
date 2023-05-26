@@ -71,6 +71,12 @@ public class LineDrawerConnectionQuiz : MonoBehaviour
         _permaActiveLines = new List<Image>();
     }
 
+    private void OnDisable()
+    {
+        _inputs.ActionInputEvent -= OnActionConfirmInput;
+        _inputs.ConfirmInputEvent -= OnActionConfirmInput;
+    }
+
     private void OnActionConfirmInput(bool isPressed)
     {
         _leftColBtns = this.GetComponent<BtnLeftColNavigation>().Buttons;
