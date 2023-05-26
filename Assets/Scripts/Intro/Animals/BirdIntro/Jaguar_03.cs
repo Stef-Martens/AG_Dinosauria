@@ -5,8 +5,9 @@ using UnityEngine;
 public class Jaguar_03 : AnimalIntro
 {
     public Sprite GivenImage;
+    public Sprite SleepingJaguar;
 
-    public override bool HasActionAfterFirstDialogue { get { return false; } }
+    public override bool HasActionAfterFirstDialogue { get { return true; } }
     public override bool HasActionAfterSecondDialogue { get { return false; } }
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return true; } }
@@ -14,6 +15,7 @@ public class Jaguar_03 : AnimalIntro
     public override bool ArrowLeft { get { return false; } }
     public override bool ArrowRight { get { return false; } }
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {
@@ -55,6 +57,8 @@ public class Jaguar_03 : AnimalIntro
 
     public override void DoFirstAction()
     {
+        interactItem.SetActive(false);
+        GetComponent<SpriteRenderer>().sprite = SleepingJaguar;
     }
 
     public override void DoSecondAction()

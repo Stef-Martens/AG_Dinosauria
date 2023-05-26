@@ -13,6 +13,8 @@ public class Apples : AnimalIntro
 
     public Sprite GivenImage;
 
+    public GameObject interactItem;
+
     public override bool HasActionAfterFirstDialogue { get { return true; } }
     public override bool HasActionAfterSecondDialogue { get { return false; } }
 
@@ -46,6 +48,7 @@ public class Apples : AnimalIntro
     public override void DoFirstAction()
     {
         FindObjectOfType<IntroPlayer>().inventory = apple;
+        interactItem.SetActive(false);
     }
 
     public override void DoSecondAction()

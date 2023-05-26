@@ -21,7 +21,7 @@ public class Ball : AnimalIntro
     public override bool ArrowLeft { get { return false; } }
     public override bool ArrowRight { get { return false; } }
 
-
+    public GameObject interactItem;
     public override List<string> dialogue
     {
         get

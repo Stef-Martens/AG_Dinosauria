@@ -14,6 +14,7 @@ public class Beetle : AnimalIntro
     public override bool ArrowLeft { get { return true; } }
     public override bool ArrowRight { get { return false; } }
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {
@@ -68,8 +69,7 @@ public class Beetle : AnimalIntro
 
         FindObjectOfType<Beetle2>().GetComponent<BoxCollider2D>().enabled = true;
         FindObjectOfType<Beetle2>().GetComponent<SpriteRenderer>().enabled = true;
-
+        interactItem.SetActive(false);
         Destroy(gameObject);
-
     }
 }

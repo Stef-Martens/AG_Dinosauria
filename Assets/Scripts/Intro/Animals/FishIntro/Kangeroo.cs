@@ -5,6 +5,7 @@ using UnityEngine;
 public class Kangeroo : AnimalIntro
 {
     public Sprite GivenImage;
+    public GameObject interactItem;
 
     public GameObject TargetSpawnBall;
     public GameObject BallPrefab;

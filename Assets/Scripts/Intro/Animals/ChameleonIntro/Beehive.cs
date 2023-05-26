@@ -6,6 +6,8 @@ public class Beehive : AnimalIntro
 {
     public Sprite GivenImage;
 
+    public GameObject interactItem;
+
     ItemInventory beehive;
     void Start()
     {

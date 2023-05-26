@@ -21,6 +21,7 @@ public class Ladybug : AnimalIntro
     public override bool ArrowLeft { get { return false; } }
     public override bool ArrowRight { get { return true; } }
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {
@@ -47,6 +48,10 @@ public class Ladybug : AnimalIntro
     public override void DoFirstAction()
     {
         FindObjectOfType<IntroPlayer>().inventory = ladybug;
+        interactItem.SetActive(false);
+        interactItem.SetActive(false);
+        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+        renderer.enabled = false;
     }
 
     public override void DoSecondAction()

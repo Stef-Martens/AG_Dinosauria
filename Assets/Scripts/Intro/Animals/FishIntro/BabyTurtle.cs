@@ -20,6 +20,7 @@ public class BabyTurtle : AnimalIntro
 
     public bool finished = false;
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {

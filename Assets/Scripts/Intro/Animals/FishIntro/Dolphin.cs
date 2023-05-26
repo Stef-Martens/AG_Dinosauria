@@ -6,6 +6,8 @@ public class Dolphin : AnimalIntro
 {
     public Sprite GivenImage;
 
+    public GameObject interactItem;
+
     public override bool HasActionAfterFirstDialogue { get { return false; } }
     public override bool HasActionAfterSecondDialogue { get { return true; } }
 

@@ -14,6 +14,8 @@ public class Jaguar_02 : AnimalIntro
     public override bool ArrowLeft { get { return true; } }
     public override bool ArrowRight { get { return true; } }
 
+    public GameObject interactItem;
+    public GameObject skunk;
 
     public override List<string> dialogue
     {
@@ -64,6 +66,8 @@ public class Jaguar_02 : AnimalIntro
         FindObjectOfType<Jaguar_03>().GetComponent<BoxCollider2D>().enabled = true;
         FindObjectOfType<Jaguar_03>().GetComponent<SpriteRenderer>().enabled = true;
         Destroy(FindObjectOfType<Crocodile>().gameObject);
+        interactItem.SetActive(false);
         Destroy(gameObject);
+        Destroy(skunk);
     }
 }

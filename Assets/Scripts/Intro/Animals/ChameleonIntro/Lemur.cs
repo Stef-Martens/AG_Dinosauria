@@ -8,6 +8,8 @@ public class Lemur : AnimalIntro
 
     public Sprite MilkImage;
 
+    public GameObject interactItem;
+
     public override bool HasActionAfterFirstDialogue { get { return false; } }
     public override bool HasActionAfterSecondDialogue { get { return true; } }
 

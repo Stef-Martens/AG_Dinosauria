@@ -8,7 +8,7 @@ public class Ant : AnimalIntro
 
     public GameObject RemoveObject;
 
-
+    public GameObject interactItem;
 
     public override bool HasActionAfterFirstDialogue { get { return false; } }
     public override bool HasActionAfterSecondDialogue { get { return true; } }
