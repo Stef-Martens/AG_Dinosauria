@@ -6,14 +6,17 @@ public class Jaguar_01 : AnimalIntro
 {
     public Sprite GivenImage;
 
+    public Sprite SleepingJaguar;
+
     public override bool HasActionAfterFirstDialogue { get { return false; } }
-    public override bool HasActionAfterSecondDialogue { get { return false; } }
+    public override bool HasActionAfterSecondDialogue { get { return true; } }
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
     public override bool ArrowLeft { get { return false; } }
     public override bool ArrowRight { get { return true; } }
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {
@@ -58,10 +61,12 @@ public class Jaguar_01 : AnimalIntro
 
     public override void DoFirstAction()
     {
+        interactItem.SetActive(false);
     }
 
     public override void DoSecondAction()
     {
+        GetComponent<SpriteRenderer>().sprite = SleepingJaguar;
     }
 
 }

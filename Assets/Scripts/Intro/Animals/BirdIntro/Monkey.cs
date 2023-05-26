@@ -14,6 +14,7 @@ public class Monkey : AnimalIntro
     public override bool ArrowLeft { get { return true; } }
     public override bool ArrowRight { get { return false; } }
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {
@@ -44,6 +45,9 @@ public class Monkey : AnimalIntro
     public override void DoFirstAction()
     {
         FindObjectOfType<MonkeyTail>().CurrentDialogue = FindObjectOfType<MonkeyTail>().secondDialogue;
+        interactItem.SetActive(false);
+        SpriteRenderer renderer= gameObject.GetComponent<SpriteRenderer>();
+        renderer.enabled = false;
     }
 
     public override void DoSecondAction()

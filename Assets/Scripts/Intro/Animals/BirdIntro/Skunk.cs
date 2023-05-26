@@ -14,6 +14,10 @@ public class Skunk : AnimalIntro
     public override bool ArrowLeft { get { return true; } }
     public override bool ArrowRight { get { return false; } }
 
+    public Sprite jaguarAwake;
+    public GameObject fart;
+    public GameObject interactItem;
+    public GameObject jaguarInteractItem;
 
     public override List<string> dialogue
     {
@@ -63,6 +67,11 @@ public class Skunk : AnimalIntro
     {
         // jaguar tweede tekst
         if (FindObjectOfType<Jaguar_02>()) FindObjectOfType<Jaguar_02>().CurrentDialogue = FindObjectOfType<Jaguar_02>().secondDialogue;
+
         FindObjectOfType<IntroPlayer>().ClearInventory();
+        fart.SetActive(true);
+        FindObjectOfType<Jaguar_02>().GetComponent<SpriteRenderer>().sprite = jaguarAwake;
+        interactItem.SetActive(false);
+        jaguarInteractItem.SetActive(true);
     }
 }

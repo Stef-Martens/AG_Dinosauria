@@ -6,6 +6,8 @@ public class Beehive : AnimalIntro
 {
     public Sprite GivenImage;
 
+    public GameObject interactItem;
+
     ItemInventory beehive;
     void Start()
     {
@@ -46,8 +48,6 @@ public override bool ArrowLeft { get { return true; } }
     public override void DoFirstAction()
     {
         FindObjectOfType<IntroPlayer>().inventory = beehive;
-
-
 
         foreach (FruitBat ding in FindObjectsOfType<FruitBat>())
         {

@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChameleonIntro : AnimalIntro
 {
     public Sprite GivenImage;
+    public GameObject question;
+    public GameObject interact;
 
     public int TasksDone = 0;
 
@@ -16,12 +18,16 @@ public class ChameleonIntro : AnimalIntro
     public override bool ArrowLeft { get { return false; } }
     public override bool ArrowRight { get { return false; } }
 
+
     public override void Update()
     {
         if (TasksDone >= 3)
         {
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
+            question.SetActive(false);
+            interact.SetActive(true);
+
         }
     }
 

@@ -8,7 +8,7 @@ public class Ant : AnimalIntro
 
     public GameObject RemoveObject;
 
-
+    public GameObject interactItem;
 
     public override bool HasActionAfterFirstDialogue { get { return false; } }
     public override bool HasActionAfterSecondDialogue { get { return true; } }
@@ -71,6 +71,8 @@ public class Ant : AnimalIntro
     {
         Destroy(RemoveObject);
         FindObjectOfType<ChameleonIntro>().TasksDone++;
+        FindObjectOfType<IntroPlayer>().ClearInventory();
+        interactItem.SetActive(false);
         Destroy(gameObject);
     }
 }

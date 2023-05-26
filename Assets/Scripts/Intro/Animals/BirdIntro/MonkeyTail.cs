@@ -14,6 +14,8 @@ public class MonkeyTail : AnimalIntro
     public override bool ArrowLeft { get { return false; } }
     public override bool ArrowRight { get { return false; } }
 
+    public GameObject interactItem;
+    public GameObject interactItemJaguar;
 
     public override List<string> dialogue
     {
@@ -64,5 +66,9 @@ public class MonkeyTail : AnimalIntro
 
 
         if (FindObjectOfType<Jaguar_01>()) Destroy(FindObjectOfType<Jaguar_01>().gameObject);
+        interactItem.SetActive(false);
+        interactItemJaguar.SetActive(false);
+        SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+        renderer.enabled = false;
     }
 }

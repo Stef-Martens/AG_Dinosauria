@@ -18,6 +18,8 @@ public class FrogMain : AnimalIntro
     public override bool ArrowLeft { get { return true; } }
     public override bool ArrowRight { get { return true; } }
 
+    public GameObject interactItem;
+
     public override void Update()
     {
         if (AmountOfFrogsFound >= 3)
@@ -77,7 +79,7 @@ public class FrogMain : AnimalIntro
     {
         if (!finished)
             FindObjectOfType<ChameleonIntro>().TasksDone++;
-
+        interactItem.SetActive(false);
         finished = true;
     }
 }

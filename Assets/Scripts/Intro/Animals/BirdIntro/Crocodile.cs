@@ -14,6 +14,7 @@ public class Crocodile : AnimalIntro
     public override bool ArrowLeft { get { return true; } }
     public override bool ArrowRight { get { return false; } }
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {
@@ -56,6 +57,10 @@ public class Crocodile : AnimalIntro
     public override void DoFirstAction()
     {
         if (FindObjectOfType<Jaguar_01>()) FindObjectOfType<Jaguar_01>().CurrentDialogue = FindObjectOfType<Jaguar_01>().secondDialogue;
+        if(interactItem != null)
+        {
+            interactItem.SetActive(false);
+        }
     }
 
     public override void DoSecondAction()

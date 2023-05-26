@@ -8,6 +8,9 @@ public class Lemur : AnimalIntro
 
     public Sprite MilkImage;
 
+    public GameObject interactItem;
+    public GameObject lemur2;
+
     public override bool HasActionAfterFirstDialogue { get { return false; } }
     public override bool HasActionAfterSecondDialogue { get { return true; } }
 
@@ -70,7 +73,9 @@ public class Lemur : AnimalIntro
         Destroy(gameObject);
 
         FindObjectOfType<IntroPlayer>().inventory = Milk;
-
+        interactItem.SetActive(false);
+        lemur2.SetActive(false);
+        gameObject.SetActive(false);
 
         //gameObject.transform.position = Position.transform.position;
     }

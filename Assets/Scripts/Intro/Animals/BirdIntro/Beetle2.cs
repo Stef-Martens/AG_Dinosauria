@@ -14,6 +14,7 @@ public class Beetle2 : AnimalIntro
     public override bool ArrowLeft { get { return false; } }
     public override bool ArrowRight { get { return true; } }
 
+    public GameObject interactItem;
 
     public override List<string> dialogue
     {

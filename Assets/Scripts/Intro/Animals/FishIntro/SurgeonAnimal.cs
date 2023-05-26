@@ -5,6 +5,7 @@ using UnityEngine;
 public class SurgeonAnimal : AnimalIntro
 {
     public Sprite GivenImage;
+    public GameObject interactItem;
 
     public override bool HasActionAfterFirstDialogue { get { return true; } }
     public override bool HasActionAfterSecondDialogue { get { return false; } }

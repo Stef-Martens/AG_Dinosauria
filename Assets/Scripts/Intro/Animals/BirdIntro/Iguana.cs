@@ -20,6 +20,8 @@ public class Iguana : AnimalIntro
     Vector3 StartPosition;
 
     public GameObject Prefab;
+    public GameObject interactItem;
+    public GameObject questionItem;
 
     public override List<string> dialogue
     {
@@ -55,6 +57,7 @@ public class Iguana : AnimalIntro
 
 
     public override List<string> CurrentDialogue { get; set; }
+
     protected virtual void Start()
     {
         CurrentDialogue = dialogue;
@@ -90,6 +93,8 @@ public class Iguana : AnimalIntro
         {
             Destroy(Collider.gameObject);
             GoRight = false;
+            interactItem.SetActive(false);
+            questionItem.SetActive(false);
         }
     }
 }
