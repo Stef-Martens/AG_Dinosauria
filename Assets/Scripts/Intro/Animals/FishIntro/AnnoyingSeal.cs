@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnnoyingSeal : AnimalIntro
@@ -9,7 +10,7 @@ public class AnnoyingSeal : AnimalIntro
     public GameObject interactItem;
 
     public override bool HasActionAfterFirstDialogue { get { return false; } }
-    public override bool HasActionAfterSecondDialogue { get { return false; } }
+    public override bool HasActionAfterSecondDialogue { get { return true; } }
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
 
@@ -62,5 +63,7 @@ public class AnnoyingSeal : AnimalIntro
 
     public override void DoSecondAction()
     {
+        interactItem.SetActive(false);
+        Destroy(gameObject);
     }
 }

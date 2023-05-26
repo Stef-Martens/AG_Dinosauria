@@ -53,6 +53,7 @@ public class CrabClaw : AnimalIntro
 
     public override void DoFirstAction()
     {
+        Destroy(interactItem);
         Destroy(gameObject);
     }
 

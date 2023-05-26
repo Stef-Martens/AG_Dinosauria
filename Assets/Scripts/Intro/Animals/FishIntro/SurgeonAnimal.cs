@@ -45,6 +45,7 @@ public class SurgeonAnimal : AnimalIntro
 
     public override void DoFirstAction()
     {
+        interactItem.SetActive(false);
         FindObjectOfType<SceneSwitch>().ChangeScene("Fish");
     }
 }

@@ -29,7 +29,6 @@ public class Ball : AnimalIntro
             return new List<string>
             {
                 "You've found the dolphin's ball! You pick up the ball.",
-                "Be careful of the seal at the top of the hill!"
             };
         }
     }

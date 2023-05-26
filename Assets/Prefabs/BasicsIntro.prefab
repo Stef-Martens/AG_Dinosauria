@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 4353836325180292579}
   - component: {fileID: 1413237678734243065}
   - component: {fileID: 276562959899870775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,17 +186,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  JumpSound: {fileID: 1413237678734243065}
-  InteractSound: {fileID: 4353836325180292579}
-  NextScene: QuizBird
+  JumpSound: {fileID: 7654769693753177115}
+  InteractSound: {fileID: 7654769693753177114}
+  NextScene: Fish
   speed: 12
-  EmptySprite: {fileID: 0}
+  EmptySprite: {fileID: 21300000, guid: 7f4e679458dce4941a00b8181b4971a6, type: 3}
   ItemImage: {fileID: 0}
   ItemText: {fileID: 0}
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _jumpHeight: 15
+  _jumpHeight: 18
 --- !u!82 &4353836325180292579
 AudioSource:
   m_ObjectHideFlags: 0
@@ -625,7 +625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7654769692583022538}
   m_LocalRotation: {x: 1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7, y: -9.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -726,11 +726,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 687bc4a2bb9b2b242beaa6020e4e983e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 06695dfecdf77ca44855ecb722beaa06, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -977,9 +977,9 @@ GameObject:
   - component: {fileID: 7654769693753177114}
   - component: {fileID: 7654769693753177115}
   - component: {fileID: 5545198190035140948}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,9 +1037,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1395341217
+  m_SortingLayer: 4
+  m_SortingOrder: 237
   m_Sprite: {fileID: 21300000, guid: cc1a5b30300ffbe4db2dc6bb6be57130, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1066,7 +1066,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 2
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 8
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -1113,15 +1113,15 @@ MonoBehaviour:
   canMove: 1
   JumpSound: {fileID: 7654769693753177115}
   InteractSound: {fileID: 7654769693753177114}
-  NextScene: QuizBird
+  NextScene: Fish
   speed: 12
-  EmptySprite: {fileID: 0}
+  EmptySprite: {fileID: 21300000, guid: 7f4e679458dce4941a00b8181b4971a6, type: 3}
   ItemImage: {fileID: 0}
   ItemText: {fileID: 0}
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _jumpHeight: 15
+  _jumpHeight: 18
 --- !u!82 &7654769693753177114
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1132,7 +1132,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8bc8fa9f22a3ecf48a1a605e194f7dfc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b9afedff409f4ff4784169556b111fbe, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

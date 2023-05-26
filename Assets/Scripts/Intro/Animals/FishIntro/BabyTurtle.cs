@@ -69,6 +69,7 @@ public class BabyTurtle : AnimalIntro
         if (GoRight)
         {
             transform.Translate(Vector2.right * 5f * Time.deltaTime);
+            Physics2D.IgnoreLayerCollision(8, 7, true);
         }
     }
 
@@ -92,6 +93,7 @@ public class BabyTurtle : AnimalIntro
         {
             GoRight = false;
             finished = true;
+            interactItem.SetActive(false);
         }
     }
 }

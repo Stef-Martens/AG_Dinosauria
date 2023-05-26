@@ -8,7 +8,7 @@ public class Crab : AnimalIntro
 
     public GameObject interactItem;
 
-    public override bool HasActionAfterFirstDialogue { get { return false; } }
+    public override bool HasActionAfterFirstDialogue { get { return true; } }
     public override bool HasActionAfterSecondDialogue { get { return false; } }
 
     public override bool SecondDialogeDirectlyAfterTalking { get { return false; } }
@@ -59,6 +59,8 @@ public class Crab : AnimalIntro
 
     public override void DoFirstAction()
     {
+        interactItem.SetActive(false);
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public override void DoSecondAction()

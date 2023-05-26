@@ -68,5 +68,6 @@ public class Kangeroo : AnimalIntro
         // bal naar den andere kant schoppe
         FindObjectOfType<IntroPlayer>().ClearInventory();
         Instantiate(BallPrefab, TargetSpawnBall.transform.position, Quaternion.identity);
+        //interactItem.SetActive(false);
     }
 }
