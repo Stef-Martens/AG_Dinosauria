@@ -503,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640128852470244458, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
       propertyPath: _isChameleonActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1640128852470244458, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
       propertyPath: _isHummingbirdActive
@@ -511,6 +511,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1640128852470244458, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
       propertyPath: _isSurgeonfishActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640128852470244458, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
+      propertyPath: _isSurgeonfishSelected
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6105094148993537092, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}

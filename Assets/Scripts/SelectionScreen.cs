@@ -165,8 +165,8 @@ public class SelectionScreen : MonoBehaviour
         _isSurgeonfishActive = FindObjectOfType<FirebaseManager>().MadeUser.animals[1].finished;
         _isChameleonActive = FindObjectOfType<FirebaseManager>().MadeUser.animals[2].finished;
 
-        AnimalSelection.transform.GetChild(6).gameObject.SetActive(false);
-        PlayLevelSelect.transform.GetChild(3).gameObject.SetActive(true);
+        AnimalSelection.transform.GetChild(7).gameObject.SetActive(false);
+        Play.transform.parent.GetChild(4).gameObject.SetActive(true);
         LevelSelection.SetActive(false);
 
         List<(int childIndex, bool isActive)> animalStates = new List<(int, bool)>
@@ -321,8 +321,8 @@ public class SelectionScreen : MonoBehaviour
 
                             _firstSelectable?.Select();
 
-                            AnimalSelection.transform.GetChild(6).gameObject.SetActive(true);
-                            Play.transform.parent.GetChild(3).gameObject.SetActive(false);
+                            AnimalSelection.transform.GetChild(7).gameObject.SetActive(true);
+                            Play.transform.parent.GetChild(4).gameObject.SetActive(false);
 
                             _isHummingbirdSelected = pressedBtn == _animalBtns[0];
                             _isSurgeonfishSelected = pressedBtn == _animalBtns[1];
@@ -441,8 +441,8 @@ public class SelectionScreen : MonoBehaviour
 
         _isAnimalKeyReleased = false;
 
-        AnimalSelection.transform.GetChild(6).gameObject.SetActive(false);
-        Play.transform.parent.GetChild(3).gameObject.SetActive(true);
+        AnimalSelection.transform.GetChild(7).gameObject.SetActive(false);
+        Play.transform.parent.GetChild(4).gameObject.SetActive(true);
     }
 
     private void GoToIntroLevels()
