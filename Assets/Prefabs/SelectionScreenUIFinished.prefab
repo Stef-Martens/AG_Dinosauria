@@ -1119,7 +1119,10 @@ GameObject:
   - component: {fileID: 990165058320009310}
   - component: {fileID: 990165058320009311}
   - component: {fileID: 990165058320009312}
+  - component: {fileID: 4498933169632254540}
+  - component: {fileID: 1667134761071251666}
   - component: {fileID: 479913302475926494}
+  - component: {fileID: 1640128852470244458}
   m_Layer: 5
   m_Name: SelectionScreenUIFinished
   m_TagString: Untagged
@@ -1213,6 +1216,117 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4498933169632254540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990165058320009313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 300b66297fcacee4ab140ffa94649ae1, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1215f4dc-806f-4564-b1ba-a62f1dd683b5
+    m_ActionName: Player/HorizontalMove[/Keyboard/leftArrow,/Keyboard/rightArrow,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b2373c6-f66b-4be7-9a0f-2fcfffe78c6d
+    m_ActionName: Player/VerticalMove[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1667134761071251666}
+        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
+        m_MethodName: OnAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c94203d8-4188-465f-9967-a427a69c33fe
+    m_ActionName: Player/Action[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a4e1abff-e9d0-498b-a7a2-2f6e9d695257
+    m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 20d0f3b0-5205-4e7a-a401-709c009007b7
+    m_ActionName: Player/OpenMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dec95eb0-a6a4-41c3-afc0-982adfe3cec2
+    m_ActionName: Player/NavigateMenu[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1667134761071251666}
+        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
+        m_MethodName: OnConfirm
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 85d55986-043f-4605-876d-08d8994fdbed
+    m_ActionName: Player/Confirm[/Keyboard/enter,/Keyboard/numpadEnter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 392bbaa0-a480-41f3-8975-0cea38596839
+    m_ActionName: Player/Return[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4d1d2810-aad1-4e25-b5b6-d3f61c8912c8
+    m_ActionName: Player/AlphabetKeyPress[/Keyboard/anyKey]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1667134761071251666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990165058320009313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6240a08681b0df04b93e13ecd117ad64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalMove: {x: 0, y: 0}
+  VerticalMove: {x: 0, y: 0}
+  Action: 0
+  Interact: 0
+  OpenMenu: 0
+  NavigateMenu: 0
+  Confirm: 0
+  Return: 0
+  AnalogMovement: 0
 --- !u!114 &479913302475926494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,6 +1339,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87f8be8924247d4dacbdb17a0f3a274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1640128852470244458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990165058320009313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb152b5100d5ee4ea52897470a56f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimalCount: 3
+  Background: {fileID: 6129324488141586750}
+  AnimalSelection: {fileID: 998510156800212020}
+  Play: {fileID: 5630391633504819355}
+  PlayLevelSelect: {fileID: 4787106335366912565}
+  LevelSelection: {fileID: 6105094148993537092}
+  Animals: {fileID: 794214739042851658}
+  _isHummingbirdActive: 0
+  _isSurgeonfishActive: 0
+  _isChameleonActive: 0
 --- !u!1 &990165058382922008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,7 +1578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5351553149016540753
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1518,7 +1654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8872982343141102979
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2182,7 +2318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5257076130702669502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2876,7 +3012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &67536857355174351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4393,7 +4529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7320775639453540924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4469,7 +4605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5010446510431715065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4543,7 +4679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7390552012747226754
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5041,7 +5177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3709808937123196819
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5156,7 +5292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7911278928445706382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5425,7 +5561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6144431909975670650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5631,7 +5767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6467889419259105649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5915,7 +6051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5133036174705277324
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6229,8 +6365,8 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 3803105015180615291}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 3803105015180615291}
+    m_SelectOnDown: {fileID: 3803105015180615291}
+    m_SelectOnLeft: {fileID: 1627582004713339774}
     m_SelectOnRight: {fileID: 1363782551120410265}
   m_Transition: 1
   m_Colors:

@@ -501,5 +501,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: SelectionScreenUIFinished
       objectReference: {fileID: 0}
+    - target: {fileID: 1640128852470244458, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
+      propertyPath: _isChameleonActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640128852470244458, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
+      propertyPath: _isHummingbirdActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640128852470244458, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
+      propertyPath: _isSurgeonfishActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105094148993537092, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f81c6435ff062f4b9502e86cb738560, type: 3}
