@@ -15178,11 +15178,11 @@ PrefabInstance:
     - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: ItemText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1764471400}
     - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: ItemImage
       value: 
-      objectReference: {fileID: 205162946}
+      objectReference: {fileID: 682843579}
     - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: JumpSound
       value: 
@@ -15194,7 +15194,7 @@ PrefabInstance:
     - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: EmptySprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7f4e679458dce4941a00b8181b4971a6, type: 3}
+      objectReference: {fileID: 21300000, guid: 4ef7320dd2e8f864f935b0f594700a39, type: 3}
     - target: {fileID: 3443288079926006607, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: InteractSound
       value: 
