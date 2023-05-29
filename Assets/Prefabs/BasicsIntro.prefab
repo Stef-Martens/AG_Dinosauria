@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6593841818223796299}
+  - component: {fileID: 2868499719813934289}
   m_Layer: 0
   m_Name: BasicsIntro
   m_TagString: Untagged
@@ -36,6 +37,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2868499719813934289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835566089394982096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f59ef43b0b585246b783b5b658ab8be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Male: {fileID: 7654769693753177107}
+  Female: {fileID: 1152298965561786909}
 --- !u!1 &1152298965561786909
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +73,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4268427116211003417
 Transform:
   m_ObjectHideFlags: 0
@@ -138,10 +153,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 2
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -163,14 +178,14 @@ MonoBehaviour:
   JumpSound: {fileID: 7654769693753177115}
   InteractSound: {fileID: 7654769693753177114}
   NextScene: Fish
-  speed: 12
+  Speed: 13
   EmptySprite: {fileID: 21300000, guid: 7f4e679458dce4941a00b8181b4971a6, type: 3}
   ItemImage: {fileID: 0}
   ItemText: {fileID: 0}
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _jumpHeight: 18
+  Jump: 120
 --- !u!82 &4353836325180292579
 AudioSource:
   m_ObjectHideFlags: 0
@@ -615,7 +630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7654769692583022538}
   m_LocalRotation: {x: 1e-45, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7, y: -9.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1053,10 +1068,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 2
   m_AngularDrag: 0.05
-  m_GravityScale: 8
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -1078,14 +1093,14 @@ MonoBehaviour:
   JumpSound: {fileID: 7654769693753177115}
   InteractSound: {fileID: 7654769693753177114}
   NextScene: Fish
-  speed: 12
+  Speed: 13
   EmptySprite: {fileID: 21300000, guid: 7f4e679458dce4941a00b8181b4971a6, type: 3}
   ItemImage: {fileID: 0}
   ItemText: {fileID: 0}
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _jumpHeight: 18
+  Jump: 120
 --- !u!82 &7654769693753177114
 AudioSource:
   m_ObjectHideFlags: 0

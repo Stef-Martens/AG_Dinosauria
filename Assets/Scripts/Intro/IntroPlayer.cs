@@ -18,7 +18,7 @@ public class IntroPlayer : MonoBehaviour
 
     private Vector3 defaultScale;
 
-    public float speed = 8f;
+    public float Speed = 10f;
 
     public Sprite EmptySprite;
 
@@ -27,8 +27,7 @@ public class IntroPlayer : MonoBehaviour
 
     [SerializeField]
     private LayerMask _layerMask;
-    [SerializeField]
-    private float _jumpHeight;
+    public float Jump = 15;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private bool _isFacingRight;
@@ -41,7 +40,7 @@ public class IntroPlayer : MonoBehaviour
 
     private void Start()
     {
-        _spriteRenderer= GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
@@ -78,21 +77,21 @@ public class IntroPlayer : MonoBehaviour
 
         if (hDirection < 0)
         {
-            rb.velocity = new Vector2(-speed, rb.velocity.y);
+            rb.velocity = new Vector2(-Speed, rb.velocity.y);
             _spriteRenderer.flipX = true;
         }
         else if (hDirection > 0)
         {
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            rb.velocity = new Vector2(Speed, rb.velocity.y);
             _spriteRenderer.flipX = false;
         }
 
-        if(hDirection < 0 && !_isFacingRight)
+        if (hDirection < 0 && !_isFacingRight)
         {
             Flip();
         }
 
-        if(hDirection > 0 && _isFacingRight)
+        if (hDirection > 0 && _isFacingRight)
         {
             Flip();
         }
@@ -100,8 +99,9 @@ public class IntroPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             JumpSound.Play();
-            rb.velocity = new Vector2(rb.velocity.x, _jumpHeight);
-            rb.gravityScale = 2f;
+            rb.AddForce(new Vector2(0f, Jump), ForceMode2D.Impulse);
+            /* rb.velocity = new Vector2(rb.velocity.x, Jump);
+             rb.gravityScale = 2f;*/
         }
     }
 
