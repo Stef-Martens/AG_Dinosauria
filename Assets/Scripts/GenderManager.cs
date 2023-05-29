@@ -9,20 +9,24 @@ public class GenderManager : MonoBehaviour
     public GameObject Female;
     void Start()
     {
-        Male.SetActive(false);
-        Female.SetActive(false);
-
-        if (FindObjectOfType<FirebaseManager>().MadeUser.male)
+        if (FindObjectOfType<FirebaseManager>())
         {
-            Male.SetActive(true);
-            FindObjectOfType<CinemachineVirtualCamera>().Follow = Male.transform;
+            Male.SetActive(false);
+            Female.SetActive(false);
+
+            if (FindObjectOfType<FirebaseManager>().MadeUser.male)
+            {
+                Male.SetActive(true);
+                FindObjectOfType<CinemachineVirtualCamera>().Follow = Male.transform;
+            }
+
+            else
+            {
+                Female.SetActive(true);
+                FindObjectOfType<CinemachineVirtualCamera>().Follow = Female.transform;
+            }
         }
 
-        else
-        {
-            Female.SetActive(true);
-            FindObjectOfType<CinemachineVirtualCamera>().Follow = Female.transform;
-        }
 
 
 
