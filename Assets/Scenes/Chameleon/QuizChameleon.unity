@@ -1047,7 +1047,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622766524503372550, guid: 3f54e3d7bbe9fd441bca0707a1551723, type: 3}
       propertyPath: QuestionText
-      value: Which raptor bird scares me?
+      value: 'Which brown-feathered
+
+        raptor bird scares me?'
       objectReference: {fileID: 0}
     - target: {fileID: 5622766524503372550, guid: 3f54e3d7bbe9fd441bca0707a1551723, type: 3}
       propertyPath: CorrectAnswer
