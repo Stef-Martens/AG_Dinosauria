@@ -14989,6 +14989,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1427432192585364123, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: The Jaguar might know where to find the Hummingbird. Talk to him using
+        E. He can be found to the right.
+      objectReference: {fileID: 0}
     - target: {fileID: 1451642119966822081, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_Name
       value: ItemImage (Drag This)
@@ -15005,6 +15010,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2711588227225431494, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: You have arrived in the jungles of Mesoamerica!
+      objectReference: {fileID: 0}
     - target: {fileID: 2728905794790951587, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -15017,6 +15026,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3009566040125907223, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e450a350d092cdd4ba716d316f34c335, type: 3}
     - target: {fileID: 3010404448736139362, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -15025,6 +15038,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3298524558119667464, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7bb4e994a6171d5428aa89543d21ef61, type: 3}
     - target: {fileID: 3975438907150460359, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -15044,6 +15061,10 @@ PrefabInstance:
     - target: {fileID: 4359003073331100296, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766241805362907904, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 4906452804287691059, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
@@ -15165,6 +15186,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemNameText
       objectReference: {fileID: 0}
+    - target: {fileID: 9049143189990337913, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: You are looking for the Hummingbird who is said to live where there
+        are a lot of flowers.
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3975438907328454955, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
@@ -15260,7 +15286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6593841818223796299, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.27
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6593841818223796299, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_LocalPosition.z

@@ -18600,6 +18600,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 569803533573948296, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 144.00003
+      objectReference: {fileID: 0}
     - target: {fileID: 847387613809263934, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -18612,10 +18616,51 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1427432192585364123, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: The Dolphin likes people and might be able to bring the Surgeonfish
+        to you. You can find him to the right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494878123454313595, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 34.000042
+      objectReference: {fileID: 0}
     - target: {fileID: 2085253383578557878, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2605321992177298694, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711588227225431494, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: You have arrived near the Great Barrier Reef in Australia!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901709046236628229, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901709046236628229, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901709046236628229, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2901709046236628229, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009566040125907223, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 53b4aa98e0702a6419bc5d7cfa765ab9, type: 3}
+    - target: {fileID: 3298524558119667464, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2691ec2605930c842a3144bbf67d7a39, type: 3}
     - target: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_Text
       value: Dolphin Beach
@@ -18623,6 +18668,10 @@ PrefabInstance:
     - target: {fileID: 4359003073331100296, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766241805362907904, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 253
       objectReference: {fileID: 0}
     - target: {fileID: 4906452804287691059, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
@@ -18707,6 +18756,11 @@ PrefabInstance:
     - target: {fileID: 7659695568027840243, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049143189990337913, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: You are looking for the Surgeonfish. She lives in the water, so you
+        might not find her!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}

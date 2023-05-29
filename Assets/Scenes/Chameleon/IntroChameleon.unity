@@ -28343,6 +28343,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1427432192585364123, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: The Frog is friends with the Chameleon, and can help you find him. The
+        Frog can be found to the right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605321992177298694, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 420
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605321992177298694, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711588227225431494, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: You have arrived in the forests of Madagascar!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009566040125907223, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2f61e7d516707414a99ed1d2cf5108fd, type: 3}
+    - target: {fileID: 3298524558119667464, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 21876c252e543cd40a09e8dbb81e9079, type: 3}
     - target: {fileID: 3975438908053475109, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 58.999756
@@ -28350,6 +28375,10 @@ PrefabInstance:
     - target: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_Text
       value: Chameleon Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766241805362907904, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998477366348, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_Name
@@ -28418,6 +28447,11 @@ PrefabInstance:
     - target: {fileID: 5978630999107022515, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049143189990337913, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: You are looking for the Chameleon. He can camouflage himself, so he
+        may be hard to find.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
