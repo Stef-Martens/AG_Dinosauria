@@ -32,6 +32,8 @@ public class IntroPlayer : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private bool _isFacingRight;
 
+    public bool IntroOpen = true;
+
     public void ClearInventory()
     {
         inventory = new ItemInventory(EmptySprite);
@@ -50,24 +52,28 @@ public class IntroPlayer : MonoBehaviour
 
     private void Update()
     {
-        ItemImage.sprite = FindObjectOfType<IntroPlayer>().inventory.Image;
-        ItemText.text = FindObjectOfType<IntroPlayer>().inventory.Name;
-        if (canMove)
+        if (!IntroOpen)
         {
-            Move();
-            if (Input.GetKeyDown(KeyCode.E))
+            ItemImage.sprite = FindObjectOfType<IntroPlayer>().inventory.Image;
+            ItemText.text = FindObjectOfType<IntroPlayer>().inventory.Name;
+            if (canMove)
             {
-                Interact();
+                Move();
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Interact();
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    FindObjectOfType<DialogueSystem>().NextLine();
+                    InteractSound.Play();
+                }
             }
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                FindObjectOfType<DialogueSystem>().NextLine();
-                InteractSound.Play();
-            }
-        }
+
     }
 
     private void Move()
