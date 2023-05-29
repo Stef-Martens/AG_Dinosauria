@@ -25,8 +25,8 @@ public class Tongue : MonoBehaviour
     private void Start()
     {
         _currentStamina = _maxStamina;
-        _staminaBar.UpdateStaminaBar(_maxStamina, _currentStamina); 
-        _renderer= GetComponent<SpriteRenderer>();
+        if (_staminaBar) _staminaBar.UpdateStaminaBar(_maxStamina, _currentStamina);
+        _renderer = GetComponent<SpriteRenderer>();
 
         _renderer.enabled = false;
         _collider.enabled = false;
@@ -37,7 +37,7 @@ public class Tongue : MonoBehaviour
         Nectar nectar = collision.gameObject.GetComponent<Nectar>();
         SinusoidalMove sinusMove = collision.gameObject.GetComponent<SinusoidalMove>();
 
-        if (nectar != null )
+        if (nectar != null)
         {
             if (_currentStamina >= _maxStamina)
             {
@@ -55,7 +55,7 @@ public class Tongue : MonoBehaviour
         {
             //collision.gameObject.transform.parent = _container.transform;
             //collision.gameObject.transform.position = _container.transform.position;
-            if(_currentStamina >= _maxStamina)
+            if (_currentStamina >= _maxStamina)
             {
                 return;
             }
@@ -64,6 +64,7 @@ public class Tongue : MonoBehaviour
                 _currentStamina += 10f;
             }
             Destroy(collision.gameObject);
+            FindObjectOfType<PickupsText>().ShowText("Mosquito");
             _eatingAudioSource.Play();
         }
     }
@@ -71,16 +72,16 @@ public class Tongue : MonoBehaviour
     private void Update()
     {
         _currentStamina -= 5f * Time.deltaTime;
-        _staminaBar.UpdateStaminaBar(_maxStamina, _currentStamina);
+        if (_staminaBar) _staminaBar.UpdateStaminaBar(_maxStamina, _currentStamina);
 
-        if(_currentStamina <= 0)
+        if (_currentStamina <= 0)
         {
             _gameOver.SetActive(true);
             GameOver gameOver = _gameOver.GetComponent<GameOver>();
             gameOver.StartGameOver("Oh no you ran out of enery :(");
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             _renderer.enabled = true;
             _collider.enabled = true;

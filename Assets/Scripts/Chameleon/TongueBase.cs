@@ -72,7 +72,7 @@ public class TongueBase : MonoBehaviour
     {
         _bodyVisual.SetPosition(0, _root.transform.position);
 
-        if(_canShoot)
+        if (_canShoot)
             _bodyVisual.SetPosition(1, _root.transform.position);
     }
 
@@ -86,29 +86,29 @@ public class TongueBase : MonoBehaviour
                 Curl.transform.rotation = Quaternion.Euler(Curl.transform.rotation.x, 180, Curl.transform.rotation.z);
             return;
         }
-        
+
         Vector3 direction = _bodyVisual.GetPosition(1) - _bodyVisual.GetPosition(0);
         direction = new Vector3(direction.x, direction.y, 0);
-        
+
         if (_chameleonController2D.IsFacingRight && _isShotWhenFacingRight)
         {
             Curl.transform.rotation = Quaternion.FromToRotation(Vector3.right.normalized, direction);
         }
-        
+
         if (!_chameleonController2D.IsFacingRight && _isShotWhenFacingRight)
         {
             Quaternion rot = Quaternion.FromToRotation(Vector3.right.normalized,
                                                        new Vector3(direction.x, direction.y, direction.z));
             Curl.transform.rotation = Quaternion.Euler(rot.eulerAngles.x, 0, rot.eulerAngles.z);
         }
-        
+
         if (!_chameleonController2D.IsFacingRight && !_isShotWhenFacingRight)
         {
             Quaternion rot = Quaternion.FromToRotation(-Vector3.right.normalized, direction);
-            
+
             Curl.transform.rotation = Quaternion.Euler(rot.eulerAngles.x, 180, -rot.eulerAngles.z);
         }
-        
+
         if (_chameleonController2D.IsFacingRight && !_isShotWhenFacingRight)
         {
             Quaternion rot = Quaternion.FromToRotation(-Vector3.right.normalized,
@@ -220,7 +220,7 @@ public class TongueBase : MonoBehaviour
         if (_bodyVisual.GetPosition(1) == _root.transform.position)
         {
             Curl.transform.position = _root.transform.position;
-         
+
             _isExtended = false;
             _extensionDelayTimer.Stop();
             _extensionDelayTimer.Reset();
@@ -255,10 +255,15 @@ public class TongueBase : MonoBehaviour
             _previousHitObjectPos = _curlMiddle.transform.position;
 
             if (directHitObject.GetComponent<Fly>())
+            {
                 directHitObject.SetActive(false);
+                FindObjectOfType<PickupsText>().ShowText("Fly");
+            }
+
 
             if (directHitObject.GetComponent<RaptorBird>())
             {
+                FindObjectOfType<PickupsText>().ShowText("Harrier");
                 if (!directHitObject.GetComponent<RaptorBird>().IsStaggering)
                 {
                     directHitObject.GetComponent<RaptorBird>().IsStaggered = true;
@@ -300,7 +305,7 @@ public class TongueBase : MonoBehaviour
     {
         float maxAllowedDistance = 2.0f;
 
-        if(_currentIndirectHitObject != null)
+        if (_currentIndirectHitObject != null)
         {
             if (_currentIndirectHitObject.transform.position.y <= _previousHitObjectPos.y)
             {
@@ -308,12 +313,17 @@ public class TongueBase : MonoBehaviour
                 if (dist <= maxAllowedDistance)
                 {
                     _previousHitObjectPos = _currentIndirectHitObject.transform.position;
-                    
-                    if(_currentIndirectHitObject.GetComponent<Fly>())
-                        _currentIndirectHitObject.SetActive(false);
 
-                    if(_currentIndirectHitObject.GetComponent<RaptorBird>())
+                    if (_currentIndirectHitObject.GetComponent<Fly>())
                     {
+                        _currentIndirectHitObject.SetActive(false);
+                        FindObjectOfType<PickupsText>().ShowText("Fly");
+                    }
+
+
+                    if (_currentIndirectHitObject.GetComponent<RaptorBird>())
+                    {
+                        FindObjectOfType<PickupsText>().ShowText("Harrier");
                         if (!_currentIndirectHitObject.GetComponent<RaptorBird>().IsStaggering)
                         {
                             _currentIndirectHitObject.GetComponent<RaptorBird>().IsStaggered = true;
@@ -327,7 +337,7 @@ public class TongueBase : MonoBehaviour
             }
         }
 
-        if(!_isDirectHit)
+        if (!_isDirectHit)
         {
             _currentIndirectHitObject = null;
             _previousHitObjectPos = Vector3.zero;
@@ -341,10 +351,15 @@ public class TongueBase : MonoBehaviour
         if (triggerHitObject != null && _isExtended)
         {
             if (triggerHitObject.GetComponent<Fly>())
+            {
                 triggerHitObject.SetActive(false);
+                FindObjectOfType<PickupsText>().ShowText("Fly");
+            }
+
 
             if (triggerHitObject.GetComponent<RaptorBird>())
             {
+                FindObjectOfType<PickupsText>().ShowText("Harrier");
                 if (!triggerHitObject.GetComponent<RaptorBird>().IsStaggering)
                 {
                     triggerHitObject.GetComponent<RaptorBird>().IsStaggered = true;

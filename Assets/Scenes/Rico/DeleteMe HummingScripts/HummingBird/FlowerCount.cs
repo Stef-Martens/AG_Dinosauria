@@ -25,6 +25,7 @@ public class FlowerCount : MonoBehaviour
     void OnNectarCollected()
     {
         count++;
+        FindObjectOfType<PickupsText>().ShowText("Nectar");
         UpdateCount();
     }
 
