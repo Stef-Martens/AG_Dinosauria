@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Teleport : AnimalIntro
 {
     public string TextToSay;
     public Sprite GivenImage;
+
+    [SerializeField]
+    private Text _placeNameTextBox;
+    [SerializeField]
+    private string _teleportedName;
 
 
     public override bool HasActionAfterFirstDialogue { get { return true; } }
@@ -44,6 +50,8 @@ public class Teleport : AnimalIntro
         AnimatorTransition.Play("CameraTransition");
 
         StartCoroutine(DelayTransform(0.25f));
+
+        _placeNameTextBox.text = _teleportedName;
     }
 
     private IEnumerator DelayTransform(float delayTime)

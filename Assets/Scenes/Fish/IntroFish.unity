@@ -2372,6 +2372,17 @@ Transform:
   m_Father: {fileID: 815543799}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &197340882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+  m_PrefabInstance: {fileID: 5978630999799896492}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &208535913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4037626934127403304, guid: b23df91c8cdabfb4e836b13d315575b3, type: 3}
@@ -4164,6 +4175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You head to the turtle's beach
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 197340882}
+  _teleportedName: Turtle Beach
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &450034194
 BoxCollider2D:
@@ -8261,6 +8274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the dolphin
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 197340882}
+  _teleportedName: Dolphin Beach
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &882753328
 BoxCollider2D:
@@ -9544,6 +9559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the dolphin's beach
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 197340882}
+  _teleportedName: Dolphin Beach
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &1094517144
 BoxCollider2D:
@@ -17530,6 +17547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go to the seals
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 197340882}
+  _teleportedName: Seal Beach
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &2038247749
 BoxCollider2D:
@@ -18597,6 +18616,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: Dolphin Beach
+      objectReference: {fileID: 0}
     - target: {fileID: 4359003073331100296, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -18615,7 +18638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998477366348, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998477366349, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
@@ -18721,6 +18744,10 @@ PrefabInstance:
       value: BasicsIntro
       objectReference: {fileID: 0}
     - target: {fileID: 835566089394982096, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152298965561786909, guid: f3d5545f11058ba4badcb4a3df7c3d80, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

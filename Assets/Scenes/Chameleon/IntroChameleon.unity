@@ -2985,6 +2985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896496}
+  _teleportedName: Chameleon's Forest
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &167528695
 BoxCollider2D:
@@ -3125,6 +3127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go to the red pandas
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896496}
+  _teleportedName: Red Panda & Bee
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &168258562
 BoxCollider2D:
@@ -5299,6 +5303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go to the lemurs
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896496}
+  _teleportedName: Lemurs & Ants
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &380182584
 BoxCollider2D:
@@ -13693,6 +13699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896496}
+  _teleportedName: Chameleon's Forest
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &1007709225
 BoxCollider2D:
@@ -15124,6 +15132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You return to the chameleon
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896496}
+  _teleportedName: Chameleon's Forest
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &1120645174
 BoxCollider2D:
@@ -21069,7 +21079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590202113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -213.2, y: 2.1, z: 0}
+  m_LocalPosition: {x: -164.47, y: -3.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28255,6 +28265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You enter the cave
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896496}
+  _teleportedName: Fruit Bat Cave
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!61 &2133826284
 BoxCollider2D:
@@ -28334,6 +28346,10 @@ PrefabInstance:
     - target: {fileID: 3975438908053475109, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 58.999756
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: Chameleon Forest
       objectReference: {fileID: 0}
     - target: {fileID: 5978630998477366348, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_Name
@@ -28430,6 +28446,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5978630999799896496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+  m_PrefabInstance: {fileID: 5978630999799896492}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7654769693070095874

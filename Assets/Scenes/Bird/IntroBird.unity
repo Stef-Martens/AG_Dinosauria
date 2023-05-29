@@ -2050,6 +2050,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go down the tree.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896493}
+  _teleportedName: Jaguar's Jungle
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &318079437
 Animator:
@@ -3261,6 +3263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go up the river.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896493}
+  _teleportedName: Jaguar's Jungle
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &394159340
 Animator:
@@ -3846,6 +3850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go up in the tree.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896493}
+  _teleportedName: Treetops
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &460176712
 Animator:
@@ -12389,6 +12395,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextToSay: You go down the river.
   GivenImage: {fileID: 21300000, guid: 0c47f767f18d90a4dace520097dc02ba, type: 3}
+  _placeNameTextBox: {fileID: 5978630999799896493}
+  _teleportedName: Riverside Jungle
   AnimatorTransition: {fileID: 7654769693070095875}
 --- !u!95 &1770070843
 Animator:
@@ -15029,6 +15037,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 58.999756
       objectReference: {fileID: 0}
+    - target: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+      propertyPath: m_Text
+      value: Jaguar's Jungle
+      objectReference: {fileID: 0}
     - target: {fileID: 4359003073331100296, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -15156,6 +15168,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3975438907328454955, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+--- !u!114 &5978630999799896493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3975438908653871884, guid: 88a6e7c61749fd04aa09a116daa61166, type: 3}
+  m_PrefabInstance: {fileID: 5978630999799896492}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7654769693070095874
 PrefabInstance:
   m_ObjectHideFlags: 0
