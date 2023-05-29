@@ -14884,6 +14884,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 670035434}
     m_Modifications:
+    - target: {fileID: 5517861350485288808, guid: a57d798af53b2ff469611adffc9c6ab6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5517861350485288809, guid: a57d798af53b2ff469611adffc9c6ab6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14956,6 +14960,10 @@ PrefabInstance:
       propertyPath: _interactItem
       value: 
       objectReference: {fileID: 329721842}
+    - target: {fileID: 5517861350485288815, guid: a57d798af53b2ff469611adffc9c6ab6, type: 3}
+      propertyPath: m_Mass
+      value: 99999
+      objectReference: {fileID: 0}
     - target: {fileID: 5517861350701513150, guid: a57d798af53b2ff469611adffc9c6ab6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.97909164

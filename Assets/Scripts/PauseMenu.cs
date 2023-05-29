@@ -127,6 +127,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
+            FindSources();
             foreach (var source in effectsSource)
             {
                 source.volume = slider.value;
