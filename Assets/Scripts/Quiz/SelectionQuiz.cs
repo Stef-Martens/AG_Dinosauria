@@ -54,6 +54,11 @@ public class SelectionQuiz : QuizBase
         }
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
     protected override void CheckAnswer()
     {
         if (_btnNavigation.HasPressedBtn && !HasSelectedAnswer)
@@ -91,5 +96,10 @@ public class SelectionQuiz : QuizBase
                 recapAnswer.transform.GetChild(2).gameObject.SetActive(true);
             }
         }
+    }
+
+    protected override void EndQuiz()
+    {
+        base.EndQuiz();
     }
 }

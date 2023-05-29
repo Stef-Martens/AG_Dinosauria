@@ -104,6 +104,11 @@ public class ConnectionQuiz : QuizBase
         }
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
     protected override void CheckAnswer()
     {
         HashSet<Tuple<Button, Button>> answersSet = new HashSet<Tuple<Button, Button>>(_answers);
@@ -147,5 +152,10 @@ public class ConnectionQuiz : QuizBase
                 recapAnswer.transform.GetChild(1).gameObject.SetActive(true);
             }
         }
+    }
+
+    protected override void EndQuiz()
+    {
+        base.EndQuiz();
     }
 }

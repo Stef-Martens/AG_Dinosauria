@@ -8,7 +8,7 @@ public abstract class QuizBase : MonoBehaviour
     public BtnNavigationBase BtnNavigation { get; set; } = null;
     public bool HasSelectedAnswer { get; set; } = false;
     public bool HasSetRecapAnswer { get; set; } = false;
-    public bool CanSwitchQuiz { get; private set; } = false;
+    public bool CanSwitchQuiz { get; set; } = false;
 
     public bool IsWithSound = false;
 
@@ -52,6 +52,9 @@ public abstract class QuizBase : MonoBehaviour
         _inputs.ConfirmInputEvent -= OnActionConfirmInput;
     }
 
+    protected Inputs GetInputs()
+        => _inputs;
+
     protected virtual void SetAnimalTexts()
     {
 
@@ -77,7 +80,7 @@ public abstract class QuizBase : MonoBehaviour
         EndQuestion();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         EndQuiz();
     }
@@ -114,7 +117,7 @@ public abstract class QuizBase : MonoBehaviour
         }
     }
 
-    private void EndQuiz()
+    protected virtual void EndQuiz()
     {
         if (BtnNavigation != null)
         {

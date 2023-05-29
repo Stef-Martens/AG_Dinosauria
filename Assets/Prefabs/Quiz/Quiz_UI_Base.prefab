@@ -417,11 +417,35 @@ MonoBehaviour:
     m_ActionId: 85d55986-043f-4605-876d-08d8994fdbed
     m_ActionName: Player/Confirm[/Keyboard/enter,/Keyboard/numpadEnter]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5840674264565547647}
+        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
+        m_MethodName: OnReturn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 392bbaa0-a480-41f3-8975-0cea38596839
     m_ActionName: Player/Return[/Keyboard/backspace]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5840674264565547647}
+        m_TargetAssemblyTypeName: Inputs, Assembly-CSharp
+        m_MethodName: OnAlphabetKeyPress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4d1d2810-aad1-4e25-b5b6-d3f61c8912c8
     m_ActionName: Player/AlphabetKeyPress[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0

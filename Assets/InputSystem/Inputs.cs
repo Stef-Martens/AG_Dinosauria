@@ -23,6 +23,8 @@ public class Inputs : MonoBehaviour
 
     public event System.Action<bool> ActionInputEvent;
     public event System.Action<bool> ConfirmInputEvent;
+    public event System.Action<bool> ReturnInputEvent;
+    public event System.Action<char> AlphabetKeyInputEvent;
 
     public void OnEnable()
     {
@@ -111,6 +113,7 @@ public class Inputs : MonoBehaviour
                         if (containsOnlyLetters)
                         {
                             TypedLetter = key.displayName[0];
+                            AlphabetKeyInputEvent?.Invoke(TypedLetter);
                             break;
                         }
                         else
@@ -170,5 +173,6 @@ public class Inputs : MonoBehaviour
     public void ReturnInput(bool newReturnState)
     {
         Return = newReturnState;
+        ReturnInputEvent?.Invoke(newReturnState);
     }
 }
