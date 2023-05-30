@@ -26,33 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chameleon/Chameleon.unity
     guid: ec982fbef9436c147b63439d37477e98
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Fish/Fish.unity
     guid: 42ee62de5b569a54986df20900c6268e
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Rico/HummingBird_Rico.unity
     guid: c262f12479958774eb1f9c6dac2128d0
   - enabled: 1
     path: Assets/Scenes/Fish/IntroFish.unity
     guid: 00d0c9e7cc6d6904b964c159c109cf3d
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Chameleon/IntroChameleon.unity
     guid: 451be6811545d0a4184b016007246f35
@@ -62,8 +44,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chameleon/QuizChameleon.unity
     guid: 9a9982173d28a9843ac82a734ca40355
-  - enabled: 1
-    path: Assets/Scenes/Fish/QuizFish.unity
-    guid: 70a3c8cd478f4fa4e960dae712a28c98
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fef323a568e57cd4c8e904d41120b2bc, type: 2}
