@@ -6057,7 +6057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484059249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2305498, y: -0.015000343, z: -0.5}
+  m_LocalPosition: {x: -0.027773857, y: -0.015000343, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6848,6 +6848,18 @@ PrefabInstance:
     - target: {fileID: 1887907889274405302, guid: 7cdabcf66dec0d8459dc9f6571bbeb26, type: 3}
       propertyPath: m_Name
       value: PickupsText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887907889770389282, guid: 7cdabcf66dec0d8459dc9f6571bbeb26, type: 3}
+      propertyPath: m_Color.b
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887907889770389282, guid: 7cdabcf66dec0d8459dc9f6571bbeb26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6117647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887907889770389282, guid: 7cdabcf66dec0d8459dc9f6571bbeb26, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cdabcf66dec0d8459dc9f6571bbeb26, type: 3}
@@ -11092,7 +11104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 22.807007, y: 11.231018}
+  m_AnchoredPosition: {x: 22.807129, y: 11.230957}
   m_SizeDelta: {x: 610, y: 65}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &439478993435708958
@@ -12162,7 +12174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4483729264950348514, guid: 9594be5b85005324292930dd02d69b8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 4483729264950348514, guid: 9594be5b85005324292930dd02d69b8b, type: 3}
       propertyPath: m_LocalPosition.y
