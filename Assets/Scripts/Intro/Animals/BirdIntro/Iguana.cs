@@ -73,7 +73,7 @@ public class Iguana : AnimalIntro
     {
         if (GoRight)
         {
-            transform.Translate(Vector2.right * 4f * Time.deltaTime);
+            transform.Translate(Vector2.right * 7f * Time.deltaTime);
             Physics2D.IgnoreLayerCollision(8, 7, true);
         }
     }

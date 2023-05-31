@@ -2372,11 +2372,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 1759192904}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnLeft: {fileID: 1589387866}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -2479,6 +2479,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678592322}
   m_CullTransparentMesh: 1
+      m_Calls:
+      - m_Target: {fileID: 235651645}
+        m_TargetAssemblyTypeName: FirebaseManager, Assembly-CSharp
+        m_MethodName: BackToHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Home
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &692391115
 GameObject:
   m_ObjectHideFlags: 0
@@ -5516,12 +5529,12 @@ GameObject:
   - component: {fileID: 1515459016}
   - component: {fileID: 1515459015}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: Warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1515459015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5555,7 +5568,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1515459016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5581,7 +5594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -318, y: 15}
+  m_AnchoredPosition: {x: -705, y: -225.83998}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1589034421
@@ -5596,12 +5609,12 @@ GameObject:
   - component: {fileID: 1589034423}
   - component: {fileID: 1589034422}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1589034422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5635,7 +5648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1589034423
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5723,7 +5736,7 @@ MonoBehaviour:
     m_SelectOnUp: {fileID: 2084443600}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 672757035}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -6095,7 +6108,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 1196756629}
-    m_SelectOnDown: {fileID: 1589387866}
+    m_SelectOnDown: {fileID: 672757035}
     m_SelectOnLeft: {fileID: 2084443600}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -6883,12 +6896,12 @@ GameObject:
   - component: {fileID: 2051708394}
   - component: {fileID: 2051708395}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2051708393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6906,7 +6919,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -318, y: 72.84}
+  m_AnchoredPosition: {x: -705, y: -168}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2051708394
@@ -6950,7 +6963,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!1 &2084443598
 GameObject:
   m_ObjectHideFlags: 0

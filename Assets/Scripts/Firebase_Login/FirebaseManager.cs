@@ -364,4 +364,9 @@ public class FirebaseManager : MonoBehaviour
 
     }
 
+    public void BackToHome()
+    {
+        FindObjectOfType<SceneSwitch>().ChangeScene("Home");
+    }
+
 }

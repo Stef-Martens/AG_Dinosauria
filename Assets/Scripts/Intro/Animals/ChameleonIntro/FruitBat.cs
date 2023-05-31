@@ -9,7 +9,7 @@ public class FruitBat : MonoBehaviour
     Vector3 StartPosition;
     GameObject player;
 
-    public float Speed = 5f;
+    public float Speed = 6f;
 
     public bool IsBee;
 
