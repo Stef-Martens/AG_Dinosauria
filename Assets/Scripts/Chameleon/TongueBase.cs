@@ -352,8 +352,10 @@ public class TongueBase : MonoBehaviour
         {
             if (triggerHitObject.GetComponent<Fly>())
             {
+                if(triggerHitObject.activeSelf)
+                    FindObjectOfType<PickupsText>().ShowText("Fly");
+
                 triggerHitObject.SetActive(false);
-                FindObjectOfType<PickupsText>().ShowText("Fly");
             }
 
 
