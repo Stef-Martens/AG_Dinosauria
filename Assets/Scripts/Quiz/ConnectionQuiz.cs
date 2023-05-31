@@ -39,7 +39,6 @@ public class ConnectionQuiz : QuizBase
 
     protected override void OnEnable()
     {
-        BtnNavigation = this.GetComponent<BtnRightColNavigation>();
         _btnNavigation.ButtonPressedEvent += OnButtonsPressedList;
 
         base.OnEnable();
@@ -131,6 +130,8 @@ public class ConnectionQuiz : QuizBase
 
     protected override void ShowRecapAnswer(bool isRightAnswer)
     {
+        BtnNavigation = _btnNavigation.BtnNavigation;
+
         if (!HasSetRecapAnswer)
         {
             HasSetRecapAnswer = true;
@@ -156,6 +157,18 @@ public class ConnectionQuiz : QuizBase
 
     protected override void EndQuiz()
     {
-        base.EndQuiz();
+        if (BtnNavigation != null)
+        {
+            if (GetInputs().Action || GetInputs().Confirm)
+            {
+                if (!GetIsEndQuestionKeyReleased() && GetHasQuestionEnded())
+                {
+                    CanSwitchQuiz = true;
+                    FindObjectOfType<SwitchToNextQuiz>().SwitchQuiz();
+                }
+                else
+                    CanSwitchQuiz = false;
+            }
+        }
     }
 }

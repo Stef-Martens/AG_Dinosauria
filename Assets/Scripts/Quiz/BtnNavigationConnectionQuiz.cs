@@ -8,6 +8,7 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
 {
     public List<Button> LeftColBtnsOrigList { get; private set; }
     public List<Button> RightColBtnsOrigList { get; private set; }
+    public BtnNavigationBase BtnNavigation { get; private set; }
 
     public bool IsVerticalLayout = true;
 
@@ -43,6 +44,8 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
     {
         SetLeftColumnValues();
         SetRightColumnValues();
+
+        BtnNavigation = this.GetComponent<BtnRightColNavigation>();
     }
 
     private void Update()
@@ -85,7 +88,12 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
     {
         _btnLeftColNavigation.FirstSelectable = _btnLeftColNavigation.Buttons?.FirstOrDefault();
         _btnLeftColNavigation.ResetHasPressedButton();
-        _btnRightColNavigation.FirstSelectable?.Select();
+
+        if (_btnRightColNavigation.Buttons.Count > 0)
+        {
+            _btnRightColNavigation.FirstSelectable = _btnRightColNavigation.Buttons[0];
+            _btnRightColNavigation.FirstSelectable?.Select();
+        }
         
         _currentBtnTuple = new Tuple<Button, Button>(pressedButton, null);
         PressedBtnsList.Add(_currentBtnTuple);
@@ -96,8 +104,13 @@ public class BtnNavigationConnectionQuiz : MonoBehaviour
     {
         _btnRightColNavigation.FirstSelectable = _btnRightColNavigation.Buttons?.FirstOrDefault();
         _btnRightColNavigation.ResetHasPressedButton();
-        _btnLeftColNavigation.FirstSelectable?.Select();
-        
+
+        if (_btnLeftColNavigation.Buttons.Count > 0)
+        {
+            _btnLeftColNavigation.FirstSelectable = _btnLeftColNavigation.Buttons[0];
+            _btnLeftColNavigation.FirstSelectable?.Select();
+        }
+
         _currentBtnTuple = new Tuple<Button, Button>(_currentBtnTuple.Item1, pressedButton);
         PressedBtnsList[PressedBtnsList.Count - 1] = _currentBtnTuple;
         ButtonPressedEvent?.Invoke(PressedBtnsList);

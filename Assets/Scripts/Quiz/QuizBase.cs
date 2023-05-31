@@ -55,6 +55,12 @@ public abstract class QuizBase : MonoBehaviour
     protected Inputs GetInputs()
         => _inputs;
 
+    protected bool GetIsEndQuestionKeyReleased()
+        => _isEndQuestionKeyReleased;
+
+    protected bool GetHasQuestionEnded()
+        => _hasQuestionEnded;
+
     protected virtual void SetAnimalTexts()
     {
 

@@ -47,6 +47,11 @@ public class LetterQuiz : QuizBase
 
     protected override void OnEnable()
     {
+        base.OnEnable();
+
+        GetInputs().AlphabetKeyInputEvent += HandleTypedLetter;
+        GetInputs().ReturnInputEvent += DeleteLetters;
+
         FillLetterSelectionTextFields();
         
         foreach(Text answerText in AnswerTxtFields)
@@ -59,15 +64,19 @@ public class LetterQuiz : QuizBase
 
         this.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
         this.transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
-
-        base.OnEnable();
-
-        GetInputs().AlphabetKeyInputEvent += HandleTypedLetter;
-        GetInputs().ReturnInputEvent += DeleteLetters;
     }
 
     protected override void OnDisable()
     {
+        GetInputs().AlphabetKeyInputEvent -= HandleTypedLetter;
+        GetInputs().ReturnInputEvent -= DeleteLetters;
+
+        foreach (Text answerText in AnswerTxtFields)
+            answerText.text = "";
+
+        foreach (Image answerBox in AnswerImgFields)
+            answerBox.color = BaseAnwerBoxColor;
+
         _answerList = new List<char>();
 
         _isLetterKeyPressed = false;
@@ -76,9 +85,6 @@ public class LetterQuiz : QuizBase
         _canSetLetterSelectOrigImgColor = true;
 
         HasSetRecapAnswer = false;
-
-        GetInputs().AlphabetKeyInputEvent -= HandleTypedLetter;
-        GetInputs().ReturnInputEvent -= DeleteLetters;
 
         base.OnDisable();
     }
