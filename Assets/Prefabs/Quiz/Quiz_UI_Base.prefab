@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 6494136777179462986}
   - component: {fileID: 5840674264565547647}
   - component: {fileID: 4737714032666541214}
+  - component: {fileID: 8631105166815683212}
   - component: {fileID: 101578609097069407}
   m_Layer: 5
   m_Name: Quiz_UI_Base
@@ -486,6 +487,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d87f8be8924247d4dacbdb17a0f3a274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8631105166815683212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026065614336788549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfab9c93e465e34ab7a66a36ec57d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &101578609097069407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,6 +513,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalIndex: 0
   Quizzes: []
+  Animal: {fileID: 0}
+  EndScreen: {fileID: 0}
 --- !u!1 &2026065614444963646
 GameObject:
   m_ObjectHideFlags: 0

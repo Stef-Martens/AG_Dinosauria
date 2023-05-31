@@ -248,6 +248,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &86178581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484864508467849249, guid: 58b7067fc874fb742894c33b4f0932ba, type: 3}
+  m_PrefabInstance: {fileID: 987335823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &237229044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6515381220065475681, guid: 50eb90e9744b3944581a4f272c02f950, type: 3}
@@ -1584,6 +1589,10 @@ PrefabInstance:
       propertyPath: AnimalIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8631105166815683212, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 86178581}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
 --- !u!1001 &987335823

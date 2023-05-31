@@ -1153,6 +1153,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 855739610}
     m_Modifications:
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
     - target: {fileID: 5750788130751062639, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
       propertyPath: m_Name
       value: Chameleon_LeavesPile (2)
@@ -2967,6 +2979,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 855739610}
     m_Modifications:
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
     - target: {fileID: 5750788130751062639, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
       propertyPath: m_Name
       value: Chameleon_LeavesPile (3)
@@ -4642,6 +4666,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 855739610}
     m_Modifications:
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
     - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -7111,6 +7147,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 855739610}
     m_Modifications:
     - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
       propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
@@ -7538,6 +7586,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 855739610}
     m_Modifications:
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 40082259031632275, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
     - target: {fileID: 5750788130751062639, guid: b3ff8f0288abbc149a0777344c7e3e16, type: 3}
       propertyPath: m_Name
       value: Chameleon_LeavesPile (4)

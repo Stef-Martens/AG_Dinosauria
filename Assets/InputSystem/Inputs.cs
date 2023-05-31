@@ -41,19 +41,30 @@ public class Inputs : MonoBehaviour
 
     public void OnHorizontalMove(InputAction.CallbackContext context)
     {
-        HorizontalMoveInput(context.ReadValue<Vector2>());
+        if(Time.timeScale != 0)
+            HorizontalMoveInput(context.ReadValue<Vector2>());
+        else
+            HorizontalMoveInput(Vector2.zero);
     }
 
     public void OnVerticalMove(InputAction.CallbackContext context)
     {
-        VerticalMoveInput(context.ReadValue<Vector2>());
+        if (Time.timeScale != 0)
+            VerticalMoveInput(context.ReadValue<Vector2>());
+        else
+            VerticalMoveInput(Vector2.zero);
     }
 
     public void OnAction(InputAction.CallbackContext context)
     {
-        if (context.started) ActionInput(true);
-        if (context.performed) ActionInput(true);
-        if (context.canceled) ActionInput(false);
+        if (Time.timeScale != 0)
+        {
+            if (context.started) ActionInput(true);
+            if (context.performed) ActionInput(true);
+            if (context.canceled) ActionInput(false);
+        }
+        else
+            ActionInput(false);
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -79,28 +90,38 @@ public class Inputs : MonoBehaviour
 
     public void OnConfirm(InputAction.CallbackContext context)
     {
-        if (context.started) ConfirmInput(true);
-        if (context.performed) ConfirmInput(true);
-        if (context.canceled) ConfirmInput(false);
+        if (Time.timeScale != 0)
+        {
+            if (context.started) ConfirmInput(true);
+            if (context.performed) ConfirmInput(true);
+            if (context.canceled) ConfirmInput(false);
+        }
+        else
+            ConfirmInput(false);
     }
 
     public void OnReturn(InputAction.CallbackContext context)
     {
-        if (context.started) ReturnInput(true);
-        if (context.performed) ReturnInput(true);
-        if (context.canceled) ReturnInput(false);
+        if (Time.timeScale != 0)
+        {
+            if (context.started) ReturnInput(true);
+            if (context.performed) ReturnInput(true);
+            if (context.canceled) ReturnInput(false);
+        }
+        else
+            ReturnInput(false);
     }
 
     public void OnAlphabetKeyPress(InputAction.CallbackContext context)
     {
         var keyboard = InputSystem.GetDevice<Keyboard>();
-
-        if (keyboard.anyKey.ReadValue() > 0)
+        
+        if (keyboard.anyKey.ReadValue() > 0 && Time.timeScale != 0)
         {
             if (!_isAnyKeyPressed)
             {
                 _isAnyKeyPressed = true;
-
+                
                 _anyKeyInputAction.Disable(); // disable the action to prevent further key presses
 
                 foreach (var key in keyboard.allKeys)
@@ -109,7 +130,7 @@ public class Inputs : MonoBehaviour
                     {
                         // check if the displayName of the key contains only letters of the alphabet
                         bool containsOnlyLetters = Regex.IsMatch(key.displayName, @"^[A-Z]+$");
-
+                        
                         if (containsOnlyLetters)
                         {
                             TypedLetter = key.displayName[0];

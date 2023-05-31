@@ -1932,6 +1932,10 @@ PrefabInstance:
       propertyPath: AnimalIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8631105166815683212, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 987335824}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
 --- !u!1001 &987335823
@@ -2031,6 +2035,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b7067fc874fb742894c33b4f0932ba, type: 3}
+--- !u!1 &987335824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484864508467849249, guid: 58b7067fc874fb742894c33b4f0932ba, type: 3}
+  m_PrefabInstance: {fileID: 987335823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1143364387
 PrefabInstance:
   m_ObjectHideFlags: 0

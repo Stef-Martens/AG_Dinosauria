@@ -674,11 +674,11 @@ PrefabInstance:
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[3]
       value: 
-      objectReference: {fileID: 2106813908}
+      objectReference: {fileID: 0}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1476092233}
     - target: {fileID: 101578609097069407, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: Quizzes.Array.data[5]
       value: 
@@ -825,6 +825,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2026065616084343844, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8631105166815683212, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: PauseMenu
+      value: 
+      objectReference: {fileID: 1292948863}
+    - target: {fileID: 8631105166815683212, guid: 2ba4ccf945de89845ae5d0da95ea0c0b, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1850,6 +1858,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b7067fc874fb742894c33b4f0932ba, type: 3}
+--- !u!1 &1292948863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3484864508467849249, guid: 58b7067fc874fb742894c33b4f0932ba, type: 3}
+  m_PrefabInstance: {fileID: 1292948862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1474331150 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6620170124450036081, guid: 3f54e3d7bbe9fd441bca0707a1551723, type: 3}

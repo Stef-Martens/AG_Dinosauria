@@ -42,6 +42,9 @@ public class LetterQuiz : QuizBase
 
     protected override void Awake()
     {
+        OnKeyDown = new UnityEvent();
+        OnKeyUp = new UnityEvent();
+
         base.Awake();
     }
 
@@ -51,6 +54,9 @@ public class LetterQuiz : QuizBase
 
         GetInputs().AlphabetKeyInputEvent += HandleTypedLetter;
         GetInputs().ReturnInputEvent += DeleteLetters;
+
+        OnKeyDown.AddListener(SetIsLetterKeyPressed);
+        OnKeyUp.AddListener(SetIsLetterKeyPressed);
 
         FillLetterSelectionTextFields();
         
@@ -70,6 +76,9 @@ public class LetterQuiz : QuizBase
     {
         GetInputs().AlphabetKeyInputEvent -= HandleTypedLetter;
         GetInputs().ReturnInputEvent -= DeleteLetters;
+
+        OnKeyDown.RemoveAllListeners();
+        OnKeyUp.RemoveAllListeners();
 
         foreach (Text answerText in AnswerTxtFields)
             answerText.text = "";
@@ -171,26 +180,29 @@ public class LetterQuiz : QuizBase
 
     private void ChangeLetterSelectionImageColor()
     {
-        for (int letterIndex = 0; letterIndex < LetterSelectionTxtFields.Count; letterIndex++)
+        if (Time.timeScale != 0)
         {
-            if (LetterSelectionTxtFields[letterIndex].text == _currentKey.ToString())
+            for (int letterIndex = 0; letterIndex < LetterSelectionTxtFields.Count; letterIndex++)
             {
-                Image currentImage = LetterSelectionImgFields[letterIndex];
+                if (LetterSelectionTxtFields[letterIndex].text == _currentKey.ToString())
+                {
+                    Image currentImage = LetterSelectionImgFields[letterIndex];
 
-                if (_canSetLetterSelectOrigImgColor)
-                {
-                    _letterSelectOrigImgColor = currentImage.color;
-                    _canSetLetterSelectOrigImgColor = false;
-                }
+                    if (_canSetLetterSelectOrigImgColor)
+                    {
+                        _letterSelectOrigImgColor = currentImage.color;
+                        _canSetLetterSelectOrigImgColor = false;
+                    }
 
-                if (_isLetterKeyPressed)
-                {
-                    currentImage.color = LetterPressedColor;
-                }
-                else
-                {
-                    currentImage.color = _letterSelectOrigImgColor;
-                    _canSetLetterSelectOrigImgColor = true;
+                    if (_isLetterKeyPressed)
+                    {
+                        currentImage.color = LetterPressedColor;
+                    }
+                    else
+                    {
+                        currentImage.color = _letterSelectOrigImgColor;
+                        _canSetLetterSelectOrigImgColor = true;
+                    }
                 }
             }
         }
@@ -219,6 +231,7 @@ public class LetterQuiz : QuizBase
         if (_answerList.Count == _correctAnswerList.Count && !HasSelectedAnswer)
         {
             HasSelectedAnswer = true;
+            GetInputs().ReturnInputEvent -= DeleteLetters;
 
             if (_answerList.SequenceEqual(_correctAnswerList))
                 ShowRecapAnswer(true);
